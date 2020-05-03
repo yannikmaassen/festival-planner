@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts/app');
 });
+
+Route::get('/planner/overview', function () {
+    return view('planner.index');
+});

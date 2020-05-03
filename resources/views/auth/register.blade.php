@@ -1,0 +1,1 @@
+<!-- standard Laravel register page first -->
