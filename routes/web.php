@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/planner/overview', function () {
     return view('planner.index');
 });
+
+Route::get('/login', function () {
+    return view('auth.login')->middleware('auth');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
