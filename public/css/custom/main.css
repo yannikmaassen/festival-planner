@@ -1,12 +1,46 @@
+/* General styling */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    height: 100vh;
-    width: 100vw;
     background-color: rgb(41, 41, 41);
 }
 
 p {
     color: white;
 }
+
+img {
+    width: 100%;
+    height: 35%;
+}
+
+label {
+    color: white;
+}
+
+.content {
+    height: auto;
+}
+
+/* Header styling */
+
+header {
+    height: 48px;
+    background-color: black;
+    margin-bottom: 12px;
+}
+
+.header--text {
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    font: bold;
+}
+
+/* Card styling */
 
 .card-body {
     background-color: rgb(244, 242, 242);
@@ -15,6 +49,18 @@ p {
 .card-header {
     background-color: lightgrey;
 }
+
+.festival-card {
+    background-color: rgb(130, 130, 130);
+    padding: 12px;
+    color: white;
+}
+
+small {
+    color: lightgray;
+}
+
+/* Button styling */
 
 .btn-primary {
     background-color: green;
@@ -28,11 +74,18 @@ p {
     text-decoration: underline;
 }
 
-img {
-    width: 100%;
-    height: 1005;
+/* Navbar-Styling */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    height: 48px;
+    background-color: lightgrey;
+    overflow-y: scroll;
 }
 
-/* .form-group {
-    background-color: darkgrey;
-} */
+/* Forms styling */
+
+.form-control {
+    background-color: lightgrey;
+}
