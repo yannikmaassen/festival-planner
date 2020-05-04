@@ -21,6 +21,10 @@ Route::get('/profile/create', function () {
     return view('profile.create');
 });
 
+Route::get('/profile/own', function () {
+    return view('profile.own');
+});
+
 Route::get('/planner/overview', function () {
     return view('planner.index');
 });
