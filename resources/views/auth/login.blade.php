@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<img src="" alt="">
-<p class="h2 text-center">Bitte logge dich ein, um fortzufahren.</p>
+<img src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene">
+<p class="h2 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
 
 <div class="container">
-  <div class="row justify-content-center mt-3">
+  <div class="row justify-content-center mt-3 mb-5">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header h3 text-center">{{ __('Login') }}</div>
@@ -59,14 +59,14 @@
                 <button type="submit" class="btn btn-primary">
                   {{ __('Login') }}
                 </button>
-
+                <!-- 
                 @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
                   {{ __('Passwort vergessen?') }}
                 </a>
-                @endif
+                @endif -->
                 <a class="btn btn-link" href="">
-                  {{ __('Noch nicht registriert?') }}
+                  {{ __('Noch keinen Account? Registrieren') }}
                 </a>
               </div>
             </div>

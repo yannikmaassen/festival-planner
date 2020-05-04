@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<img src="" alt="">
-<p class="text-center h3">Bitte registriere dich, um fortzufahren.</p>
+<img src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene">
+<p class="text-center h3 mt-3">Bitte registriere dich, um fortzufahren.</p>
 
 <div class="container">
-  <div class="row justify-content-center align-items-center mt-3">
+  <div class="row justify-content-center mt-3 mb-5">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header h4 text-center">{{ __('Registrieren') }}</div>
@@ -69,9 +69,9 @@
                 <button type="submit" class="btn btn-primary">
                   {{ __('Registrieren') }}
                 </button>
-                <button type="submit" class="btn btn-primary">
+                <a class="btn btn-link" href="{{ url('/login') }}">
                   {{ __('Bereits registriert? Login') }}
-                </button>
+                </a>
               </div>
             </div>
           </form>
