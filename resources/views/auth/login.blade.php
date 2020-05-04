@@ -65,7 +65,7 @@
                   {{ __('Passwort vergessen?') }}
                 </a>
                 @endif -->
-                <a class="btn btn-link" href="">
+                <a class="btn btn-link" href="{{ url('/register') }}">
                   {{ __('Noch keinen Account? Registrieren') }}
                 </a>
               </div>

@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('layouts/app');
 });
 
+Route::get('/profile/create', function () {
+    return view('profile.create');
+});
+
 Route::get('/planner/overview', function () {
     return view('planner.index');
 });
