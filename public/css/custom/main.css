@@ -6,6 +6,10 @@
 
 body {
     background-color: rgb(41, 41, 41);
+    display: grid;
+    grid-template-rows: 48px auto 48px;
+    height: 100vh;
+    width: 100vw;
 }
 
 p {
@@ -18,7 +22,7 @@ p {
 }
 
 .content {
-    height: auto;
+    overflow: scroll;
 }
 
 /* Header styling */
@@ -83,6 +87,8 @@ small {
     height: 48px;
     background-color: lightgrey;
     overflow-y: scroll;
+    position: sticky;
+    bottom: 0;
 }
 
 /* Forms styling */

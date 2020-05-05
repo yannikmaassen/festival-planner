@@ -52,6 +52,10 @@ Route::get('/planner/edit', function () {
     return view('planner.edit');
 });
 
+Route::get('/friends/add', function () {
+    return view('friends.add');
+});
+
 
 
 // Auth routes
