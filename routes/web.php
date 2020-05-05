@@ -56,6 +56,14 @@ Route::get('/friends/add', function () {
     return view('friends.add');
 });
 
+Route::get('/todos/add', function () {
+    return view('todos.add');
+});
+
+Route::get('/playlist/add', function () {
+    return view('playlist.add');
+});
+
 
 
 // Auth routes

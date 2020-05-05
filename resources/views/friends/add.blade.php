@@ -6,10 +6,11 @@
   <form class="form-inline my-4 my-lg-0" method="GET" action="{{ url('/search') }}">
     @csrf
     <div class="input-group input-group-sm">
-      <input name="q" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Max Mustermann">
+      <label for="input_friends" class="label--form">Suche nach Freunden, die auch diese App nutzen.</label>
+      <input name="input_friends" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Suche nach User-Name oder E-Mail">
       <div class="input-group-append">
         <button type="submit" class="btn btn-secondary btn-number" href="{{ url('/search') }}">
-          Search
+          Suche
         </button>
       </div>
     </div>
