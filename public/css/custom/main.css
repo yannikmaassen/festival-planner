@@ -12,8 +12,9 @@ p {
     color: white;
 }
 
-label {
+.label--form {
     color: white;
+    font-style: italic;
 }
 
 .content {
