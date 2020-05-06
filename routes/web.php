@@ -40,6 +40,10 @@ Route::get('/planner', function () {
     return view('planner.show');
 });
 
+Route::get('/planner/finished', function () {
+    return view('planner.show_finished');
+});
+
 Route::get('/planner/overview', function () {
     return view('planner.index');
 });
@@ -63,8 +67,6 @@ Route::get('/todos/add', function () {
 Route::get('/playlist/add', function () {
     return view('playlist.add');
 });
-
-
 
 // Auth routes
 
