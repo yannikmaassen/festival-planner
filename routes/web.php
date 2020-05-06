@@ -16,3 +16,50 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts/app');
 });
+
+// Profile routes
+
+Route::get('/profile/create', function () {
+    return view('profile.create');
+});
+
+Route::get('/profile/own', function () {
+    return view('profile.own');
+});
+
+Route::get('/profile/edit', function () {
+    return view('profile.edit');
+});
+
+Route::get('/profile/{profile_id}', function () {
+    return view('profile.show');
+});
+
+// Planner routes
+Route::get('/planner', function () {
+    return view('planner.show');
+});
+
+Route::get('/planner/overview', function () {
+    return view('planner.index');
+});
+
+Route::get('/planner/create', function () {
+    return view('planner.create');
+});
+
+Route::get('/planner/edit', function () {
+    return view('planner.edit');
+});
+
+
+
+// Auth routes
+
+Route::get('/login', function () {
+    return view('auth.login')->middleware('auth');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
