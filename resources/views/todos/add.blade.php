@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <h2 class="text-white mt-3">ToDo-Liste hinzufügen</h2>
+  <h2 class="text-white text-center mt-3">ToDo-Liste hinzufügen</h2>
   <div class="form-group">
     <label class="label--form mt-3" for="todos_input">Füge hier deine ToDo-Liste ein, die du mit deiner Crew bearbeiten und abarbeiten kannst.</label>
     <textarea class="form-control" id="todos_input" rows="12"></textarea>

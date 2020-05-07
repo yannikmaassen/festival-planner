@@ -14,7 +14,7 @@
   <title>Festival Planner</title>
 </head>
 
-<body>
+<body class="body--nav">
 
   @include('includes/header')
   <div class="content">

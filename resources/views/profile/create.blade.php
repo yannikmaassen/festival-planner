@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-  <p class="h2 mt-2">
+  <p class="h2 text-center mt-2">
     Erzähl' was über dich!
   </p>
   <a class="btn-link small text-muted" href="#">Nö, warum?</a>

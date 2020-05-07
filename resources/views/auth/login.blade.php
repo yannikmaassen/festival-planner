@@ -2,7 +2,7 @@
 
 @section('content')
 <img class="image--auth" src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene">
-<p class="h2 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
+<p class="h3 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
 
 <div class="container">
   <div class="row justify-content-center mt-3 mb-5">

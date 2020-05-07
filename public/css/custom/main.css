@@ -12,6 +12,14 @@ body {
     width: 100vw;
 }
 
+.body--nav {
+    background-color: rgb(41, 41, 41);
+    display: grid;
+    grid-template-rows: 48px auto 48px;
+    height: 100vh;
+    width: 100vw;
+}
+
 p {
     color: white;
 }
@@ -23,6 +31,10 @@ p {
 
 .content {
     overflow: scroll;
+}
+
+footer {
+    height: 48px;
 }
 
 /* Header styling */
@@ -84,7 +96,7 @@ small {
 .navbar {
     display: flex;
     justify-content: space-around;
-    height: 48px;
+    /* height: 48px; */
     background-color: lightgrey;
     overflow-y: scroll;
     position: sticky;

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <p class="h2 mt-2">
+  <p class="h2 text-center mt-3">
     Festival-Planner hinzufügen
   </p>
 
