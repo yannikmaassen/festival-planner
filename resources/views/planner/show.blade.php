@@ -11,7 +11,7 @@
   </section>
   <hr>
   <section>
-    <h2 class="row planner--element__heading justify-content-center">Deine Festivalcrew</h2>
+    <h2 class="row planner--element__heading justify-content-center">Festivalcrew</h2>
     <a class="btn btn-primary mb-4 w-100" href="{{ url('/friends/add') }}">
       {{ __('Füge weitere Crewmember hinzu!') }}
     </a>

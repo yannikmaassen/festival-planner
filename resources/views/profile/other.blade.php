@@ -8,7 +8,7 @@
       Maaßen</p>
   </div>
   <section>
-    <h3 class="row profile--element__heading justify-content-center">Beschreibung</h3>
+    <h3 class="profile--element__heading">Beschreibung</h3>
     <p class="profile-element">
       Yannik / Sanji<br>
       Hamburg 040<br>
@@ -17,12 +17,12 @@
   </section>
   <hr>
   <section>
-    <h3 class="row profile--element__heading justify-content-center">Platzhalter Musik</h3>
+    <h3 class="profile--element__heading">Platzhalter Musik</h3>
     <p class="profile-element">Hier werden mithilfe der Spotify API alle Musiknennungen des Users aufgelistet. So werden Genres oder Interpreten als ein Icon mit dazugehörigem Namen nebeneinander aufgezeigt.</p>
   </section>
   <hr>
   <section>
-    <h3 class="row profile--element__heading justify-content-center">Bisherige Festivals</h3>
+    <h3 class="profile--element__heading">Bisherige Festivals</h3>
     <p class="profile-element">
       - Rock am Ring<br>
       - Deichbrand Festival<br>

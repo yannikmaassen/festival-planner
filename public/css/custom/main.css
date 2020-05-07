@@ -208,6 +208,7 @@ small {
     padding: 8px;
     border-color: var(--light_cyan);
     margin-bottom: 20px;
+    background-color: var(--steel_teal);
 }
 
 .profile--element__heading {

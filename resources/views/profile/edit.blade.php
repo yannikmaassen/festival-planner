@@ -14,7 +14,7 @@
   <form>
     <div class="form-group mt-3">
       <label class="label--form" for="profile_input1">Dein Name</label>
-      <input class="form-control" id="profile_input1" placeholder="z.B. Max">
+      <input class="form-control" id="profile_input1">
     </div>
     <div class="form-group">
       <label class="label--form" for="profile_input2">Dein Profilbild</label>

@@ -9,11 +9,11 @@
   <form>
     <div class="form-group mt-3">
       <label class="label--form" for="planner_input1">Name des Festivals</label>
-      <input class="form-control" id="planner_input1" placeholder="z.B. &#34Rock am Ring&#34">
+      <input class="form-control" id="planner_input1">
     </div>
     <div class="form-group mt-3">
       <label class="label--form" for="planner_input2">Datum</label>
-      <input class="form-control" id="planner_input2" placeholder="z.B. 05.06.-07.06.2020">
+      <input class="form-control" id="planner_input2">
     </div>
     <div class="form-group mt-3">
       <label class="label--form" for="planner_input3">Genre</label>
@@ -26,7 +26,7 @@
     </div>
     <div class="form-group mt-3">
       <label class="label--form" for="planner_input4">Headliner</label>
-      <input class="form-control" id="planner_input4" placeholder="z.B. &#34Foo Fighters, Marteria, Volbeat&#34">
+      <input class="form-control" id="planner_input4">
     </div>
     <div class="form-group">
       <label class="label--form" for="planner_input5">Beschreibung des Festivals</label>

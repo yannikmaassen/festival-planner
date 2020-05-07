@@ -7,18 +7,22 @@
     <p class="h2 text-center mt-2">
       Erzähl' was über dich!
     </p>
-    <a class="btn-link small text-muted" href="#">Nö, warum?</a>
+    <a class="btn-link small" href="#">
+      <p class="text-center text-white">
+        Nö, warum?
+      </p>
+    </a>
     <form>
       <div class="form-group mt-3">
-        <label class="label--form" for="profile_input1">Dein Name</label>
-        <input class="form-control" id="profile_input1" placeholder="z.B. Max">
+        <label class="label--form" for="profile_input1">Name</label>
+        <input class="form-control" id="profile_input1">
       </div>
       <div class="form-group">
-        <label class="label--form" for="profile_input2">Dein Profilbild</label>
+        <label class="label--form" for="profile_input2">Profilbild</label>
         <input type="file" class="form-control-file" id="profile_input2">
       </div>
       <div class="form-group">
-        <label class="label--form" for="profile_input3">Eine kleine Beschreibung über dich</label>
+        <label class="label--form" for="profile_input3">Beschreibung</label>
         <textarea class="form-control" id="profile_input3" rows="3"></textarea>
       </div>
       <div class="form-group">
@@ -26,7 +30,7 @@
         <textarea class="form-control" id="profile_input4" rows="3"></textarea>
       </div>
       <div class="form-group">
-        <label class="label--form" for="exampleFormControlSelect1">Auf wie vielen verschiedenen Festivals warst du bereits?</label>
+        <label class="label--form" for="exampleFormControlSelect1">Wie viele Festivals hast du bereits besucht?</label>
         <select class="form-control" id="exampleFormControlSelect1">
           <option>1</option>
           <option>2</option>
