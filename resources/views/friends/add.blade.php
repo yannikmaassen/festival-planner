@@ -12,6 +12,9 @@
         <button type="submit" class="btn btn-secondary btn-number" href="{{ url('/search') }}">
           Suche
         </button>
+        <button type="submit" class="btn btn-primary my-3 w-100" href="#">
+          {{ __('Speichern') }}
+        </button>
       </div>
     </div>
   </form>

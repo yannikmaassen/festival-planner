@@ -6,9 +6,7 @@
     <img class="image--profile" src="/images/icon.png" alt="Profilbild Yannik Maaßen">
     <p class="h3">Yannik Maaßen</p>
   </div>
-  <button class="btn--edit-profile mb-3">
-    <a href="/profile/edit">Profil bearbeiten</a>
-  </button>
+  <a class="btn btn--edit-profile mb-3" href="/profile/edit">Profil bearbeiten</a>
   <section class="profile-element">
     <h4 class="text-white">Beschreibung</h4>
     <p class="text-white">Hier steht die Beschreibung, welche der Nutzer über den create oder edit view selber editieren kann.</p>

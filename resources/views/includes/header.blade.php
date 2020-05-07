@@ -1,4 +1,4 @@
 <header>
-  <p class="header--text">Festival Planner
+  <p class="header--text">Planival
   </p>
 </header>

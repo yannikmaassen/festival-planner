@@ -38,7 +38,7 @@
     </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">
-        <button type="submit" class="btn btn-primary mb-4" href="{{ url('/planner') }}">
+        <button type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/planner') }}">
           {{ __('Anlegen') }}
         </button>
       </div>

@@ -13,7 +13,7 @@ suggestion: horizontal cards, border cards, modified kitchen sink -->
           <div class="festival-card">
             <h5 class="card-title h3">Rock am Ring</h5>
             <p class="card-text"><small>05.-07.06.2020</small></p>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">System of a Down - Green Day - Volbeat</p>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ suggestion: horizontal cards, border cards, modified kitchen sink -->
         <div class="festival-card">
           <h5 class="card-title h3">Hurricane Festival</h5>
           <p class="card-text"><small>23.-25.06.2020</small></p>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">Seeed - Martin Garrix - The Killers - Deichkind</p>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@ suggestion: horizontal cards, border cards, modified kitchen sink -->
         <div class="festival-card">
           <h5 class="card-title h3">Airbeat One Festival</h5>
           <p class="card-text"><small>14.-17.07.2020</small></p>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">David Guetta - Hardwell - Dimitri Vegas & Like Mike</p>
         </div>
       </div>
     </div>
