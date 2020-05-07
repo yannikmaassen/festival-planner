@@ -31,8 +31,8 @@ Route::get('/profile/edit', function () {
     return view('profile.edit');
 });
 
-Route::get('/profile/{profile_id}', function () {
-    return view('profile.show');
+Route::get('/profile/other', function () {
+    return view('profile.other');
 });
 
 // Planner routes
@@ -60,12 +60,24 @@ Route::get('/friends/add', function () {
     return view('friends.add');
 });
 
+Route::get('/friends/edit', function () {
+    return view('friends.edit');
+});
+
 Route::get('/todos/add', function () {
     return view('todos.add');
 });
 
+Route::get('/todos/edit', function () {
+    return view('todos.edit');
+});
+
 Route::get('/playlist/add', function () {
     return view('playlist.add');
+});
+
+Route::get('/playlist/edit', function () {
+    return view('playlist.edit');
 });
 
 // Auth routes

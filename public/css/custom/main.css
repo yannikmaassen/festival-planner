@@ -4,6 +4,7 @@
     --smoky_black: #090c08;
     --eerie_black: #191919;
     --rich_black: #080705;
+    --green_black: #07393c;
     --cadet: #5c6b73;
     --gunmetal: #253237;
     --light_cyan: #e0fbfc;
@@ -20,6 +21,7 @@
     --steel_teal: #55828b;
     --outer_space: #343f3e;
     --davys_grey: #505a5b;
+    --manatee: #8f91a2;
 }
 
 /* General styling */
@@ -50,18 +52,24 @@ p {
     color: var(--baby_powder);
 }
 
-.label--form {
-    color: white;
-    font: bold;
-    font-size: 1.2em;
-}
-
 .content {
     overflow: scroll;
 }
 
 footer {
     height: 48px;
+}
+
+.logo--auth {
+    font-family: "Aclonica";
+    text-align: center;
+    font-size: 3em;
+    color: var(--platinum);
+}
+
+hr {
+    border-top: 1.5px solid var(--light_cyan);
+    margin-bottom: 30px;
 }
 
 /* Header styling */
@@ -91,16 +99,24 @@ header {
 }
 
 .festival-card {
-    /* background-color: rgb(130, 130, 130); */
-    background-color: var(--steel_teal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px;
-    color: var(--baby_powder);
-    font-weight: 500;
+    color: var(--gunmetal);
     background-image: linear-gradient(
         to right,
-        var(--outer_space),
-        var(--cadet)
+        var(--manatee),
+        var(--platinum)
     );
+}
+
+.card-text {
+    color: var(--charcoal);
+}
+
+.planner--element__heading {
+    color: var(--baby_powder);
 }
 
 small {
@@ -112,7 +128,7 @@ small {
 .btn-primary {
     background-color: var(--flame);
     color: white;
-    border-color: black;
+    border: 1.5px solid var(--rich_black);
 }
 
 .btn-link {
@@ -124,11 +140,19 @@ small {
 .btn--edit-profile {
     width: 100%;
     height: 36px;
-    color: black;
-    background-color: var(--platinum);
+    color: var(--baby_powder);
+    background-color: var(--davys_grey);
+    border: 1px solid var(--rich_black);
     border-radius: 12px;
     font: bold;
     font-size: 1.1em;
+}
+
+.btn--edit__planner {
+    background-color: var(--davys_grey);
+    border: 1px solid var(--rich_black);
+    color: var(--baby_powder);
+    font-size: 0.7em;
 }
 
 /* Navbar-Styling */
@@ -136,7 +160,6 @@ small {
 .navbar {
     display: flex;
     justify-content: space-around;
-    font-family: "Material Icons";
     /* height: 48px; */
     background-color: var(--gunmetal);
     overflow-y: scroll;
@@ -145,15 +168,23 @@ small {
 }
 
 .svg--nav {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     fill: white;
 }
 
 /* Forms styling */
 
 .form-control {
-    background-color: lightgrey;
+    background-color: var(--platinum);
+    margin-bottom: 30px;
+}
+
+.label--form {
+    color: var(--platinum);
+    font: bold;
+    font-size: 1.2em;
+    margin-bottom: 0px;
 }
 
 /* Profile styling */
@@ -164,19 +195,23 @@ small {
 }
 
 .image--profile {
-    width: 100px;
-    height: 100px;
-    background-color: lightgrey;
-    border-radius: 50px;
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    margin-right: 40px;
 }
 
 .profile-element {
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 12px;
     border-style: solid;
     padding: 8px;
-    border-color: lightgrey;
+    border-color: var(--light_cyan);
     margin-bottom: 20px;
+}
+
+.profile--element__heading {
+    color: var(--baby_powder);
 }
 
 .box {

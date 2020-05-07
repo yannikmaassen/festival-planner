@@ -2,10 +2,14 @@
 
 @section('content')
 <div class="container">
-  <p class="h2 mt-2">
+  <p class="h2 text-center mt-2">
     Erzähl' was über dich!
   </p>
-  <a class="btn-link small text-muted" href="#">Nö, warum?</a>
+  <a class="btn-link small text-white" href="#">
+    <p class="text-center text-grey">
+      Nö, warum?
+    </p>
+  </a>
 
   <form>
     <div class="form-group mt-3">

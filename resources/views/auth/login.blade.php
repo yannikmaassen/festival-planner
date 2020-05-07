@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<img class="image--auth" src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene">
+<!-- <img class="image--auth" src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene"> -->
+<h1 class="logo--auth my-5">Planival</h1>
 <p class="h3 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
 
 <div class="container">

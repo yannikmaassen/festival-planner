@@ -7,8 +7,6 @@
     <p class="h2">Yannik<br>
       Maaßen</p>
   </div>
-  <a class="btn btn--edit-profile mb-4" href="/profile/edit">Profil bearbeiten</a>
-  <!-- <hr> -->
   <section>
     <h3 class="row profile--element__heading justify-content-center">Beschreibung</h3>
     <p class="profile-element">
@@ -30,19 +28,6 @@
       - Deichbrand Festival<br>
       - Highfield Festival<br>
       - Tomorrowland<br>
-    </p>
-  </section>
-  <hr>
-  <section>
-    <h3 class="row profile--element__heading justify-content-center">Meine Packliste</h3>
-    <p class="profile-element">
-      - Tageslinsen<br>
-      - Panzertape<br>
-      - neues Zelt<br>
-      - Klopapier<br>
-      - Wasser<br>
-      - Bier<br>
-      - Knabberkram<br>
     </p>
   </section>
 </div>
