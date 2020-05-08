@@ -13,7 +13,6 @@
     <p class="profile__section">
       Yannik / Sanji<br>
       Hamburg 040<br>
-      auf der Suche nach weiteren Festivalgängern<br>
     </p>
   </section>
   <hr>

@@ -2,16 +2,19 @@
 
 @section('content')
 <div class="container">
-  <section>
+  <section class="mb-4">
     <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Bild einer Festival-Szene">
     <div class="row justify-content-between align-items-center">
       <h1 class="text-white mt-3 ml-3">Rock am Ring</h1>
       <a href="{{ url('/planner/edit') }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
     </div>
-    <p><small>05.06.-07.06.2020</small></p>
-    <p>Rock - Alternative - Metal</p>
-    <p>Green Day - System of a Down - Volbeat</p>
-    <p>Rock am Ring ist ein von Marek Lieberberg veranstaltetes Musikfestival, das von 1985 bis 2014 und seit 2017 wieder auf dem Nürburgring in der Nähe der Stadt Adenau in der Eifel stattfindet.</p>
+    <p>05.06.-07.06.2020</p>
+    <section class="festival-info">
+      <h2 class="festival-info__heading">Info</h2>
+      <p>Rock - Alternative - Metal</p>
+      <p>Green Day - System of a Down - Volbeat</p>
+      <p>Rock am Ring ist ein von Marek Lieberberg veranstaltetes Musikfestival, das von 1985 bis 2014 und seit 2017 wieder auf dem Nürburgring in der Nähe der Stadt Adenau in der Eifel stattfindet.</p>
+    </section>
   </section>
   <hr>
   <section class="mb-5">

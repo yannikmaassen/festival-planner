@@ -63,7 +63,7 @@ hr {
 }
 
 .badge__style {
-    background-color: var(--steel_teal);
+    background-color: var(--manatee);
     color: var(--baby_powder);
     font-size: 1.1em;
     padding: 8px;
@@ -77,6 +77,21 @@ a.badge:hover {
 
 a.badge:focus {
     box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+
+.festival-info {
+    background-color: var(--steel_teal);
+    height: auto;
+    width: auto;
+    border: 1.5px solid var(--cadet);
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.festival-info__heading {
+    color: var(--gunmetal);
+    font: bold;
+    border-bottom: 1px solid var(--cadet);
 }
 
 /* Auth styling */

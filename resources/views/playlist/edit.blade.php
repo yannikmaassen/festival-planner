@@ -9,7 +9,7 @@
       <label class="form__label mt-3" for="playlist_input">Füge hier deine Spotify-Playlist ein, die du mit deiner Crew erstellen und bearbeiten kannst.</label>
       <textarea class="form-control" id="playlist_input" rows="12" placeholder="PLatzhalter für eine Ansicht durch die Spotify API"></textarea>
     </div>
-    <a type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/planner') }}">
+    <a type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/planner/finished') }}">
       {{ __('Änderungen speichern') }}
     </a>
   </form>
