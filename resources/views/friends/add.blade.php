@@ -13,9 +13,9 @@
           Suche
         </button>
       </div>
-      <button type="submit" class="btn btn-primary my-5 w-100" href="#">
+      <a type="submit" class="btn btn-primary my-5 w-100" href="{{ url('/planner') }}">
         {{ __('Speichern') }}
-      </button>
+      </a>
     </div>
   </form>
 </div>

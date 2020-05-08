@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <p class="h2 text-center mt-3">
-    Festival-Planner hinzufügen
+    Festival-Planner bearbeiten
   </p>
 
   <form>
@@ -38,9 +38,9 @@
     </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">
-        <a type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/planner') }}">
-          {{ __('Anlegen') }}
-        </a>
+        <button type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/planner') }}">
+          {{ __('Änderungen übernehmen') }}
+        </button>
       </div>
     </div>
   </form>

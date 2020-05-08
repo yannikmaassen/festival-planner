@@ -60,16 +60,39 @@ footer {
     height: 48px;
 }
 
+hr {
+    border-top: 1.5px solid var(--light_cyan);
+    margin-bottom: 30px;
+}
+
+/* Auth styling */
+
 .logo--auth {
     font-family: "Aclonica";
     text-align: center;
     font-size: 3em;
     color: var(--platinum);
+    background-color: var(--steel_teal);
+    border-radius: 40px;
+    padding: 8px;
+    width: 80%;
 }
 
-hr {
-    border-top: 1.5px solid var(--light_cyan);
-    margin-bottom: 30px;
+.card-body {
+    background: var(--baby_powder);
+}
+
+.card-header {
+    background-color: var(--gunmetal);
+    color: var(--platinum);
+}
+
+.col-form-label {
+    color: var(--gunmetal);
+}
+
+.form-check-label {
+    color: var(--gunmetal);
 }
 
 /* Header styling */
@@ -89,14 +112,6 @@ header {
 }
 
 /* Card styling */
-
-.card-body {
-    /* background-color: rgb(244, 242, 242); */
-}
-
-.card-header {
-    background-color: lightgrey;
-}
 
 .festival-card {
     display: flex;
@@ -132,7 +147,7 @@ small {
 }
 
 .btn-link {
-    color: black;
+    color: var(--gunmetal);
     font-size: 0.7em;
     text-decoration: underline;
 }

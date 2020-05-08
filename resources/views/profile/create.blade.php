@@ -49,9 +49,9 @@
       </div>
       <div class="form-group row justify-content-center">
         <div class="col-md-8 offset-md-4">
-          <button type="submit" class="btn btn-primary my-3 w-100">
+          <a type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/profile/own') }}">
             {{ __('Änderungen speichern') }}
-          </button>
+          </a>
         </div>
       </div>
     </form>
