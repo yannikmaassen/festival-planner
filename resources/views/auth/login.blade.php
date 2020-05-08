@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<img class="image--auth" src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene">
-<p class="h2 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
+<!-- <img class="image--auth" src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene"> -->
+<h1 class="logo--auth my-5">Planival</h1>
+<p class="h3 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
 
 <div class="container">
   <div class="row justify-content-center mt-3 mb-5">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header h3 text-center">{{ __('Login') }}</div>
+        <div class="card-header h4 text-center">{{ __('Login') }}</div>
 
         <div class="card-body">
           <form method="POST" action="{{ route('login') }}">

@@ -1,3 +1,29 @@
+/* Variables */
+
+:root {
+    --smoky_black: #090c08;
+    --eerie_black: #191919;
+    --rich_black: #080705;
+    --green_black: #07393c;
+    --cadet: #5c6b73;
+    --gunmetal: #253237;
+    --light_cyan: #e0fbfc;
+    --flame: #f15025;
+    --english_violet: #474056;
+    --red_violet: #912f40;
+    --platinum: #e6e8e6;
+    --charcoal: #40434e;
+    --charcoal_blue: #364958;
+    --baby_powder: #fffffa;
+    --gold: #ddbe46;
+    --middle_blue: #90ddf0;
+    --light_gray: #ced0ce;
+    --steel_teal: #55828b;
+    --outer_space: #343f3e;
+    --davys_grey: #505a5b;
+    --manatee: #8f91a2;
+}
+
 /* General styling */
 
 * {
@@ -5,41 +31,67 @@
 }
 
 body {
-    background-color: rgb(41, 41, 41);
+    /* background-color: rgb(41, 41, 41); */
+    background-color: var(--charcoal_blue);
+    display: grid;
+    /* grid-template-rows: 48px auto 48px; */
+    height: 100vh;
+    width: 100vw;
+    font-family: "Ubuntu";
+}
+
+.body--nav {
+    /* background-color: rgb(41, 41, 41); */
+    display: grid;
+    grid-template-rows: 48px auto 48px;
+    height: 100vh;
+    width: 100vw;
 }
 
 p {
-    color: white;
-}
-
-.label--form {
-    color: white;
-    font-style: italic;
+    color: var(--baby_powder);
 }
 
 .content {
-    height: auto;
+    overflow: scroll;
+}
+
+footer {
+    height: 48px;
+}
+
+.logo--auth {
+    font-family: "Aclonica";
+    text-align: center;
+    font-size: 3em;
+    color: var(--platinum);
+}
+
+hr {
+    border-top: 1.5px solid var(--light_cyan);
+    margin-bottom: 30px;
 }
 
 /* Header styling */
 
 header {
+    font-family: "Aclonica";
     height: 48px;
-    background-color: black;
+    background-color: var(--gunmetal);
     margin-bottom: 12px;
 }
 
 .header--text {
     text-align: center;
     font-size: 2em;
-    color: white;
-    font: bold;
+    color: var(--platinum);
+    /* font: bold; */
 }
 
 /* Card styling */
 
 .card-body {
-    background-color: rgb(244, 242, 242);
+    /* background-color: rgb(244, 242, 242); */
 }
 
 .card-header {
@@ -47,9 +99,24 @@ header {
 }
 
 .festival-card {
-    background-color: rgb(130, 130, 130);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px;
-    color: white;
+    color: var(--gunmetal);
+    background-image: linear-gradient(
+        to right,
+        var(--manatee),
+        var(--platinum)
+    );
+}
+
+.card-text {
+    color: var(--charcoal);
+}
+
+.planner--element__heading {
+    color: var(--baby_powder);
 }
 
 small {
@@ -59,9 +126,9 @@ small {
 /* Button styling */
 
 .btn-primary {
-    background-color: green;
+    background-color: var(--flame);
     color: white;
-    border-color: black;
+    border: 1.5px solid var(--rich_black);
 }
 
 .btn-link {
@@ -72,7 +139,20 @@ small {
 
 .btn--edit-profile {
     width: 100%;
-    height: 32px;
+    height: 36px;
+    color: var(--baby_powder);
+    background-color: var(--davys_grey);
+    border: 1px solid var(--rich_black);
+    border-radius: 12px;
+    font: bold;
+    font-size: 1.1em;
+}
+
+.btn--edit__planner {
+    background-color: var(--davys_grey);
+    border: 1px solid var(--rich_black);
+    color: var(--baby_powder);
+    font-size: 0.7em;
 }
 
 /* Navbar-Styling */
@@ -80,15 +160,31 @@ small {
 .navbar {
     display: flex;
     justify-content: space-around;
-    height: 48px;
-    background-color: lightgrey;
+    /* height: 48px; */
+    background-color: var(--gunmetal);
     overflow-y: scroll;
+    position: sticky;
+    bottom: 0;
+}
+
+.svg--nav {
+    width: 32px;
+    height: 32px;
+    fill: white;
 }
 
 /* Forms styling */
 
 .form-control {
-    background-color: lightgrey;
+    background-color: var(--platinum);
+    margin-bottom: 30px;
+}
+
+.label--form {
+    color: var(--platinum);
+    font: bold;
+    font-size: 1.2em;
+    margin-bottom: 0px;
 }
 
 /* Profile styling */
@@ -99,17 +195,30 @@ small {
 }
 
 .image--profile {
-    width: 100px;
-    height: 100px;
-    background-color: lightgrey;
-    border-radius: 50px;
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    margin-right: 40px;
 }
 
 .profile-element {
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 12px;
     border-style: solid;
     padding: 8px;
-    border-color: lightgrey;
+    border-color: var(--light_cyan);
     margin-bottom: 20px;
+    background-color: var(--steel_teal);
+}
+
+.profile--element__heading {
+    color: var(--baby_powder);
+}
+
+.box {
+    height: 150px;
+    width: 100%;
+    background-color: lightgrey;
+    color: black;
+    padding: 8px;
 }
