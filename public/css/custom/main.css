@@ -31,17 +31,14 @@
 }
 
 body {
-    /* background-color: rgb(41, 41, 41); */
     background-color: var(--charcoal_blue);
     display: grid;
-    /* grid-template-rows: 48px auto 48px; */
     height: 100vh;
     width: 100vw;
     font-family: "Ubuntu";
 }
 
-.body--nav {
-    /* background-color: rgb(41, 41, 41); */
+.body__nav {
     display: grid;
     grid-template-rows: 48px auto 48px;
     height: 100vh;
@@ -84,7 +81,7 @@ a.badge:focus {
 
 /* Auth styling */
 
-.logo--auth {
+.logo__auth {
     font-family: "Aclonica";
     text-align: center;
     font-size: 3em;
@@ -121,11 +118,10 @@ header {
     margin-bottom: 12px;
 }
 
-.header--text {
+.header__text {
     text-align: center;
     font-size: 2em;
     color: var(--platinum);
-    /* font: bold; */
 }
 
 /* Card styling */
@@ -147,7 +143,7 @@ header {
     color: var(--charcoal);
 }
 
-.planner--element__heading {
+.planner__element--heading {
     color: var(--baby_powder);
 }
 
@@ -169,7 +165,7 @@ small {
     text-decoration: underline;
 }
 
-.btn--edit-profile {
+.btn__edit-profile {
     width: 100%;
     height: 36px;
     color: var(--baby_powder);
@@ -180,7 +176,7 @@ small {
     font-size: 1.1em;
 }
 
-.btn--edit__planner {
+.btn__edit-planner {
     background-color: var(--davys_grey);
     border: 1px solid var(--rich_black);
     color: var(--baby_powder);
@@ -192,14 +188,13 @@ small {
 .navbar {
     display: flex;
     justify-content: space-around;
-    /* height: 48px; */
     background-color: var(--gunmetal);
     overflow-y: scroll;
     position: sticky;
     bottom: 0;
 }
 
-.svg--nav {
+.nav__svg {
     width: 32px;
     height: 32px;
     fill: white;
@@ -212,7 +207,7 @@ small {
     margin-bottom: 30px;
 }
 
-.label--form {
+.form__label {
     color: var(--platinum);
     font: bold;
     font-size: 1.2em;
@@ -221,19 +216,19 @@ small {
 
 /* Profile styling */
 
-.image--auth {
+.auth__image {
     width: 100%;
     height: 35%;
 }
 
-.image--profile {
+.profile__image {
     width: 120px;
     height: 120px;
     border-radius: 30px;
     margin-right: 40px;
 }
 
-.profile-element {
+.profile__section {
     border-width: 1px;
     border-radius: 12px;
     border-style: solid;
@@ -244,7 +239,7 @@ small {
     font-size: 1.1em;
 }
 
-.profile--element__heading {
+.profile__section--heading {
     color: var(--baby_powder);
 }
 

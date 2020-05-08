@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <section>
-    <img class="image--auth mt-3" src="/images/blog_festival_Main.jpg" alt="Bild einer Festival-Szene">
+    <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Bild einer Festival-Szene">
     <h1 class="text-white mt-3">Rock am Ring</h1>
     <p><small>05.06.-07.06.2020</small></p>
     <p>Rock - Alternative - Metal</p>
@@ -12,19 +12,19 @@
   </section>
   <hr>
   <section>
-    <h2 class="planner--element__heading">Festivalcrew</h2>
+    <h2 class="planner__element--heading">Festivalcrew</h2>
     <a class="btn btn-primary mb-4 w-100" href="{{ url('/friends/add') }}">
       {{ __('Füge weitere Crewmember hinzu!') }}
     </a>
   </section>
   <section>
-    <h2 class="planner--element__heading">ToDo-Liste</h2>
+    <h2 class="planner__element--heading">ToDo-Liste</h2>
     <a class="btn btn-primary mb-4 w-100" href="{{ url('/todos/add') }}">
       {{ __('Füge ToDos für Dich und Deine Crew hinzu!') }}
     </a>
   </section>
   <section>
-    <h2 class="planner--element__heading">Music</h2>
+    <h2 class="planner__element--heading">Music</h2>
     <a class="btn btn-primary mb-4 w-100" href="{{ url('/playlist/add') }}">
       {{ __('Füge hier Eure Festival-Playlisten ein!') }}
     </a>

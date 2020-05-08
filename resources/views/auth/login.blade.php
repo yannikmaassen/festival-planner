@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <img class="image--auth" src="/images/blog_festival_Main.jpg" alt="Bild von einer Festival-Szene"> -->
 <div class="container">
   <div class="row justify-content-center">
-    <h1 class="logo--auth mt-4 mb-2">Planival</h1>
+    <h1 class="logo__auth mt-4 mb-2">Planival</h1>
   </div>
   <p class="h2 text-center mt-2 mb-5">Verwalte deine Festivals!</p>
   <p class="h6 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
@@ -72,9 +71,6 @@
           </form>
         </div>
       </div>
-      <!-- <div class="col align-items-center">
-        <p>Copyright Yannik Maaßen</p>
-        <a class="auth--footer" href="#">Impressum</a> -->
     </div>
   </div>
 </div>
