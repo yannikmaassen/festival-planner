@@ -12,19 +12,19 @@
   </section>
   <hr>
   <section>
-    <h2 class="row planner--element__heading justify-content-center">Festivalcrew</h2>
+    <h2 class="planner--element__heading">Festivalcrew</h2>
     <a class="btn btn-primary mb-4 w-100" href="{{ url('/friends/add') }}">
       {{ __('Füge weitere Crewmember hinzu!') }}
     </a>
   </section>
   <section>
-    <h2 class="row planner--element__heading justify-content-center">ToDo-Liste</h2>
+    <h2 class="planner--element__heading">ToDo-Liste</h2>
     <a class="btn btn-primary mb-4 w-100" href="{{ url('/todos/add') }}">
       {{ __('Füge ToDos für Dich und Deine Crew hinzu!') }}
     </a>
   </section>
   <section>
-    <h2 class="row planner--element__heading justify-content-center">Music</h2>
+    <h2 class="planner--element__heading">Music</h2>
     <a class="btn btn-primary mb-4 w-100" href="{{ url('/playlist/add') }}">
       {{ __('Füge hier Eure Festival-Playlisten ein!') }}
     </a>

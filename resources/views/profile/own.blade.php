@@ -25,12 +25,11 @@
   <hr>
   <section>
     <h3 class="profile--element__heading">Bisherige Festivals</h3>
-    <p class="profile-element">
-      - Rock am Ring<br>
-      - Deichbrand Festival<br>
-      - Highfield Festival<br>
-      - Tomorrowland<br>
-    </p>
+    <span class="badge badge__style">Rock am Ring</span>
+    <span class="badge badge__style">Deichbrand Festival</span>
+    <span class="badge badge__style">Highfield Festival</span>
+    <span class="badge badge__style">Tomorrowland</span>
+    <span class="badge badge__style">Glastonbury Festival</span>
   </section>
   <hr>
   <section>

@@ -65,6 +65,23 @@ hr {
     margin-bottom: 30px;
 }
 
+.badge__style {
+    background-color: var(--steel_teal);
+    color: var(--baby_powder);
+    font-size: 1.1em;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 12px;
+}
+
+a.badge:hover {
+    color: var(--gunmetal);
+}
+
+a.badge:focus {
+    box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+
 /* Auth styling */
 
 .logo--auth {
@@ -224,6 +241,7 @@ small {
     border-color: var(--light_cyan);
     margin-bottom: 20px;
     background-color: var(--steel_teal);
+    font-size: 1.1em;
 }
 
 .profile--element__heading {

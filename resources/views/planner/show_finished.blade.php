@@ -9,30 +9,31 @@
       <a href="{{ url('/planner/edit') }}" class="btn btn--edit__planner mr-3">Bearbeiten</a>
     </div>
     <p><small>05.06.-07.06.2020</small></p>
-    <p>Green Day, System of a Down, Volbeat</p>
+    <p>Rock - Alternative - Metal</p>
+    <p>Green Day - System of a Down - Volbeat</p>
     <p>Rock am Ring ist ein von Marek Lieberberg veranstaltetes Musikfestival, das von 1985 bis 2014 und seit 2017 wieder auf dem Nürburgring in der Nähe der Stadt Adenau in der Eifel stattfindet.</p>
   </section>
   <hr>
-  <section>
+  <section class="mb-5">
     <div class="row justify-content-between align-items-center">
       <h2 class="text-white ml-3">Festivalcrew</h2>
       <a href="{{ url('/friends/edit') }}" class="btn btn--edit__planner mr-3">Bearbeiten</a>
     </div>
-    <a href="/profile/own"><img src="/images/icon.png" alt="">
-      <p>Yannik Maaßen</p>
-    </a>
+    <a href="/profile/own" class="badge badge__style">Yannik</a>
+    <a href="/profile/other" class="badge badge__style">Maik</a>
+    <a href="/profile/other" class="badge badge__style">Mats</a>
   </section>
   <section>
     <div class="row justify-content-between align-items-center">
       <h2 class="text-white ml-3">ToDo-Liste</h2>
       <a href="{{ url('/todos/edit') }}" class="btn btn--edit__planner mr-3">Bearbeiten</a>
     </div>
-    <p>- Lorem, ipsum dolor.<br>
-      - Lorem, ipsum dolor.<br>
-      - Lorem, ipsum dolor.<br>
-      - Lorem, ipsum dolor.<br>
-      - Lorem, ipsum dolor.<br>
-      - Lorem, ipsum dolor.<br>
+    <p class="profile-element mb-5">- Pavillon kaufen<br>
+      - Festivalkarten ausdrucken<br>
+      - Musikbox mitnehmen<br>
+      - Anhänger präparieren<br>
+      - Sonnencreme für die Fahrt einpacken<br>
+      - Verpflegung einkaufen<br>
     </p>
   </section>
   <section>
