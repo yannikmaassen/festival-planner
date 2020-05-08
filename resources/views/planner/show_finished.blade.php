@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <section class="mb-4">
-    <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Bild einer Festival-Szene">
+    <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Festival-Szenerie">
     <div class="row justify-content-between align-items-center">
       <h1 class="text-white mt-3 ml-3">Rock am Ring</h1>
       <a href="{{ url('/planner/edit') }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
@@ -22,9 +22,13 @@
       <h2 class="text-white ml-3">Festivalcrew</h2>
       <a href="{{ url('/friends/edit') }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
     </div>
-    <a href="/profile/own" class="badge badge__style">Yannik</a>
-    <a href="/profile/other" class="badge badge__style">Maik</a>
-    <a href="/profile/other" class="badge badge__style">Mats</a>
+    <a href="{{ ('/profile/own') }}" class="badge badge__style--own">Yannik</a>
+    <a href="{{ ('/profile/other') }}" class="badge badge__style">Maik</a>
+    <a href="{{ ('/profile/other') }}" class="badge badge__style">Mats</a>
+    <a href="{{ ('/profile/other') }}" class="badge badge__style">Annika</a>
+    <a href="{{ ('/profile/other') }}" class="badge badge__style">Hannah</a>
+    <a href="{{ ('/profile/other') }}" class="badge badge__style">Ingo</a>
+    <a href="{{ ('/profile/other') }}" class="badge badge__style">Peter</a>
   </section>
   <section>
     <div class="row justify-content-between align-items-center">

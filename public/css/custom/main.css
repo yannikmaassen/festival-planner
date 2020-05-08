@@ -71,6 +71,15 @@ hr {
     border-radius: 12px;
 }
 
+.badge__style--own {
+    background-color: var(--steel_teal);
+    color: var(--baby_powder);
+    font-size: 1.1em;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 12px;
+}
+
 a.badge:hover {
     color: var(--gunmetal);
 }
@@ -171,7 +180,7 @@ small {
 .btn-primary {
     background-color: var(--flame);
     color: white;
-    border: 1.5px solid var(--rich_black);
+    border: 1px solid var(--rich_black);
 }
 
 .btn-link {
@@ -193,7 +202,7 @@ small {
 
 .btn__edit-planner {
     background-color: var(--davys_grey);
-    border: 1px solid var(--rich_black);
+    border: 1px solid var(--gunmetal);
     color: var(--baby_powder);
     font-size: 0.7em;
 }

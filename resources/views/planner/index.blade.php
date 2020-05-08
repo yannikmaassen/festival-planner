@@ -5,7 +5,7 @@ suggestion: horizontal cards, border cards, modified kitchen sink -->
 
 @section('content')
 <div class="content mx-3">
-  <a href="{{ url('/planner') }}">
+  <a href="{{ url('/planner/finished') }}">
     <div class="card mb-4 mt-3" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-8">
@@ -19,7 +19,7 @@ suggestion: horizontal cards, border cards, modified kitchen sink -->
     </div>
   </a>
 
-  <a href="{{ url('/planner') }}">
+  <a href="{{ url('/planner/finished') }}">
     <div class="card mb-4" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-8">

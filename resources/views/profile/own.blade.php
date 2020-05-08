@@ -18,7 +18,7 @@
   <hr>
   <section>
     <h3 class="profile__section--heading">Platzhalter Musik</h3>
-    <p class="profile__section">Hier werden mithilfe der Spotify API alle Musiknennungen des Users aufgelistet. So werden Genres oder Interpreten als ein Icon mit dazugehörigem Namen nebeneinander aufgezeigt.</p>
+    <p class="profile__section">Hier werden mithilfe der Spotify API alle Musiknennungen des Users aufgelistet.</p>
   </section>
   <hr>
   <section>
