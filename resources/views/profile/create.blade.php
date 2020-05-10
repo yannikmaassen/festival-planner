@@ -23,7 +23,7 @@
         <input type="file" class="form-control-file" id="profile_input2">
       </div>
       <div class="form-group">
-        <label class="form__label" for="profile_input3">Beschreibung</label>
+        <label class="form__label" for="profile_input3">Deine Beschreibung</label>
         <textarea class="form-control" id="profile_input3" rows="3"></textarea>
       </div>
       <div class="form-group">

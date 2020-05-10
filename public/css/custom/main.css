@@ -185,7 +185,7 @@ small {
 
 .btn-link {
     color: var(--gunmetal);
-    font-size: 0.7em;
+    font-size: 0.9em;
     text-decoration: underline;
 }
 
@@ -229,6 +229,12 @@ small {
 .form-control {
     background-color: var(--platinum);
     margin-bottom: 30px;
+}
+
+.form-control__date {
+    background-color: var(--platinum);
+    border-radius: 6px;
+    border: none;
 }
 
 .form__label {

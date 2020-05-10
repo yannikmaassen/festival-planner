@@ -8,7 +8,7 @@
       <h1 class="text-white mt-3 ml-3">Rock am Ring</h1>
       <a href="{{ url('/planner/edit') }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
     </div>
-    <p>05.06.-07.06.2020</p>
+    <p>05.06.2020-07.06.2020</p>
     <section class="festival-info">
       <h2 class="festival-info__heading">Info</h2>
       <p>Rock - Alternative - Metal</p>

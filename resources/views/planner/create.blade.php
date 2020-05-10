@@ -13,8 +13,11 @@
       <input class="form-control" id="planner_input1">
     </div>
     <div class="form-group mt-3">
-      <label class="form__label" for="planner_input2">Datum</label>
-      <input class="form-control" id="planner_input2">
+      <label class="form__label" for="planner_input2">Zeitraum</label>
+      <div class="row no-gutters justify-content-between"><input class="col-5 form-control__date" id="planner_input2" type="date">
+        -
+        <input class="col-5 form-control__date" id="planner_input2.1" type="date">
+      </div>
     </div>
     <div class="form-group mt-3">
       <label class="form__label" for="planner_input3">Genre</label>
