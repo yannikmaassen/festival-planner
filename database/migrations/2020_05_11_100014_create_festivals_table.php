@@ -16,6 +16,12 @@ class CreateFestivalsTable extends Migration
         Schema::create('festivals', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('genres');
+            $table->string('headliner');
+            $table->string('description');
         });
     }
 

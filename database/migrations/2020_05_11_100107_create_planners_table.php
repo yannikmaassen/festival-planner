@@ -16,6 +16,10 @@ class CreatePlannersTable extends Migration
         Schema::create('planners', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreign('festival_id')->references('id')->on('festivals')->onDelete('cascade');
+            $table->string('todo_list');
+            $table->string('playlist');
+            $table->file('planner_image');
         });
     }
 
