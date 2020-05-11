@@ -31,17 +31,14 @@
 }
 
 body {
-    /* background-color: rgb(41, 41, 41); */
     background-color: var(--charcoal_blue);
     display: grid;
-    /* grid-template-rows: 48px auto 48px; */
     height: 100vh;
     width: 100vw;
     font-family: "Ubuntu";
 }
 
-.body--nav {
-    /* background-color: rgb(41, 41, 41); */
+.body__nav {
     display: grid;
     grid-template-rows: 48px auto 48px;
     height: 100vh;
@@ -60,16 +57,80 @@ footer {
     height: 48px;
 }
 
-.logo--auth {
+hr {
+    border-top: 1.5px solid var(--light_cyan);
+    margin-bottom: 30px;
+}
+
+.badge__style {
+    background-color: var(--manatee);
+    color: var(--baby_powder);
+    font-size: 1.1em;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 12px;
+}
+
+.badge__style--own {
+    background-color: var(--steel_teal);
+    color: var(--baby_powder);
+    font-size: 1.1em;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 12px;
+}
+
+a.badge:hover {
+    color: var(--gunmetal);
+}
+
+a.badge:focus {
+    box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+
+.festival-info {
+    background-color: var(--steel_teal);
+    height: auto;
+    width: auto;
+    border: 1.5px solid var(--cadet);
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.festival-info__heading {
+    color: var(--gunmetal);
+    font: bold;
+    border-bottom: 1px solid var(--cadet);
+}
+
+/* Auth styling */
+
+.logo__auth {
     font-family: "Aclonica";
     text-align: center;
     font-size: 3em;
     color: var(--platinum);
+    background-color: var(--steel_teal);
+    border-radius: 40px;
+    padding: 8px;
+    width: 80%;
 }
 
-hr {
-    border-top: 1.5px solid var(--light_cyan);
-    margin-bottom: 30px;
+.card-body {
+    background: var(--baby_powder);
+}
+
+.card-header {
+    background-color: var(--gunmetal);
+    color: var(--platinum);
+}
+
+.col-form-label {
+    color: var(--gunmetal);
+}
+
+.form-check-label {
+    color: var(--gunmetal);
 }
 
 /* Header styling */
@@ -81,22 +142,13 @@ header {
     margin-bottom: 12px;
 }
 
-.header--text {
+.header__text {
     text-align: center;
     font-size: 2em;
     color: var(--platinum);
-    /* font: bold; */
 }
 
 /* Card styling */
-
-.card-body {
-    /* background-color: rgb(244, 242, 242); */
-}
-
-.card-header {
-    background-color: lightgrey;
-}
 
 .festival-card {
     display: flex;
@@ -115,7 +167,7 @@ header {
     color: var(--charcoal);
 }
 
-.planner--element__heading {
+.planner__element--heading {
     color: var(--baby_powder);
 }
 
@@ -128,16 +180,16 @@ small {
 .btn-primary {
     background-color: var(--flame);
     color: white;
-    border: 1.5px solid var(--rich_black);
+    border: 1px solid var(--rich_black);
 }
 
 .btn-link {
-    color: black;
-    font-size: 0.7em;
+    color: var(--gunmetal);
+    font-size: 0.9em;
     text-decoration: underline;
 }
 
-.btn--edit-profile {
+.btn__edit-profile {
     width: 100%;
     height: 36px;
     color: var(--baby_powder);
@@ -148,9 +200,9 @@ small {
     font-size: 1.1em;
 }
 
-.btn--edit__planner {
+.btn__edit-planner {
     background-color: var(--davys_grey);
-    border: 1px solid var(--rich_black);
+    border: 1px solid var(--gunmetal);
     color: var(--baby_powder);
     font-size: 0.7em;
 }
@@ -160,14 +212,13 @@ small {
 .navbar {
     display: flex;
     justify-content: space-around;
-    /* height: 48px; */
     background-color: var(--gunmetal);
     overflow-y: scroll;
     position: sticky;
     bottom: 0;
 }
 
-.svg--nav {
+.nav__svg {
     width: 32px;
     height: 32px;
     fill: white;
@@ -180,7 +231,13 @@ small {
     margin-bottom: 30px;
 }
 
-.label--form {
+.form-control__date {
+    background-color: var(--platinum);
+    border-radius: 6px;
+    border: none;
+}
+
+.form__label {
     color: var(--platinum);
     font: bold;
     font-size: 1.2em;
@@ -189,19 +246,19 @@ small {
 
 /* Profile styling */
 
-.image--auth {
+.auth__image {
     width: 100%;
     height: 35%;
 }
 
-.image--profile {
+.profile__image {
     width: 120px;
     height: 120px;
     border-radius: 30px;
     margin-right: 40px;
 }
 
-.profile-element {
+.profile__section {
     border-width: 1px;
     border-radius: 12px;
     border-style: solid;
@@ -209,9 +266,10 @@ small {
     border-color: var(--light_cyan);
     margin-bottom: 20px;
     background-color: var(--steel_teal);
+    font-size: 1.1em;
 }
 
-.profile--element__heading {
+.profile__section--heading {
     color: var(--baby_powder);
 }
 
