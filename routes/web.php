@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,26 +15,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts/app');
-});
+    return view('auth.login');
+})->name('auth.login');
 
 // Profile routes
 
-Route::get('/profile/create', function () {
-    return view('profile.create');
-});
+Route::get('/profile/create', 'ProfileController@create')->name('profile.create');
+Route::get('/profile/own', 'ProfileController@own')->name('profile.own');
+Route::post('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::get('/profile/other', 'ProfileController@other')->name('profile.other');
 
-Route::get('/profile/own', function () {
-    return view('profile.own');
-});
 
-Route::get('/profile/edit', function () {
-    return view('profile.edit');
-});
+// Route::get('/profile/create', function () {
+//     return view('profile.create');
+// })->name('profile.create');
 
-Route::get('/profile/other', function () {
-    return view('profile.other');
-});
+// Route::get('/profile/own', function () {
+//     return view('profile.own');
+// })->name('profile.own');
+
+// Route::get('/profile/edit', function () {
+//     return view('profile.edit');
+// })->name('profile.edit');
+
+// Route::get('/profile/other', function () {
+//     return view('profile.other');
+// })->name('profile.other');
 
 // Planner routes
 Route::get('/planner', function () {

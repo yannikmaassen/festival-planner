@@ -13,7 +13,6 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -23,7 +22,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('profile.create');
     }
 
     /**
@@ -43,9 +42,14 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function own($id)
     {
-        //
+        return view('profile.own');
+    }
+
+    public function other($id)
+    {
+        return view('profile.other');
     }
 
     /**
@@ -56,7 +60,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('profile.edit');
     }
 
     /**
