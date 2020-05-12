@@ -23,10 +23,10 @@ Route::get('/profile/own', 'ProfileController@own')->name('profile.own');
 Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
 Route::get('/profile/other', 'ProfileController@other')->name('profile.other');
 
-Route::get('/planner/show', 'PlannerController@show')->name('planner.show');
-Route::get('/planner/create', 'PlannerController@create')->name('planner.create');
 Route::get('/planner/overview', 'PlannerController@index')->name('planner.overview');
 Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
+Route::get('/planner/{planner}', 'PlannerController@show')->name('planner.show');
+Route::get('/planner/create', 'PlannerController@create')->name('planner.create');
 Route::get('/planner/edit', 'PlannerController@edit')->name('planner.edit');
 
 Route::get('/friends/add', 'FriendController@add')->name('friends.add');
@@ -37,13 +37,16 @@ Route::get('/todos/edit', 'TodoController@edit')->name('todos.edit');
 
 // Spotify API routes
 
-Route::get('/playlist/add', function () {
-    return view('playlist.add');
-});
+Route::get('/playlist/add', 'PlaylistController@add')->name('playlist.add');
+Route::get('/playlist/edit', 'PlaylistController@edit')->name('playlist.edit');
 
-Route::get('/playlist/edit', function () {
-    return view('playlist.edit');
-});
+// Route::get('/playlist/add', function () {
+//     return view('playlist.add')->name('playlist.add');
+// });
+
+// Route::get('/playlist/edit', function () {
+//     return view('playlist.edit')->name('playlist.edit');
+// });
 
 // Auth routes
 

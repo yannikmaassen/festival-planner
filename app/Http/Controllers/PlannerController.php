@@ -12,7 +12,7 @@ class PlannerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(PLanner $planner)
+    public function index(Planner $planner)
     {
         $planner = Planner::all();
         return view('planner.index', [
