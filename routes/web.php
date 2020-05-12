@@ -18,66 +18,29 @@ Route::get('/', function () {
     return view('auth.login');
 })->name('auth.login');
 
-// Profile routes
-
 Route::get('/profile/create', 'ProfileController@create')->name('profile.create');
 Route::get('/profile/own', 'ProfileController@own')->name('profile.own');
-Route::post('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
 Route::get('/profile/other', 'ProfileController@other')->name('profile.other');
 
+Route::get('/planner/show', 'PlannerController@show')->name('planner.show');
+Route::get('/planner/create', 'PlannerController@create')->name('planner.create');
+Route::get('/planner/overview', 'PlannerController@index')->name('planner.overview');
+Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
+Route::get('/planner/edit', 'PlannerController@edit')->name('planner.edit');
 
-// Route::get('/profile/create', function () {
-//     return view('profile.create');
-// })->name('profile.create');
+Route::get('/friends/add', 'FriendController@add')->name('friends.add');
+Route::get('/friends/edit', 'FriendController@edit')->name('friends.edit');
 
-// Route::get('/profile/own', function () {
-//     return view('profile.own');
-// })->name('profile.own');
-
-// Route::get('/profile/edit', function () {
-//     return view('profile.edit');
-// })->name('profile.edit');
-
-// Route::get('/profile/other', function () {
-//     return view('profile.other');
-// })->name('profile.other');
+Route::get('/todos/add', 'TodoController@add')->name('todos.add');
+Route::get('/todos/edit', 'TodoController@edit')->name('todos.edit');
 
 // Planner routes
-Route::get('/planner', function () {
-    return view('planner.show');
-});
+// Route::get('/planner', function () {
+//     return view('planner.show');
+// });
 
-Route::get('/planner/finished', function () {
-    return view('planner.show_finished');
-});
-
-Route::get('/planner/overview', function () {
-    return view('planner.index');
-});
-
-Route::get('/planner/create', function () {
-    return view('planner.create');
-});
-
-Route::get('/planner/edit', function () {
-    return view('planner.edit');
-});
-
-Route::get('/friends/add', function () {
-    return view('friends.add');
-});
-
-Route::get('/friends/edit', function () {
-    return view('friends.edit');
-});
-
-Route::get('/todos/add', function () {
-    return view('todos.add');
-});
-
-Route::get('/todos/edit', function () {
-    return view('todos.edit');
-});
+// Spotify API routes
 
 Route::get('/playlist/add', function () {
     return view('playlist.add');

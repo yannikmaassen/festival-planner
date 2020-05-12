@@ -1,6 +1,8 @@
 @extends('layouts.app_nav')
 
 @section('content')
+
+@foreach()
 <div class="container">
   <section class="mb-4">
     <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Festival-Szenerie">

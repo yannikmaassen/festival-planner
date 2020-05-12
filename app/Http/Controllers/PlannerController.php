@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Planner;
 
 class PlannerController extends Controller
 {
@@ -13,7 +14,7 @@ class PlannerController extends Controller
      */
     public function index()
     {
-        //
+        return view('planner.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class PlannerController extends Controller
      */
     public function create()
     {
-        //
+        return view('planner.create');
     }
 
     /**
@@ -43,10 +44,18 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Planner $planner)
     {
-        //
+        $planner = Planner::find(1);
+        return view('planner.show', [
+            'planners' => $planner
+        ]);
     }
+
+    // $planner = Planner::find(1);
+    // return view('planner.show', [
+    //     'planners' => $planner
+    // ]);
 
     /**
      * Show the form for editing the specified resource.
@@ -54,9 +63,12 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Planner $planner)
     {
-        //
+        $planner = Planner::find(1);
+        return view('planner.edit', [
+            'planners' => $planner
+        ]);
     }
 
     /**
@@ -80,5 +92,10 @@ class PlannerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function finished()
+    {
+        return view('planner.show_finished');
     }
 }

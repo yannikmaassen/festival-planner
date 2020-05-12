@@ -42,12 +42,12 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function own($id)
+    public function own()
     {
         return view('profile.own');
     }
 
-    public function other($id)
+    public function other()
     {
         return view('profile.other');
     }
@@ -58,7 +58,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         return view('profile.edit');
     }
