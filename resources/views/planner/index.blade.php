@@ -4,22 +4,27 @@ suggestion: horizontal cards, border cards, modified kitchen sink -->
 @extends ('layouts/app_nav')
 
 @section('content')
-<div class="content mx-3">
-  <a href="{{ url('/planner/finished') }}">
-    <div class="card mb-4 mt-3" style="max-width: 540px;">
+
+<div class="content mx-3 mt-3">
+  @foreach($planners as $planner)
+  <a href="{{ route('planner.finished') }}">
+    <div class="card mb-4" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-8">
           <div class="festival-card">
-            <h3 class="card-title">Rock am Ring</h3>
-            <p class="card-text">05.-07.06.2020</p>
-            <p class="card-text">System of a Down - Green Day - Volbeat</p>
+            <h3 class="card-title">{{ $planner->name }}</h3>
+            <p class="card-text">{{ $planner->start_date }} - {{ $planner->end_date }}</p>
+            <p class="card-text">{{ $planner->headliner_1 }} - {{ $planner->headliner_2 }} - {{ $planner->headliner_3 }}</p>
           </div>
         </div>
       </div>
     </div>
   </a>
+  @endforeach
+</div>
 
-  <a href="{{ url('/planner/finished') }}">
+
+<!-- <a href="{{ url('/planner/finished') }}">
     <div class="card mb-4" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-8">
@@ -74,5 +79,5 @@ suggestion: horizontal cards, border cards, modified kitchen sink -->
       </div>
     </div>
   </a>
-</div>
+</div> -->
 @endsection

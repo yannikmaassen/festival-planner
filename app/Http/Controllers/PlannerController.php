@@ -12,9 +12,12 @@ class PlannerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PLanner $planner)
     {
-        return view('planner.index');
+        $planner = Planner::all();
+        return view('planner.index', [
+            'planners' => $planner
+        ]);
     }
 
     /**
@@ -46,7 +49,6 @@ class PlannerController extends Controller
      */
     public function show(Planner $planner)
     {
-        $planner = Planner::find(1);
         return view('planner.show', [
             'planners' => $planner
         ]);
@@ -65,7 +67,6 @@ class PlannerController extends Controller
      */
     public function edit(Planner $planner)
     {
-        $planner = Planner::find(1);
         return view('planner.edit', [
             'planners' => $planner
         ]);
@@ -89,13 +90,38 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Planner $planner)
     {
-        //
+        $planner->delete();
+
+        return redirect()->route('planner.overview');
     }
 
     public function finished()
     {
         return view('planner.show_finished');
+    }
+
+    public function validateData()
+    {
+        return request()->validate([
+            'name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'genre_1' => 'min:3',
+            'genre_2' => 'min:3',
+            'genre_3' => 'min:3',
+            'genre_4' => 'min:3',
+            'genre_5' => 'min:3',
+            'headliner_1' => 'min:3',
+            'headliner_2' => 'min:3',
+            'headliner_3' => 'min:3',
+            'headliner_4' => 'min:3',
+            'headliner_5' => 'min:3',
+            'description' => 'required|min:3',
+            'todo_list',
+            'playlist',
+            'planner_image' => 'image|mimes:jpeg,png,jpg,gif'
+        ]);
     }
 }

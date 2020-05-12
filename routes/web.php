@@ -35,11 +35,6 @@ Route::get('/friends/edit', 'FriendController@edit')->name('friends.edit');
 Route::get('/todos/add', 'TodoController@add')->name('todos.add');
 Route::get('/todos/edit', 'TodoController@edit')->name('todos.edit');
 
-// Planner routes
-// Route::get('/planner', function () {
-//     return view('planner.show');
-// });
-
 // Spotify API routes
 
 Route::get('/playlist/add', function () {
