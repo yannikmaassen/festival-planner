@@ -38,7 +38,9 @@ class PlannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $this->validateData();
+        Planner::create($data);
+        return redirect()->route('planner.index');
     }
 
     /**
@@ -53,11 +55,6 @@ class PlannerController extends Controller
             'planners' => $planner
         ]);
     }
-
-    // $planner = Planner::find(1);
-    // return view('planner.show', [
-    //     'planners' => $planner
-    // ]);
 
     /**
      * Show the form for editing the specified resource.
@@ -121,7 +118,7 @@ class PlannerController extends Controller
             'description' => 'required|min:3',
             'todo_list',
             'playlist',
-            'planner_image' => 'image|mimes:jpeg,png,jpg,gif'
+            // 'planner_image' => 'image|mimes:jpeg,png,jpg,gif'
         ]);
     }
 }
