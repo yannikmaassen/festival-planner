@@ -54,7 +54,7 @@
 
             <div class="form-group row mb-0">
               <div class="col-md-8 offset-md-4">
-                <a type="submit" class="btn btn-primary" href="{{ url('/profile/create') }}">
+                <a type="submit" class="btn btn-primary" href="{{ route('profile.create') }}">
                   {{ __('Login') }}
                 </a>
                 <!-- 

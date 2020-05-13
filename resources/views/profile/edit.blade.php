@@ -11,8 +11,9 @@
     </p>
   </a>
 
-  <form>
+  <form method="POST" action="{{ route('profile.edit') }}">
     @csrf
+
     <div class="form-group mt-3">
       <label class="form__label" for="profile_input1">Dein Name</label>
       <input class="form-control" id="profile_input1">

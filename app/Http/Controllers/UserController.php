@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,6 +13,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -22,7 +23,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('profile.create');
+        //
     }
 
     /**
@@ -42,14 +43,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function own()
+    public function show($id)
     {
-        return view('profile.own');
-    }
-
-    public function other()
-    {
-        return view('profile.other');
+        //
     }
 
     /**
@@ -58,9 +54,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('profile.edit');
+        //
     }
 
     /**
