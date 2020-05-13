@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Planner extends Model
 {
-    protected $fillable = ['name', 'start_date', 'end_date', 'genre_1', 'genre_2', 'genre_3', 'genre_4', 'genre_5', 'headliner_1', 'headliner_2', 'headliner_3', 'headliner_4', 'headliner_5', 'description', 'todo_list', 'playlist', 'planner_image'];
+    protected $fillable = ['info_text', 'todo_list', 'playlists', 'planner_image'];
 
+    public function festival()
+    {
+        return $this->belongsTo('App\Festival');
+    }
 
     public function user()
     {
