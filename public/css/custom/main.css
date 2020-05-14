@@ -205,6 +205,7 @@ small {
     border: 1px solid var(--gunmetal);
     color: var(--baby_powder);
     font-size: 0.7em;
+    height: 36px;
 }
 
 /* Navbar-Styling */

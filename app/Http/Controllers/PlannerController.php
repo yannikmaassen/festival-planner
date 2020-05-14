@@ -57,11 +57,13 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Planner $planner)
+    public function show($id)
     {
+        $currentPlanner = Planner::find($id);
         $festivals = Festival::all();
         return view('planner.show', [
-            'festivals' => $festivals
+            'festivals' => $festivals,
+            'currentPlanner' => $currentPlanner
         ]);
     }
 
