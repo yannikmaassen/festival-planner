@@ -6,45 +6,24 @@
     Festival-Planner hinzufügen
   </p>
 
-  <form>
+  <form method="POST" action="{{ route('planner.store') }}" enctype="multipart/form-data">
     @csrf
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input1">Name des Festivals</label>
-      <input class="form-control" id="planner_input1">
-    </div>
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input2">Zeitraum</label>
-      <div class="row no-gutters justify-content-between"><input class="col-5 form-control__date" id="planner_input2" type="date">
-        -
-        <input class="col-5 form-control__date" id="planner_input2.1" type="date">
-      </div>
-    </div>
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input3">Genre</label>
-      <select class="custom-select" id="planner_input3" multiple>
-        <option selected>Bitte Genres auswählen</option>
-        <option value="1">Rock</option>
-        <option value="2">HipHop</option>
-        <option value="3">Electro</option>
+    <div class="form-group">
+      <label class="control-label">Festival auswählen</label>
+      <select autocomplete="off" name="festivals" size="10" class="form-control @error('festivals') is-invalid @enderror">
+        @foreach ($festivals as $festival)
+        <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
+        @endforeach
       </select>
-    </div>
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input4">Headliner</label>
-      <input class="form-control" id="planner_input4">
-    </div>
-    <div class="form-group">
-      <label class="form__label" for="planner_input5">Beschreibung des Festivals</label>
-      <textarea class="form-control" id="planner_input5" rows="3"></textarea>
-    </div>
-    <div class="form-group">
-      <label class="form__label" for="planner_input6">Planner-Bild</label>
-      <input type="file" class="form-control-file" id="planner_input6">
+      @error('festival')
+      <p class="invalid-feedback">{{ $errors->first('festivals') }}</p>
+      @enderror
     </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">
-        <a type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/planner') }}">
+        <button type="submit" class="btn btn-primary my-3 w-100">
           {{ __('Planner anlegen') }}
-        </a>
+        </button>
       </div>
     </div>
   </form>

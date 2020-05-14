@@ -23,11 +23,11 @@ Route::get('/profile/own', 'ProfileController@own')->name('profile.own');
 Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
 Route::get('/profile/other', 'ProfileController@other')->name('profile.other');
 
-Route::get('/planner/overview', 'PlannerController@index')->name('planner.overview');
+// Route::get('/planner/edit', 'PlannerController@edit')->name('planner.edit');
+// Route::post('/planner/create', 'PlannerController@store')->name('planner.store');
 Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
-Route::get('/planner/{planner}', 'PlannerController@show')->name('planner.show');
-Route::get('/planner/create', 'PlannerController@create')->name('planner.create');
-Route::get('/planner/edit', 'PlannerController@edit')->name('planner.edit');
+
+Route::resource('/planner', 'PlannerController');
 
 Route::get('/friends/add', 'FriendController@add')->name('friends.add');
 Route::get('/friends/edit', 'FriendController@edit')->name('friends.edit');
@@ -40,14 +40,6 @@ Route::get('/todos/edit', 'TodoController@edit')->name('todos.edit');
 Route::get('/playlist/add', 'PlaylistController@add')->name('playlist.add');
 Route::get('/playlist/edit', 'PlaylistController@edit')->name('playlist.edit');
 
-// Route::get('/playlist/add', function () {
-//     return view('playlist.add')->name('playlist.add');
-// });
-
-// Route::get('/playlist/edit', function () {
-//     return view('playlist.edit')->name('playlist.edit');
-// });
-
 // Auth routes
 
 Route::get('/login', function () {
@@ -57,3 +49,7 @@ Route::get('/login', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/auth', 'SpotifyController@authenticate');
+Route::get('/spoti', 'SpotifyController@callback');
+Route::get('/spotifyData', 'SpotifyController@data');
