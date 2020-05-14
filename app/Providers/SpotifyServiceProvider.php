@@ -18,7 +18,7 @@ class SpotifyServiceProvider extends ServiceProvider
             return new SpotifyWebAPI\Session(
                 config('spotify.client_id'),
                 config('spotify.client_secret'),
-                'http://festival-planner.test/spoti'
+                url('/spoti')
             );
         });
     }
