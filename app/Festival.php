@@ -10,4 +10,9 @@ class Festival extends Model
     {
         return $this->hasMany('App\Planner');
     }
+
+    public function user()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
