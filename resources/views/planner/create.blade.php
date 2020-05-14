@@ -10,7 +10,7 @@
     @csrf
     <div class="form-group">
       <label class="control-label">Festival auswählen</label>
-      <select autocomplete="off" name="festivals" size="10" class="form-control @error('products') is-invalid @enderror">
+      <select autocomplete="off" name="festivals" size="10" class="form-control @error('festivals') is-invalid @enderror">
         @foreach ($festivals as $festival)
         <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
         @endforeach
