@@ -42,7 +42,13 @@ class PlannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $festivals = Festival::all();
+        $data = $this->validateData();
+        Planner::create($data);
+
+        return redirect()->route('planner.show', [
+            'festivals' => $festivals,
+        ]);
     }
 
     /**
@@ -53,8 +59,9 @@ class PlannerController extends Controller
      */
     public function show(Planner $planner)
     {
+        $festivals = Festival::all();
         return view('planner.show', [
-            'planners' => $planner
+            'festivals' => $festivals
         ]);
     }
 
@@ -104,13 +111,10 @@ class PlannerController extends Controller
     public function validateData()
     {
         return request()->validate([
-            'festival_name' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
-            'genres' => 'min:3',
-            'description' => 'required|min:3',
+            'festival_id' => 'required',
+            'info_text' => 'required|min:3',
             'todo_list' => '',
-            'playlist' => ''
+            'playlist' => '',
         ]);
     }
 }
