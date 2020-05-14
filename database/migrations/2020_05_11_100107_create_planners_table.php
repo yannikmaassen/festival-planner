@@ -14,7 +14,7 @@ class CreatePlannersTable extends Migration
     public function up()
     {
         Schema::create('planners', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
             $table->integer('festival_id')->unsigned();
             $table->foreign('festival_id')->references('id')->on('festivals')->onDelete('cascade');

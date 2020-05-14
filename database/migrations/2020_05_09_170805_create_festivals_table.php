@@ -14,7 +14,7 @@ class CreateFestivalsTable extends Migration
     public function up()
     {
         Schema::create('festivals', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
             $table->string('festival_name');
             $table->string('start_date');

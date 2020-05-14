@@ -15,9 +15,12 @@ class PlannerController extends Controller
      */
     public function index(Planner $planner)
     {
+        $festivals = Festival::all();
         $planner = Planner::all();
         return view('planner.index', [
-            'planners' => $planner
+            'planners' => $planner,
+            'festivals' => $festivals,
+
         ]);
     }
 
@@ -42,13 +45,10 @@ class PlannerController extends Controller
      */
     public function store(Request $request)
     {
-        $festivals = Festival::all();
         $data = $this->validateData();
         Planner::create($data);
 
-        return redirect()->route('planner.show', [
-            'festivals' => $festivals,
-        ]);
+        return redirect()->route('planner.index');
     }
 
     /**
@@ -113,8 +113,6 @@ class PlannerController extends Controller
         return request()->validate([
             'festival_id' => 'required',
             'info_text' => 'required|min:3',
-            'todo_list' => '',
-            'playlist' => '',
         ]);
     }
 }
