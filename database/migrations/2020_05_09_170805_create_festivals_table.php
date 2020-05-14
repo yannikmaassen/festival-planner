@@ -17,8 +17,9 @@ class CreateFestivalsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('festival_name');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->string('start_date');
+            $table->string('end_date');
+            $table->string('location');
             $table->string('genres')->nullable();
         });
     }
