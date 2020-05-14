@@ -14,14 +14,14 @@ class CreatePlannersTable extends Migration
     public function up()
     {
         Schema::create('planners', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->timestamps();
-            $table->text('info_text');
+            $table->integer('festival_id')->unsigned();
+            $table->foreign('festival_id')->references('id')->on('festivals')->onDelete('cascade');
+            $table->text('info_text')->nullable();
             $table->text('todo_list')->nullable();
             $table->string('playlists')->nullable();
             $table->string('planner_image')->nullable();
-            $table->integer('festival_id')->unsigned();
-            $table->foreign('festival_id')->references('id')->on('festivals')->onDelete('cascade');
         });
     }
 
