@@ -12,7 +12,7 @@
         Nö, warum?
       </p>
     </a>
-    <form method="POST" action="{{ route('profile.store') }}">
+    <form method="POST">
       @csrf
       <div class="form-group mt-3">
         <label class="form__label" for="profile_input1">Name</label>
