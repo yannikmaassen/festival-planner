@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Planner;
 use App\Festival;
+use Illuminate\Support\Facades\DB;
 
 class PlannerController extends Controller
 {
@@ -16,10 +17,12 @@ class PlannerController extends Controller
      */
     public function index()
     {
-        $planners = Planner::where('id', Auth::user()->user_id)->get();
+        $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
+        $testPlanners = DB::table('planners')->where('id', $planners->planner_id)->get();
+        $festivals = DB::table('festivals')->where('id', $testPlanners->festival_id)->get();
         return view('planner.index', [
             'planners' => $planners,
-            'festivals' => Festival::all()
+            'festivals' => $festivals
         ]);
     }
 
