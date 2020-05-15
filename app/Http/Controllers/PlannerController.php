@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Planner;
 use App\Festival;
 
@@ -13,10 +14,11 @@ class PlannerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Planner $planner)
+    public function index()
     {
+        $planners = Planner::where('id', Auth::user()->user_id)->get();
         return view('planner.index', [
-            'planners' => Planner::all(),
+            'planners' => $planners,
             'festivals' => Festival::all()
         ]);
     }
@@ -41,8 +43,14 @@ class PlannerController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validateData();
-        Planner::create($data);
+        $user = Auth::user();
+        $this->validateData();
+        $newPlanner = Planner::create([
+            'festival_id' => $request->input('festival_id'),
+            'info_text' => $request->input('info_text'),
+            'planner_image' => $request->input('planner_image')
+        ]);
+        $newPlanner->user()->sync($user);
 
         return redirect()->route('planner.index');
     }
