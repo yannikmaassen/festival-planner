@@ -12,7 +12,7 @@
         Nö, warum?
       </p>
     </a>
-    <form method="POST">
+    <form method="POST" action="{{ route('profile.store') }}">
       @csrf
       <div class="form-group mt-3">
         <label class="form__label" for="profile_input1">Name</label>
@@ -24,15 +24,11 @@
       </div>
       <div class="form-group">
         <label class="form__label" for="profile_input3">Deine Beschreibung</label>
-        <textarea class="form-control" id="profile_input3" rows="3" name="description"></textarea>
+        <textarea class="form-control" id="profile_input3" rows="3" name="profile_description"></textarea>
       </div>
       <div class="form-group">
-        <label class="form__label" for="profile_input4">Hier Volltextsuche mit Spotify API einbinden</label>
-        <textarea class="form-control" id="profile_input4" rows="2" name="music"></textarea>
-      </div>
-      <div class="form-group">
-        <label class="form__label" for="profile_input5">Welche Festivals hast du bereits besucht?</label>
-        <textarea class="form-control" id="profile_input5" rows="1" name="festival_id"></textarea>
+        <label class="form__label" for="profile_input4">Welche Festivals hast du bereits besucht?</label>
+        <textarea class="form-control" id="profile_input4" rows="1" name="festival_id"></textarea>
       </div>
       <div class="form-group">
         <label class="form__label" for="profile_input5">Deine persönliche Packliste</label>

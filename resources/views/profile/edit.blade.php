@@ -11,7 +11,7 @@
     </p>
   </a>
 
-  <form method="POST" action="{{ route('profile.edit') }}">
+  <form method="POST">
     @csrf
 
     <div class="form-group mt-3">
@@ -40,7 +40,7 @@
     </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">
-        <a type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/profile/own') }}">
+        <a type="submit" class="btn btn-primary my-3 w-100" href="{{ route('profile.show') }}">
           {{ __('Änderungen speichern') }}
         </a>
       </div>
