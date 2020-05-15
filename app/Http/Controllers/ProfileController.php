@@ -37,7 +37,6 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        $data = $this->validateData();
         $newProfile = Profile::create([
             'profile_name' => $request->input('profile_name'),
             'profile_image' => $request->input('profile_image'),
@@ -71,9 +70,12 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('profile.edit');
+        $ownProfile = Profile::find($id);
+        return view('profile.edit', [
+            'ownProfile' => $ownProfile
+        ]);
     }
 
     /**

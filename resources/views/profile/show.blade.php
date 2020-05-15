@@ -6,7 +6,7 @@
     <img class="profile__image" src="/images/people-at-concert.jpg" alt="Profilbild">
     <p class="h2">{{ $ownProfile->profile_name }}</p>
   </div>
-  <a class="btn btn__edit-profile mb-4" href="{{ url('/profile/edit') }}">Profil bearbeiten</a>
+  <a class="btn btn__edit-profile mb-4" href="{{ route('profile.edit', $ownProfile) }}">Profil bearbeiten</a>
   <form method="POST" action="{{ route('logout') }}">
     @csrf
     <button class="btn btn__edit-profile mb-4">Logout</button>
