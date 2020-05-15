@@ -54,3 +54,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/auth', 'SpotifyController@authenticate');
 Route::get('/spoti', 'SpotifyController@callback');
 Route::get('/spotifyData', 'SpotifyController@data');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
