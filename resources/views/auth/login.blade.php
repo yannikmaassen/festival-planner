@@ -54,15 +54,14 @@
 
             <div class="form-group row mb-0">
               <div class="col-md-8 offset-md-4">
-                <a type="submit" class="btn btn-primary" href="{{ route('profile.create') }}">
+                <button type="submit" class="btn btn-primary">
                   {{ __('Login') }}
-                </a>
-                <!-- 
+                </button>
                 @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
                   {{ __('Passwort vergessen?') }}
                 </a>
-                @endif -->
+                @endif
                 <a class="btn btn-link" href="{{ url('/register') }}">
                   {{ __('Noch keinen Account? Registrieren') }}
                 </a>

@@ -8,6 +8,10 @@
       Maaßen</p>
   </div>
   <a class="btn btn__edit-profile mb-4" href="/profile/edit">Profil bearbeiten</a>
+  <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <button class="btn btn__edit-profile mb-4">Logout</button>
+  </form>
   <section>
     <h3 class="profile__section--heading">Beschreibung</h3>
     <p class="profile__section">

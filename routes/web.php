@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Auth::routes();
+
+
 Route::get('/', function () {
     return view('auth.login');
 })->name('auth.login');
 
-Route::get('/profile/create', 'ProfileController@create')->name('profile.create');
+Route::get('/profile/create', 'ProfileController@create')->name('profile.create')->middleware('auth');
 Route::get('/profile/own', 'ProfileController@own')->name('profile.own')->middleware('auth');
 Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit')->middleware('auth');
 Route::get('/profile/other', 'ProfileController@other')->name('profile.other')->middleware('auth');
@@ -26,9 +29,7 @@ Route::get('/profile/other', 'ProfileController@other')->name('profile.other')->
 // Route::get('/planner/edit', 'PlannerController@edit')->name('planner.edit');
 // Route::post('/planner/create', 'PlannerController@store')->name('planner.store');
 Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
-
-
-Route::resource('/planner', 'PlannerController');
+Route::resource('/planner', 'PlannerController')->middleware('auth');
 
 Route::get('/friends/add', 'FriendController@add')->name('friends.add');
 Route::get('/friends/edit', 'FriendController@edit')->name('friends.edit');
@@ -44,7 +45,7 @@ Route::get('/playlist/edit', 'PlaylistController@edit')->name('playlist.edit');
 // Auth routes
 
 Route::get('/login', function () {
-    return view('auth.login')->middleware('auth');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -55,6 +56,6 @@ Route::get('/auth', 'SpotifyController@authenticate');
 Route::get('/spoti', 'SpotifyController@callback');
 Route::get('/spotifyData', 'SpotifyController@data');
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
