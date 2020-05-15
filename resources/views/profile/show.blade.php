@@ -14,7 +14,7 @@
   <section>
     <h3 class="profile__section--heading">Beschreibung</h3>
     <p class="profile__section">
-      {{ $ownProfile->description }}
+      {{ $ownProfile->profile_description }}
     </p>
   </section>
   <hr>

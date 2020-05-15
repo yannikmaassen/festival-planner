@@ -17,8 +17,8 @@ class ProfileSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
             'profile_name' => 'Test Tester',
-            'description' => 'Lorem Ipsum dolor sit amet.',
-            'music' => '',
+            'profile_description' => 'Lorem Ipsum dolor sit amet.',
+            'festival_id' => '',
             'profile_list' => 'Testware',
             'profile_image' => ''
         ], [
@@ -26,8 +26,8 @@ class ProfileSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
             'profile_name' => 'Testo Tester',
-            'description' => 'Amet sit dolor ipsum lorem.',
-            'music' => '',
+            'profile_description' => 'Amet sit dolor ipsum lorem.',
+            'festival_id' => '',
             'profile_list' => 'Testoware',
             'profile_image' => ''
         ]]);

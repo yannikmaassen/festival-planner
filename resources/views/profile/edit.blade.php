@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
       <label class="form__label" for="profile_input3">Eine kleine Beschreibung über dich</label>
-      <textarea class="form-control" id="profile_input3" rows="3" name="profile_description">{{ old('profile_description') ?? $ownProfile->description }}</textarea>
+      <textarea class="form-control" id="profile_input3" rows="3" name="profile_description">{{ old('profile_description') ?? $ownProfile->profile_description }}</textarea>
     </div>
     <div class="form-group">
       <label class="form__label" for="profile_input4">Welche Festivals hast du bereits besucht?</label>

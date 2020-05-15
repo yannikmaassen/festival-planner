@@ -17,10 +17,10 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('profile_name')->nullable();
-            $table->text('description')->nullable();
-            $table->string('music')->nullable();
-            $table->text('profile_list')->nullable();
             $table->string('profile_image')->nullable();
+            $table->text('profile_description')->nullable();
+            $table->string('festival_id')->nullable();
+            $table->text('profile_list')->nullable();
         });
     }
 
