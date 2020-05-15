@@ -27,6 +27,7 @@ Route::get('/profile/other', 'ProfileController@other')->name('profile.other');
 // Route::post('/planner/create', 'PlannerController@store')->name('planner.store');
 Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
 
+
 Route::resource('/planner', 'PlannerController');
 
 Route::get('/friends/add', 'FriendController@add')->name('friends.add');

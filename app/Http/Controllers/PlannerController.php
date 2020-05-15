@@ -15,12 +15,9 @@ class PlannerController extends Controller
      */
     public function index(Planner $planner)
     {
-        $festivals = Festival::all();
-        $planner = Planner::all();
         return view('planner.index', [
-            'planners' => $planner,
-            'festivals' => $festivals,
-
+            'planners' => Planner::all(),
+            'festivals' => Festival::all()
         ]);
     }
 
@@ -31,9 +28,8 @@ class PlannerController extends Controller
      */
     public function create()
     {
-        $festivals = Festival::all();
         return view('planner.create', [
-            'festivals' => $festivals,
+            'festivals' => Festival::all()
         ]);
     }
 
@@ -60,9 +56,8 @@ class PlannerController extends Controller
     public function show($id)
     {
         $currentPlanner = Planner::find($id);
-        $festivals = Festival::all();
         return view('planner.show', [
-            'festivals' => $festivals,
+            'festivals' => Festival::all(),
             'currentPlanner' => $currentPlanner
         ]);
     }
@@ -87,9 +82,14 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Planner $planner)
     {
-        //
+        $input = $this->validateData();
+        $planner->update($input);
+
+        return redirect()->route('planner.show', [
+            'planner' => $planner
+        ]);
     }
 
     /**
@@ -115,6 +115,9 @@ class PlannerController extends Controller
         return request()->validate([
             'festival_id' => 'required',
             'info_text' => 'required|min:3',
+            'planner_image' => '',
+            'todo_list' => '',
+            'playlists' => '',
         ]);
     }
 }

@@ -23,6 +23,10 @@
       <label class="form__label">Info-Text des Planners</label>
       <textarea class="form-control" rows="3" name="info_text" placeholder="Schreibe hier ein paar Grußworte an deine Freunde oder eine kleine Beschreibung über das Festival!"></textarea>
     </div>
+    <div class="form-group">
+      <label class="form__label">Profilbild</label>
+      <input type="file" class="form-control-file" name="planner_image">
+    </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">
         <button type="submit" class="btn btn-primary my-3 w-100">
