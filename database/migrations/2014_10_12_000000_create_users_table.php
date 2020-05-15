@@ -21,11 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('profile_name')->nullable();
-            $table->text('description')->nullable();
-            $table->string('music')->nullable();
-            $table->text('profile_list')->nullable();
-            $table->string('profile_image')->nullable();
+            $table->foreignId('profile_id')->constrained()->onDelete('cascade');
         });
     }
 

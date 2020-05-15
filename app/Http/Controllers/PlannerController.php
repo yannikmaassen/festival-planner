@@ -18,11 +18,11 @@ class PlannerController extends Controller
     public function index()
     {
         $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
-        $testPlanners = DB::table('planners')->where('id', $planners->planner_id)->get();
-        $festivals = DB::table('festivals')->where('id', $testPlanners->festival_id)->get();
+        // $testPlanners = DB::table('planners')->where('id', $planners->planner_id)->get();
+        // $festivals = DB::table('festivals')->where('id', $testPlanners->festival_id)->get();
         return view('planner.index', [
             'planners' => $planners,
-            'festivals' => $festivals
+            // 'festivals' => $festivals
         ]);
     }
 
