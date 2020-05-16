@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Profile;
+use App\Festival;
 
 class ProfileController extends Controller
 {
@@ -33,7 +36,18 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $data = $this->validateData();
+        $newProfile = Profile::create([
+            'profile_name' => $request->input('profile_name'),
+            'profile_image' => $request->input('profile_image'),
+            'profile_description' => $request->input('profile_description'),
+            'festival_id' => $request->input('festival_id'),
+            'profile_list' => $request->input('profile_list')
+        ]);
+        $newProfile->user()->sync($user);
+
+        return redirect()->url('/planner/' . $newProfile->id);
     }
 
     /**
@@ -42,14 +56,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function own()
+    public function show($id)
     {
-        return view('profile.own');
-    }
-
-    public function other()
-    {
-        return view('profile.other');
+        $ownProfile = Profile::find($id);
+        return view('profile.show', [
+            'festivals' => Festival::all(),
+            'ownProfile' => $ownProfile
+        ]);
     }
 
     /**
@@ -84,5 +97,21 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function other()
+    {
+        return view('profile.other');
+    }
+
+    public function validateData()
+    {
+        return request()->validate([
+            'profile_name' => 'required',
+            'profile_image' => '',
+            'profile_description' => 'required|min:3',
+            'festival_id' => '',
+            'profile_list' => ''
+        ]);
     }
 }

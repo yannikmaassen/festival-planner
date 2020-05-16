@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Planner;
 use App\Festival;
+use Illuminate\Support\Facades\DB;
 
 class PlannerController extends Controller
 {
@@ -13,11 +15,14 @@ class PlannerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Planner $planner)
+    public function index()
     {
-        $planner = Planner::all();
+        $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
+        // $testPlanners = DB::table('planners')->where('id', $planners->planner_id)->get();
+        // $festivals = DB::table('festivals')->where('id', $testPlanners->festival_id)->get();
         return view('planner.index', [
-            'planners' => $planner
+            'planners' => $planners,
+            // 'festivals' => $festivals
         ]);
     }
 
@@ -28,9 +33,8 @@ class PlannerController extends Controller
      */
     public function create()
     {
-        $festivals = Festival::all();
         return view('planner.create', [
-            'festivals' => $festivals,
+            'festivals' => Festival::all()
         ]);
     }
 
@@ -42,7 +46,16 @@ class PlannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $this->validateData();
+        $newPlanner = Planner::create([
+            'festival_id' => $request->input('festival_id'),
+            'info_text' => $request->input('info_text'),
+            'planner_image' => $request->input('planner_image')
+        ]);
+        $newPlanner->user()->sync($user);
+
+        return redirect()->route('planner.index');
     }
 
     /**
@@ -51,10 +64,12 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Planner $planner)
+    public function show($id)
     {
+        $currentPlanner = Planner::find($id);
         return view('planner.show', [
-            'planners' => $planner
+            'festivals' => Festival::all(),
+            'currentPlanner' => $currentPlanner
         ]);
     }
 
@@ -78,9 +93,14 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Planner $planner)
     {
-        //
+        $input = $this->validateData();
+        $planner->update($input);
+
+        return redirect()->route('planner.show', [
+            'planner' => $planner
+        ]);
     }
 
     /**
@@ -104,13 +124,11 @@ class PlannerController extends Controller
     public function validateData()
     {
         return request()->validate([
-            'festival_name' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
-            'genres' => 'min:3',
-            'description' => 'required|min:3',
+            'festival_id' => 'required',
+            'info_text' => 'required|min:3',
+            'planner_image' => '',
             'todo_list' => '',
-            'playlist' => ''
+            'playlists' => '',
         ]);
     }
 }

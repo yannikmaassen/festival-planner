@@ -5,15 +5,14 @@
   <section class="mb-4">
     <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Festival-Szenerie">
     <div class="row justify-content-between align-items-center">
-      <h1 class="text-white mt-3 ml-3">{{ $planners->name }}</h1>
+      <h1 class="text-white mt-3 ml-3">{{ $currentPlanner->festival->festival_name }}</h1>
       <a href="{{ url('/planner/edit') }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
     </div>
-    <p>{{ $planners->start_date }} - {{ $planners->end_date }}</p>
+    <p>{{ $currentPlanner->festival->start_date }} - {{ $currentPlanner->festival->end_date }}</p>
     <section class="festival-info">
       <h2 class="festival-info__heading">Info</h2>
-      <p>{{ $planners->genre_1 }} - {{ $planners->genre_2 }} - {{ $planners->genre_3 }}</p>
-      <p>{{ $planners->headliner_1 }} - {{ $planners->headliner_2 }} - {{ $planners->headliner_3 }}</p>
-      <p>{{ $planners->description }}</p>
+      <p>{{ $currentPlanner->festival->genres }}</p>
+      <p>{{ $currentPlanner->info_text }}</p>
     </section>
   </section>
   <hr>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Planner extends Model
 {
-    protected $fillable = ['info_text', 'todo_list', 'playlists', 'planner_image'];
+    protected $fillable = ['festival_id', 'info_text'];
 
     public function festival()
     {

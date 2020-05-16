@@ -18,7 +18,7 @@
             <div class="form-group row mb-0">
               <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('User-Name') }}</label>
               <div class="col-md-6">
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="user_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                 @error('name')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -60,9 +60,9 @@
 
             <div class="form-group row mb-0">
               <div class="col-md-6 offset-md-4">
-                <a type="submit" class="btn btn-primary" href="{{ url('/profile/create') }}">
+                <button type="submit" class="btn btn-primary">
                   {{ __('Registrieren') }}
-                </a>
+                </button>
                 <a class="btn btn-link" href="{{ url('/login') }}">
                   {{ __('Bereits registriert? Login') }}
                 </a>

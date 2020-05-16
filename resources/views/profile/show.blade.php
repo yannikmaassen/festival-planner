@@ -4,15 +4,17 @@
 <div class="container">
   <div class="row justify-content-center align-items-center my-4">
     <img class="profile__image" src="/images/people-at-concert.jpg" alt="Profilbild">
-    <p class="h2">Yannik<br>
-      Maaßen</p>
+    <p class="h2">{{ $ownProfile->profile_name }}</p>
   </div>
-  <a class="btn btn__edit-profile mb-4" href="/profile/edit">Profil bearbeiten</a>
+  <a class="btn btn__edit-profile mb-4" href="{{ url('/profile/edit') }}">Profil bearbeiten</a>
+  <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <button class="btn btn__edit-profile mb-4">Logout</button>
+  </form>
   <section>
     <h3 class="profile__section--heading">Beschreibung</h3>
     <p class="profile__section">
-      Yannik / Sanji<br>
-      Hamburg 040<br>
+      {{ $ownProfile->description }}
     </p>
   </section>
   <hr>
@@ -33,13 +35,7 @@
   <section>
     <h3 class="profile__section--heading">Meine Packliste</h3>
     <p class="profile__section">
-      - Tageslinsen<br>
-      - Panzertape<br>
-      - neues Zelt<br>
-      - Klopapier<br>
-      - Wasser<br>
-      - Bier<br>
-      - Knabberkram<br>
+      {{ $ownProfile->profile_list }}
     </p>
   </section>
 </div>
