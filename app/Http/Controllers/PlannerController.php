@@ -79,10 +79,12 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Planner $planner)
+    public function edit($id)
     {
+        $currentPlanner = Planner::find($id);
         return view('planner.edit', [
-            'planners' => $planner
+            'currentPlanner' => $currentPlanner,
+            'festivals' => Festival::all(),
         ]);
     }
 
@@ -93,13 +95,15 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Planner $planner)
+    public function update($id)
     {
-        $input = $this->validateData();
-        $planner->update($input);
+        $data = $this->validateData();
+        $currentPlanner = Planner::find($id);
+        $currentPlanner->update($data);
 
         return redirect()->route('planner.show', [
-            'planner' => $planner
+            'currentPlanner' => $currentPlanner,
+            'festivals' => Festival::all()
         ]);
     }
 
@@ -113,7 +117,7 @@ class PlannerController extends Controller
     {
         $planner->delete();
 
-        return redirect()->route('planner.overview');
+        return redirect()->route('planner');
     }
 
     public function finished()
@@ -127,8 +131,8 @@ class PlannerController extends Controller
             'festival_id' => 'required',
             'info_text' => 'required|min:3',
             'planner_image' => '',
-            'todo_list' => '',
-            'playlists' => '',
+            // 'todo_list' => '',
+            // 'playlists' => '',
         ]);
     }
 }

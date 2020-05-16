@@ -24,7 +24,7 @@
       <textarea class="form-control" rows="3" name="info_text" placeholder="Schreibe hier ein paar Grußworte an deine Freunde oder eine kleine Beschreibung über das Festival!"></textarea>
     </div>
     <div class="form-group">
-      <label class="form__label">Profilbild</label>
+      <label class="form__label">Planner-Bild</label>
       <input type="file" class="form-control-file" name="planner_image">
     </div>
     <div class="form-group row justify-content-center">

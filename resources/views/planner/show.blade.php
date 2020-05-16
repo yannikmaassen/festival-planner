@@ -6,7 +6,7 @@
     <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Festival-Szenerie">
     <div class="row justify-content-between align-items-center">
       <h1 class="text-white mt-3 ml-3">{{ $currentPlanner->festival->festival_name }}</h1>
-      <a href="{{ url('/planner/edit') }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
+      <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
     </div>
     <p>{{ $currentPlanner->festival->start_date }} - {{ $currentPlanner->festival->end_date }}</p>
     <section class="festival-info">
