@@ -38,5 +38,16 @@
       </div>
     </div>
   </form>
+  <form method="POST" action="{{ route('planner.destroy', $currentPlanner) }}">
+    @csrf
+    @method('DELETE')
+    <div class="form-group row justify-content-center">
+      <div class="col-md-8 offset-md-4">
+        <button type="submit" class="btn btn-primary my-3 w-100">
+          {{ __('Planner löschen') }}
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
 @endsection

@@ -113,11 +113,12 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Planner $planner)
+    public function destroy($id)
     {
-        $planner->delete();
+        $currentPlanner = Planner::find($id);
+        $currentPlanner->delete();
 
-        return redirect()->route('planner');
+        return redirect()->route('planner.index');
     }
 
     public function finished()
