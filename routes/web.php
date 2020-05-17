@@ -24,7 +24,7 @@ Route::get('/', function () {
 // Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit')->middleware('auth');
 
 
-Route::get('/profile/own', 'ProfileController@own')->name('profile.own')->middleware('auth');
+Route::get('/profile/own', 'ProfileController@show')->name('profile.show')->middleware('auth');
 Route::get('/profile/other', 'ProfileController@other')->name('profile.other')->middleware('auth');
 Route::resource('/profile', 'ProfileController')->middleware('auth');
 
