@@ -13,7 +13,7 @@
           Suche
         </a>
       </div>
-      <a type="submit" class="btn btn-primary my-5 w-100" href="{{ url('/planner') }}">
+      <a type="submit" class="btn btn-primary my-5 w-100" href="{{ url('/planner/ . $currentPlanner->id') }}">
         {{ __('Speichern') }}
       </a>
     </div>

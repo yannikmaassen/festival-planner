@@ -18,11 +18,10 @@ class PlannerController extends Controller
     public function index()
     {
         $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
-        // $testPlanners = DB::table('planners')->where('id', $planners->planner_id)->get();
+        // $testPlanners = DB::table('planners')->where('id', $planner->planner_id)->get();
         // $festivals = DB::table('festivals')->where('id', $testPlanners->festival_id)->get();
         return view('planner.index', [
             'planners' => $planners,
-            // 'festivals' => $festivals
         ]);
     }
 
@@ -103,13 +102,13 @@ class PlannerController extends Controller
         if ($request->has('planner_image')) {
             $path = $request->file('planner_image')->store('/planner/images', 'public');
             $data['planner_image'] = $path;
-            $currentPlanner->update($data);
-
-            return redirect()->route('planner.show', [
-                'currentPlanner' => $currentPlanner,
-                'festivals' => Festival::all()
-            ]);
         }
+        $currentPlanner->update($data);
+
+        return redirect()->route('planner.show', [
+            'currentPlanner' => $currentPlanner,
+            'festivals' => Festival::all()
+        ]);
     }
 
     /**

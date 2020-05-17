@@ -3,12 +3,15 @@
 @section('content')
 <div class="container">
   <section class="mb-4">
-    <img class="auth__image mt-3" src="{{ $currentPlanner->planner_image }}" alt="Festival-Szenerie">
-    <div class="row justify-content-between align-items-center">
+    <img class="auth__image mt-3" src="{{ $currentPlanner->getImageAttribute($currentPlanner->planner_image) }}" alt="Festival-Szenerie">
+    <div class="row">
       <h1 class="text-white mt-3 ml-3">{{ $currentPlanner->festival->festival_name }}</h1>
-      <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>
     </div>
-    <p>{{ $currentPlanner->festival->start_date }} - {{ $currentPlanner->festival->end_date }}</p>
+    <div class="row justify-content-around align-items-center">
+      <p class="mr-5">{{ $currentPlanner->festival->start_date }} - {{ $currentPlanner->festival->end_date }}</p>
+      <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner ml-4 mb-3">Bearbeiten</a>
+    </div>
+
     <section class="festival-info">
       <h2 class="festival-info__heading">Info</h2>
       <p>{{ $currentPlanner->festival->genres }}</p>

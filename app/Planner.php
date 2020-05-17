@@ -25,6 +25,6 @@ class Planner extends Model
             return Storage::url($value);
         }
 
-        return 'https://via.placeholder.com/500x350';
+        return '/images/blog_festival_Main.jpg';
     }
 }
