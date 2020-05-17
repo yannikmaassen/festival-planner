@@ -190,12 +190,11 @@ small {
 }
 
 .btn__edit-profile {
-    width: 100%;
+    width: 320px;
     height: 36px;
     color: var(--baby_powder);
     background-color: var(--davys_grey);
     border: 1px solid var(--rich_black);
-    border-radius: 12px;
     font: bold;
     font-size: 1.1em;
 }
@@ -205,6 +204,16 @@ small {
     border: 1px solid var(--gunmetal);
     color: var(--baby_powder);
     font-size: 0.7em;
+}
+
+.btn__logout {
+    width: 250px;
+    height: 36px;
+    color: var(--baby_powder);
+    background-color: var(--davys_grey);
+    border: 1px solid var(--rich_black);
+    font: bold;
+    font-size: 1.1em;
 }
 
 /* Navbar-Styling */

@@ -59,11 +59,15 @@ class ProfileController extends Controller
     public function show(User $user)
     {
         $user = Auth::user();
-        $ownProfile = Profile::find($user->id);
-        return view('profile.show', [
-            'festivals' => Festival::all(),
-            'ownProfile' => $ownProfile
-        ]);
+        if ($user->profile_id !== null) {
+            $ownProfile = Profile::find($user->id);
+            return view('profile.show', [
+                'festivals' => Festival::all(),
+                'ownProfile' => $ownProfile
+            ]);
+        } else {
+            return view('profile.noprofile');
+        }
     }
 
     /**
