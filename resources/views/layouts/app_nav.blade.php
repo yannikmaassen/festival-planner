@@ -24,7 +24,7 @@
   <div class="content">
     @yield('content')
   </div>
-  @include('includes/footer')
+  @include('includes/footer', ['ownProfile' => '1'])
 
 
   <!-- Optional JavaScript -->

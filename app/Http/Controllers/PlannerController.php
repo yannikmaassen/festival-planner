@@ -47,14 +47,14 @@ class PlannerController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        $this->validateData();
-        $newPlanner = Planner::create([
-            'festival_id' => $request->input('festival_id'),
-            'info_text' => $request->input('info_text'),
-            'planner_image' => $request->input('planner_image')
-        ]);
-        $newPlanner->user()->sync($user);
+        $data = $this->validateData();
 
+        if ($request->has('planner_image')) {
+            $path = $request->file('planner_image')->store('/planner/images', 'public');
+            $data['planner_image'] = $path;
+        }
+        $newPlanner = Planner::create($data);
+        $newPlanner->user()->sync($user);
         return redirect()->route('planner.index');
     }
 
@@ -95,16 +95,21 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         $data = $this->validateData();
         $currentPlanner = Planner::find($id);
-        $currentPlanner->update($data);
 
-        return redirect()->route('planner.show', [
-            'currentPlanner' => $currentPlanner,
-            'festivals' => Festival::all()
-        ]);
+        if ($request->has('planner_image')) {
+            $path = $request->file('planner_image')->store('/planner/images', 'public');
+            $data['planner_image'] = $path;
+            $currentPlanner->update($data);
+
+            return redirect()->route('planner.show', [
+                'currentPlanner' => $currentPlanner,
+                'festivals' => Festival::all()
+            ]);
+        }
     }
 
     /**
@@ -131,9 +136,9 @@ class PlannerController extends Controller
         return request()->validate([
             'festival_id' => 'required',
             'info_text' => 'required|min:3',
-            'planner_image' => '',
-            // 'todo_list' => '',
-            // 'playlists' => '',
+            'todo_list' => '',
+            'playlists' => '',
+            'planner_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     }
 }

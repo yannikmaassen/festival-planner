@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class Planner extends Model
@@ -16,5 +17,14 @@ class Planner extends Model
     public function user()
     {
         return $this->belongsToMany('App\User');
+    }
+
+    public function getImageAttribute($value)
+    {
+        if ($value) {
+            return Storage::url($value);
+        }
+
+        return 'https://via.placeholder.com/500x350';
     }
 }

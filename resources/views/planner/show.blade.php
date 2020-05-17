@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <section class="mb-4">
-    <img class="auth__image mt-3" src="/images/blog_festival_Main.jpg" alt="Festival-Szenerie">
+    <img class="auth__image mt-3" src="{{ $currentPlanner->planner_image }}" alt="Festival-Szenerie">
     <div class="row justify-content-between align-items-center">
       <h1 class="text-white mt-3 ml-3">{{ $currentPlanner->festival->festival_name }}</h1>
       <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner mr-3">Bearbeiten</a>

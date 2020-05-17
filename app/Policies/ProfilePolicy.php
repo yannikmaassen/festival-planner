@@ -19,8 +19,6 @@ class ProfilePolicy
      */
     public function viewAny(User $user, Profile $profile)
     {
-        $user = Auth::user();
-        return $user->id === $profile->id;
     }
 
     /**
@@ -32,6 +30,8 @@ class ProfilePolicy
      */
     public function view(User $user, Profile $profile)
     {
+        $user = Auth::user();
+        return $user->id === $profile->id;
     }
 
     /**

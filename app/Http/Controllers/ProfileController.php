@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Profile;
 use App\Festival;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -108,6 +109,15 @@ class ProfileController extends Controller
     public function other()
     {
         return view('profile.other');
+    }
+
+    public function own(User $user)
+    {
+        $user = Auth::user();
+        $ownProfile = Profile::find($user);
+        return view('profile.show', [
+            'ownProfile' => $ownProfile
+        ]);
     }
 
     public function validateData()
