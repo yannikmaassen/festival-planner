@@ -37,7 +37,7 @@
     </div>
     <div class="form-group">
       <label class="form__label">Auf welchen Festivals warst du bereits?</label>
-      <select autocomplete="off" name="festival_id" size="5" class="form-control @error('festival_id') is-invalid @enderror">
+      <select multiple autocomplete="off" name="festival_id" size="5" class="form-control @error('festival_id') is-invalid @enderror">
         @foreach ($festivals as $festival)
         <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
         @endforeach

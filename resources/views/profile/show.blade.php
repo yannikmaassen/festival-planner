@@ -17,8 +17,8 @@
   </section>
   <hr>
   <section>
-    <h3 class="profile__section--heading">Bisherige Festivals</h3>
-    <span class="badge badge__style">Rock am Ring</span>
+    <h3 class="profile__section--heading">Mein Lieblingsfestival</h3>
+    <span class="badge badge__style">{{ $festival->festival_name }}</span>
   </section>
   <hr>
   <section>
