@@ -37,17 +37,25 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-        $newProfile = Profile::create([
-            'profile_name' => $request->input('profile_name'),
-            'profile_image' => $request->input('profile_image'),
-            'profile_description' => $request->input('profile_description'),
-            'festival_id' => $request->input('festival_id'),
-            'profile_list' => $request->input('profile_list')
-        ]);
-        $newProfile->user()->sync($user);
+        $data = $this->validateData();
+        $newProfile = Profile::create($data);
 
-        return redirect()->url('/planner/' . $newProfile->id);
+        $user = Auth::user();
+        $user->profile()->save($newProfile);
+
+        // $newProfile = new Profile([
+        //     'profile_name' => $request->input('profile_name'),
+        //     'profile_image' => $request->input('profile_image'),
+        //     'profile_description' => $request->input('profile_description'),
+        //     // 'festival_id' => $request->input('festival_id'),
+        //     'profile_list' => $request->input('profile_list')
+        // ]);
+        // $user->save($newProfile);
+        // $newProfile->user()->sync($user);
+
+        return view('profile.show', [
+            'ownProfile' => $newProfile
+        ]);
     }
 
     /**
@@ -116,23 +124,14 @@ class ProfileController extends Controller
         return view('profile.other');
     }
 
-    // public function own(User $user)
-    // {
-    //     $user = Auth::user();
-    //     $ownProfile = Profile::find($user);
-    //     return view('profile.show', [
-    //         'ownProfile' => $ownProfile
-    //     ]);
-    // }
-
     public function validateData()
     {
         return request()->validate([
             'profile_name' => 'required',
-            'profile_image' => '',
+            'profile_image' => 'nullable',
             'profile_description' => 'required|min:3',
-            'festival_id' => '',
-            'profile_list' => ''
+            'festival_id' => 'nullable',
+            'profile_list' => 'nullable'
         ]);
     }
 }

@@ -9,7 +9,9 @@
       <div class="row no-gutters">
         <div class="col-md-8">
           <div class="festival-card">
-
+            <h3 class="card-title">Rock am Ring</h3>
+            <p class="card-text">05.06.2021 - 07.06.2021</p>
+            <p class="card-text">Nürburgring</p>
           </div>
         </div>
       </div>
