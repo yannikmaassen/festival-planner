@@ -233,6 +233,10 @@ small {
     fill: white;
 }
 
+.navbar > a.active > svg {
+    fill: var(--rich_black);
+}
+
 /* Forms styling */
 
 .form-control {
