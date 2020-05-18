@@ -19,9 +19,17 @@
       <label class="form__label" for="profile_input1">Dein Name</label>
       <input class="form-control" id="profile_input1" name="profile_name" value="{{ old('profile_name') ?? $ownProfile->profile_name }}">
     </div>
-    <div class="form-group">
-      <label class="form__label" for="profile_input2">Dein Profilbild</label>
-      <input type="file" class="form-control-file" id="profile_input2" name="profile_image" value="{{ old('profile_image') ?? $ownProfile->profile_image }}">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Profilbild</span>
+      </div>
+      <div class="custom-file">
+        <input name="profile_image" type="file" class="custom-file-input @error('profile_image') is-invalid @enderror" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">...</label>
+        @error('profile_image')
+        <p class="invalid-feedback">{{ $errors->first('profile_image') }}</p>
+        @enderror
+      </div>
     </div>
     <div class="form-group">
       <label class="form__label" for="profile_input3">Eine kleine Beschreibung über dich</label>
