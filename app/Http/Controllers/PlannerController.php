@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Planner;
 use App\Festival;
-use Illuminate\Support\Facades\DB;
 
 class PlannerController extends Controller
 {
@@ -17,13 +16,23 @@ class PlannerController extends Controller
      */
     public function index()
     {
-        $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
-        // $testPlanners = DB::table('planners')->where('id', $planners->planner_id)->get();
-        // $festivals = DB::table('festivals')->where('id', $testPlanners->festival_id)->get();
-        return view('planner.index', [
-            'planners' => $planners,
-            // 'festivals' => $festivals
-        ]);
+        // $user = Auth::user();
+        // $planners = $user->planner;
+
+        // // $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
+        // return view('planner.index', [
+        //     'planners' => $planners
+        // ]);
+
+        $user = Auth::user();
+        $planners = $user->planner;
+        if (count($planners) >= 1) {
+            return view('planner.index', [
+                'planners' => $planners
+            ]);
+        } else {
+            return view('planner.noplanner');
+        }
     }
 
     /**
@@ -47,14 +56,14 @@ class PlannerController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        $this->validateData();
-        $newPlanner = Planner::create([
-            'festival_id' => $request->input('festival_id'),
-            'info_text' => $request->input('info_text'),
-            'planner_image' => $request->input('planner_image')
-        ]);
-        $newPlanner->user()->sync($user);
+        $data = $this->validateData();
 
+        if ($request->has('planner_image')) {
+            $path = $request->file('planner_image')->store('/planner/images', 'public');
+            $data['planner_image'] = $path;
+        }
+        $newPlanner = Planner::create($data);
+        $newPlanner->user()->sync($user);
         return redirect()->route('planner.index');
     }
 
@@ -79,10 +88,12 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Planner $planner)
+    public function edit($id)
     {
+        $currentPlanner = Planner::find($id);
         return view('planner.edit', [
-            'planners' => $planner
+            'currentPlanner' => $currentPlanner,
+            'festivals' => Festival::all(),
         ]);
     }
 
@@ -93,13 +104,20 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Planner $planner)
+    public function update(Request $request, $id)
     {
-        $input = $this->validateData();
-        $planner->update($input);
+        $data = $this->validateData();
+        $currentPlanner = Planner::find($id);
 
-        return redirect()->route('planner.show', [
-            'planner' => $planner
+        if ($request->has('planner_image')) {
+            $path = $request->file('planner_image')->store('/planner/images', 'public');
+            $data['planner_image'] = $path;
+        }
+        $currentPlanner->update($data);
+
+        return view('planner.show', [
+            'currentPlanner' => $currentPlanner,
+            'festivals' => Festival::all()
         ]);
     }
 
@@ -109,11 +127,12 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Planner $planner)
+    public function destroy($id)
     {
-        $planner->delete();
+        $currentPlanner = Planner::find($id);
+        $currentPlanner->delete();
 
-        return redirect()->route('planner.overview');
+        return redirect()->route('planner.index');
     }
 
     public function finished()
@@ -126,9 +145,9 @@ class PlannerController extends Controller
         return request()->validate([
             'festival_id' => 'required',
             'info_text' => 'required|min:3',
-            'planner_image' => '',
-            'todo_list' => '',
-            'playlists' => '',
+            'todo_list' => 'nullable',
+            'playlists' => 'nullable',
+            'planner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     }
 }

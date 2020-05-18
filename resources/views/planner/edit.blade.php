@@ -6,45 +6,52 @@
     Festival-Planner bearbeiten
   </p>
 
-  <form>
+  <form method="POST" action="{{ route('planner.update', $currentPlanner) }}" enctype="multipart/form-data">
     @csrf
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input1">Name des Festivals</label>
-      <input class="form-control" id="planner_input1">
-    </div>
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input2">Zeitraum</label>
-      <div class="row no-gutters justify-content-between"><input class="col-5 form-control__date" id="planner_input2" type="date">
-        -
-        <input class="col-5 form-control__date" id="planner_input2.1" type="date">
-      </div>
-    </div>
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input3">Genre</label>
-      <select class="custom-select" id="planner_input3" multiple>
-        <option selected>Bitte Genres auswählen</option>
-        <option value="1">Rock</option>
-        <option value="2">HipHop</option>
-        <option value="3">Electro</option>
+    @method('PUT')
+
+    <div class="form-group">
+      <label class="form__label">Festival ändern</label>
+      <select autocomplete="off" name="festival_id" size="10" class="form-control @error('festivals') is-invalid @enderror">
+        @foreach ($festivals as $festival)
+        <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
+        @endforeach
       </select>
+      @error('festival')
+      <p class="invalid-feedback">{{ $errors->first('festivals') }}</p>
+      @enderror
     </div>
-    <div class="form-group mt-3">
-      <label class="form__label" for="planner_input4">Headliner</label>
-      <input class="form-control" id="planner_input4">
+
+    <div class="form-group">
+      <label class="form__label" for="planner_input2">Info-Text des Planners</label>
+      <textarea class="form-control @error('info_text') is-invalid @enderror" id="planner_input2" name="info_text" rows="3">{{ old('info_text') ?? $currentPlanner->info_text }}</textarea>
+      @error('info_text')
+      <p class="invalid-feedback">{{ $errors->first('info_text') }}</p>
+      @enderror
     </div>
     <div class="form-group">
-      <label class="form__label" for="planner_input5">Beschreibung des Festivals</label>
-      <textarea class="form-control" id="planner_input5" rows="3"></textarea>
-    </div>
-    <div class="form-group">
-      <label class="form__label" for="planner_input6">Planner-Bild</label>
-      <input type="file" class="form-control-file" id="planner_input6">
+      <label class="form__label" for="planner_input3">Planner-Bild</label>
+      <input type="file" class="form-control-file @error('planner_image') is-invalid @enderror" id="planner_input3" name="planner_image" value="{{ old('planner_image') ?? $currentPlanner->planner_image }}">
+      @error('planner_image')
+      <p class="invalid-feedback">{{ $errors->first('planner_image') }}</p>
+      @enderror
     </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">
-        <a type="submit" class="btn btn-primary my-3 w-100" href="{{ url('/planner') }}">
+        <button type="submit" class="btn btn-primary my-3 w-100">
           {{ __('Änderungen übernehmen') }}
-        </a>
+        </button>
+      </div>
+    </div>
+  </form>
+  <form method="POST" action="{{ route('planner.destroy', $currentPlanner) }}">
+    @csrf
+    @method('DELETE')
+    <div class="form-group row justify-content-center">
+      <div class="col-md-8 offset-md-4">
+        <button type="submit" class="btn btn__edit-planner mb-3 w-100">
+          {{ __('Planner löschen') }}
+        </button>
       </div>
     </div>
   </form>

@@ -14,15 +14,18 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->timestamps();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->nullable();
             $table->string('profile_name')->nullable();
-            $table->text('description')->nullable();
-            $table->string('music')->nullable();
-            $table->text('profile_list')->nullable();
             $table->string('profile_image')->nullable();
+            $table->text('profile_description')->nullable();
+            $table->string('festival_id')->nullable();
+            $table->text('profile_list')->nullable();
         });
     }
+
+
 
     /**
      * Reverse the migrations.

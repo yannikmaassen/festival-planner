@@ -25,7 +25,6 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
-            'profile_id' => '1'
         ], [
             'id' => '2',
             'user_name' => 'testo',
@@ -35,7 +34,6 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
-            'profile_id' => '2'
         ]]);
     }
 }

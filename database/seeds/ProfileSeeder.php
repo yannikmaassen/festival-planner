@@ -16,18 +16,20 @@ class ProfileSeeder extends Seeder
             'id' => '1',
             'created_at' => now(),
             'updated_at' => now(),
+            'user_id' => '1',
             'profile_name' => 'Test Tester',
-            'description' => 'Lorem Ipsum dolor sit amet.',
-            'music' => '',
+            'profile_description' => 'Lorem Ipsum dolor sit amet.',
+            'festival_id' => '',
             'profile_list' => 'Testware',
             'profile_image' => ''
         ], [
             'id' => '2',
             'created_at' => now(),
             'updated_at' => now(),
+            'user_id' => '2',
             'profile_name' => 'Testo Tester',
-            'description' => 'Amet sit dolor ipsum lorem.',
-            'music' => '',
+            'profile_description' => 'Amet sit dolor ipsum lorem.',
+            'festival_id' => '',
             'profile_list' => 'Testoware',
             'profile_image' => ''
         ]]);

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Profile;
 use App\Festival;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -25,7 +27,9 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('profile.create');
+        return view('profile.create', [
+            'festivals' => Festival::all()
+        ]);
     }
 
     /**
@@ -38,16 +42,13 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $data = $this->validateData();
-        $newProfile = Profile::create([
-            'profile_name' => $request->input('profile_name'),
-            'profile_image' => $request->input('profile_image'),
-            'profile_description' => $request->input('profile_description'),
-            'festival_id' => $request->input('festival_id'),
-            'profile_list' => $request->input('profile_list')
-        ]);
-        $newProfile->user()->sync($user);
+        $data['user_id'] = $user->id;
+        $newProfile = Profile::create($data);
+        $user->profile()->save($newProfile);
 
-        return redirect()->url('/planner/' . $newProfile->id);
+        return view('profile.show', [
+            'ownProfile' => $newProfile
+        ]);
     }
 
     /**
@@ -56,13 +57,19 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $ownProfile = Profile::find($id);
-        return view('profile.show', [
-            'festivals' => Festival::all(),
-            'ownProfile' => $ownProfile
-        ]);
+        $user = Auth::user();
+
+        if (isset($user->profile)) {
+            $ownProfile = Profile::find($user->id);
+            return view('profile.show', [
+                'festivals' => Festival::all(),
+                'ownProfile' => $ownProfile
+            ]);
+        } else {
+            return view('profile.noprofile');
+        }
     }
 
     /**
@@ -71,9 +78,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('profile.edit');
+        $ownProfile = Profile::find($id);
+        return view('profile.edit', [
+            'ownProfile' => $ownProfile,
+            'festivals' => Festival::all()
+        ]);
     }
 
     /**
@@ -83,9 +94,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $data = $this->validateData();
+        $ownProfile = Profile::find($id);
+        $ownProfile->update($data);
+
+        return redirect()->route('profile.show', $ownProfile);
     }
 
     /**
@@ -108,10 +123,10 @@ class ProfileController extends Controller
     {
         return request()->validate([
             'profile_name' => 'required',
-            'profile_image' => '',
+            'profile_image' => 'nullable',
             'profile_description' => 'required|min:3',
-            'festival_id' => '',
-            'profile_list' => ''
+            'festival_id' => 'nullable',
+            'profile_list' => 'nullable'
         ]);
     }
 }
