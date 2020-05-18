@@ -14,10 +14,8 @@ class CreatePlannersUsersTable extends Migration
     public function up()
     {
         Schema::create('planner_user', function (Blueprint $table) {
-            $table->integer('planner_id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->foreign('planner_id')->references('id')->on('planners')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('planner_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }
 
