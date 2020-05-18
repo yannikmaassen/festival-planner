@@ -5,7 +5,7 @@
   <div class="row justify-content-center align-items-center my-2">
     <img class="profile__image" src="/images/people-at-concert.jpg" alt="Profilbild">
   </div>
-  <div class="row justify-content-center my-2">
+  <div class="row justify-content-center align-items-center my-2">
     <p class="h2">{{ $ownProfile->profile_name }}</p>
   </div>
   <div class="row justify-content-center">

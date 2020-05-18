@@ -62,6 +62,10 @@ hr {
     margin-bottom: 30px;
 }
 
+.bi-arrow-down {
+    fill: var(--platinum);
+}
+
 .badge__style {
     background-color: var(--manatee);
     color: var(--baby_powder);
