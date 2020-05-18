@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Profile;
 use App\Festival;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -26,7 +27,9 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('profile.create');
+        return view('profile.create', [
+            'festivals' => Festival::all()
+        ]);
     }
 
     /**
@@ -37,21 +40,11 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validateData();
-        $newProfile = Profile::create($data);
-
         $user = Auth::user();
+        $data = $this->validateData();
+        $data['user_id'] = $user->id;
+        $newProfile = Profile::create($data);
         $user->profile()->save($newProfile);
-
-        // $newProfile = new Profile([
-        //     'profile_name' => $request->input('profile_name'),
-        //     'profile_image' => $request->input('profile_image'),
-        //     'profile_description' => $request->input('profile_description'),
-        //     // 'festival_id' => $request->input('festival_id'),
-        //     'profile_list' => $request->input('profile_list')
-        // ]);
-        // $user->save($newProfile);
-        // $newProfile->user()->sync($user);
 
         return view('profile.show', [
             'ownProfile' => $newProfile
@@ -67,7 +60,8 @@ class ProfileController extends Controller
     public function show(User $user)
     {
         $user = Auth::user();
-        if ($user->profile_id !== null) {
+
+        if (isset($user->profile)) {
             $ownProfile = Profile::find($user->id);
             return view('profile.show', [
                 'festivals' => Festival::all(),
@@ -88,7 +82,8 @@ class ProfileController extends Controller
     {
         $ownProfile = Profile::find($id);
         return view('profile.edit', [
-            'ownProfile' => $ownProfile
+            'ownProfile' => $ownProfile,
+            'festivals' => Festival::all()
         ]);
     }
 

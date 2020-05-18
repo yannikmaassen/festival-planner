@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Planner;
 use App\Festival;
-use Illuminate\Support\Facades\DB;
 
 class PlannerController extends Controller
 {
