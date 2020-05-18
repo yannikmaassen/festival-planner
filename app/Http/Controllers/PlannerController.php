@@ -16,13 +16,23 @@ class PlannerController extends Controller
      */
     public function index()
     {
+        // $user = Auth::user();
+        // $planners = $user->planner;
+
+        // // $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
+        // return view('planner.index', [
+        //     'planners' => $planners
+        // ]);
+
         $user = Auth::user();
         $planners = $user->planner;
-
-        // $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
-        return view('planner.index', [
-            'planners' => $planners
-        ]);
+        if (count($planners) >= 1) {
+            return view('planner.index', [
+                'planners' => $planners
+            ]);
+        } else {
+            return view('planner.noplanner');
+        }
     }
 
     /**
