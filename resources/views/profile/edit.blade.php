@@ -28,8 +28,15 @@
       <textarea class="form-control" id="profile_input3" rows="3" name="profile_description">{{ old('profile_description') ?? $ownProfile->profile_description }}</textarea>
     </div>
     <div class="form-group">
-      <label class="form__label" for="profile_input4">Welche Festivals hast du bereits besucht?</label>
-      <textarea class="form-control" id="profile_input4" rows="1" name="festival_id"></textarea>
+      <label class="form__label">Auf welchen Festivals warst du bereits?</label>
+      <select autocomplete="off" name="festival_id" size="5" class="form-control @error('festival_id') is-invalid @enderror">
+        @foreach ($festivals as $festival)
+        <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
+        @endforeach
+      </select>
+      @error('festival_id')
+      <p class="invalid-feedback">{{ $errors->first('festival_id') }}</p>
+      @enderror
     </div>
     <div class="form-group">
       <label class="form__label" for="profile_input5">Deine persönliche Packliste</label>

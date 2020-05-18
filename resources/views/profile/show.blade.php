@@ -19,10 +19,6 @@
   <section>
     <h3 class="profile__section--heading">Bisherige Festivals</h3>
     <span class="badge badge__style">Rock am Ring</span>
-    <span class="badge badge__style">Deichbrand Festival</span>
-    <span class="badge badge__style">Highfield Festival</span>
-    <span class="badge badge__style">Tomorrowland</span>
-    <span class="badge badge__style">Glastonbury Festival</span>
   </section>
   <hr>
   <section>

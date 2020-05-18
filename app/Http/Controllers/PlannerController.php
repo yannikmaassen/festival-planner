@@ -17,10 +17,12 @@ class PlannerController extends Controller
      */
     public function index()
     {
-        $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
+        $user = Auth::user();
+        $planners = $user->planner;
+
+        // $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
         return view('planner.index', [
-            'planners' => $planners,
-            'festival' => Festival::all()
+            'planners' => $planners
         ]);
     }
 
