@@ -54,6 +54,21 @@ class SpotifyController extends Controller
         ]);
     }
 
+    public function searchArtist(SpotifyWebAPI\SpotifyWebAPI $api)
+    {
+        $query = request()->input('q');
+        $api->setAccessToken(session()->get('access_token'));
+
+        $results = $api->search($query, 'artist');
+
+        $artists = $results->artists->items;
+
+        return view('artist.searchResultsArtist', [
+            'artists' => $artists,
+            'query' => $query
+        ]);
+    }
+
     // public function requestAccessToken()
     // {
     //     $session->requestAccessToken($_GET['code']);

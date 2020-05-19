@@ -7,7 +7,7 @@ use App\User;
 
 class FriendController extends Controller
 {
-    public function search()
+    public function searchFriends()
     {
         $query = request()->input('searchFriends');
         $friends = User::where('user_name', 'LIKE', "%$query%")

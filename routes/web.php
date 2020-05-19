@@ -34,12 +34,15 @@ Route::get('/planner/finished', 'PlannerController@finished')->name('planner.fin
 Route::resource('/planner', 'PlannerController')->middleware('auth');
 
 
-Route::get('/friends/search', 'FriendController@search')->name('friends.search');
+Route::get('/friends/search', 'FriendController@searchFriends')->name('friends.search');
 Route::get('/friends/add', 'FriendController@add')->name('friends.add');
 Route::get('/friends/edit', 'FriendController@edit')->name('friends.edit');
 
 Route::get('/todos/add', 'TodoController@add')->name('todos.add');
 Route::get('/todos/edit', 'TodoController@edit')->name('todos.edit');
+
+Route::get('/artists/search', 'ArtistController@search')->name('artist.search');
+// Route::get('/artists/search', 'FriendController@searchFriends')->name('friends.search');
 
 // Spotify API routes
 
@@ -62,5 +65,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/spotifyAuth', 'SpotifyController@authenticate')->name('spotifyAuth');
 Route::get('/spoti', 'SpotifyController@callback')->name('spoti');
 Route::get('/playlist/searchResultsPlaylist', 'SpotifyController@searchPlaylist')->name('searchResultsPlaylist');
+Route::get('/artist/searchResultsArtist', 'SpotifyController@searchArtist')->name('searchResultsArtist');
 
 // Route::get('/spotifyData', 'SpotifyController@data');
