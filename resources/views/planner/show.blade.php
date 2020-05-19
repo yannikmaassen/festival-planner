@@ -33,7 +33,7 @@
   </section>
   <section>
     <h2 class="planner__element--heading">Music</h2>
-    <a class="btn btn-primary mb-4 w-100" href="{{ route('playlist.add') }}">
+    <a class="btn btn-primary mb-4 w-100" href="{{ route('playlist.search') }}">
       {{ __('Füge hier Eure Festival-Playlisten ein!') }}
     </a>
   </section>

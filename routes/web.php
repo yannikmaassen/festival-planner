@@ -43,7 +43,8 @@ Route::get('/todos/edit', 'TodoController@edit')->name('todos.edit');
 
 // Spotify API routes
 
-Route::get('/playlist/add', 'PlaylistController@add')->name('playlist.add');
+
+Route::get('/playlist/search', 'PlaylistController@search')->name('playlist.search');
 Route::get('/playlist/edit', 'PlaylistController@edit')->name('playlist.edit');
 
 // Auth routes
@@ -56,10 +57,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/auth', 'SpotifyController@authenticate');
-Route::get('/spoti', 'SpotifyController@callback');
-Route::get('/spotifyData', 'SpotifyController@data');
+// Spotify routes
 
+Route::get('/spotifyAuth', 'SpotifyController@authenticate')->name('spotifyAuth');
+Route::get('/spoti', 'SpotifyController@callback')->name('spoti');
+Route::get('/playlist/searchResultsPlaylist', 'SpotifyController@searchPlaylist')->name('searchResultsPlaylist');
 
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/spotifyData', 'SpotifyController@data');

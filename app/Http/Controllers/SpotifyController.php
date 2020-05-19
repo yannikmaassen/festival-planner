@@ -12,8 +12,13 @@ class SpotifyController extends Controller
     {
         $options = [
             'scope' => [
+                'playlist-modify-public',
                 'playlist-read-private',
-                'user-read-private',
+                'playlist-modify-private',
+                'user-read-email',
+                'playlist-read-collaborative',
+                'user-library-modify',
+                'user-top-read',
             ],
             'auto-refresh' => true,
         ];
@@ -30,18 +35,23 @@ class SpotifyController extends Controller
         session(['access_token' => $accessToken]);
         session(['refresh_token' => $refreshToken]);
 
-        return redirect('spotifyData');
+        return redirect('planner');
     }
 
-    //test query
 
-    public function data(SpotifyWebAPI\SpotifyWebAPI $api)
+    public function searchPlaylist(SpotifyWebAPI\SpotifyWebAPI $api)
     {
+        $query = request()->input('q');
         $api->setAccessToken(session()->get('access_token'));
-        return [
-            $api->getTrack('11dFghVXANMlKmJXsNCbNl'),
-            $api->me()
-        ];
+
+        $results = $api->search($query, 'playlist');
+
+        $playlists = $results->playlists->items;
+
+        return view('playlist.searchResultsPlaylist', [
+            'playlists' => $playlists,
+            'query' => $query
+        ]);
     }
 
     // public function requestAccessToken()

@@ -61,8 +61,6 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
-
-
         if (isset($user->profile)) {
             $ownProfile = Profile::find($user->id);
             $festival_id = $ownProfile->festival_id;

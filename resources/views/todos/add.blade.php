@@ -14,5 +14,8 @@
       {{ __('Speichern') }}
     </button>
   </form>
+  <div class="row">
+    <a class="btn btn-secondary" href="{{ url()->previous() }}">Abbrechen</a>
+  </div>
 </div>
 @endsection

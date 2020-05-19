@@ -34,7 +34,7 @@
         <textarea class="form-control" id="profile_input3" rows="3" name="profile_description"></textarea>
       </div>
       <div class="form-group">
-        <label class="form__label">Auf welchen Festivals warst du bereits?</label>
+        <label class="form__label">Dein Lieblingsfestival?</label>
         <select autocomplete="off" name="festival_id" size="5" class="form-control @error('festival_id') is-invalid @enderror">
           @foreach ($festivals as $festival)
           <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
