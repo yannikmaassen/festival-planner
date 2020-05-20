@@ -34,9 +34,9 @@
   <hr>
   <section>
     <h3 class="profile__section--heading">Meine Packliste</h3>
-    <p class="profile__section">
-      {{ $ownProfile->profile_list }}
-    </p>
+    <pre class="profile__section">
+    {{ $ownProfile->profile_list }}
+    </pre>
   </section>
   <div class="row justify-content-center">
     <form method="POST" action="{{ route('logout') }}">

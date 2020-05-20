@@ -57,20 +57,21 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show()
     {
         $user = Auth::user();
-
-        if (isset($user->profile)) {
-            $ownProfile = Profile::find($user->id);
+        if (is_null($user->profile)) {
+            return view('profile.noprofile');
+        } else {
+            $ownProfile = Profile::find($user->profile)->where('user_id', '=', $user->id)->first();
             $festival_id = $ownProfile->festival_id;
             $festival = Festival::find($festival_id);
+
+
             return view('profile.show', [
                 'festival' => $festival,
                 'ownProfile' => $ownProfile
             ]);
-        } else {
-            return view('profile.noprofile');
         }
     }
 
@@ -116,9 +117,12 @@ class ProfileController extends Controller
         //
     }
 
-    public function other()
+    public function other(Profile $profile)
     {
-        return view('profile.other');
+
+        return view('profile.other', [
+            'profile' => $profile
+        ]);
     }
 
     public function validateData()
