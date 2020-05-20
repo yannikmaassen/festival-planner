@@ -4,9 +4,8 @@
 <div class="container">
   <h2 class="text-white text-center mt-3">ToDo-Liste hinzufügen</h2>
 
-  <form method="POST" action="{{ route('planner.update', $planner->id) }}" enctype="multipart/form-data">
+  <form method="POST" action="{{ route('todos.add') }}">
     @csrf
-    @method('PATCH')
     <div class="form-group">
       <label class="form__label mt-3" for="todos_input">ToDo-Liste</label>
       <textarea name="todo_list" class="form-control" id="todos_input" rows="12" placeholder="Füge hier deine ToDo-Liste ein, die du mit deiner Crew bearbeiten und abarbeiten kannst."></textarea>

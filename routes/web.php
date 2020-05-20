@@ -33,6 +33,8 @@ Route::resource('/profile', 'ProfileController')->middleware('auth');
 Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
 Route::resource('/planner', 'PlannerController')->middleware('auth');
 
+
+Route::get('/friends/search', 'FriendController@search')->name('friends.search');
 Route::get('/friends/add', 'FriendController@add')->name('friends.add');
 Route::get('/friends/edit', 'FriendController@edit')->name('friends.edit');
 

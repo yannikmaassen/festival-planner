@@ -2,11 +2,13 @@
 
 @section('content')
 <div class="container">
-  <div class="row justify-content-center mx-2 my-2">
-    <h3 class="text-white">Scheint so, als hättest du noch kein Profil... <br>
-      Erstell' dir eins, wenn du magst!</h3>
+  <div class="row justify-content-center align-items-center mx-2">
+    <h1 class="text-white text-center my-5">WHOOOPS... </h1><br>
+    <h4 class="text-white text-center mt-5 mb-4">Scheint so, als hättest du noch kein Profil... <br><br>
+      Erstell' dir doch gleich eins!</h4>
     <a class="btn btn-primary" href="{{ route('profile.create') }}">Profil erstellen</a>
   </div>
+  <hr>
   <form method="POST" action="{{ route('logout') }}">
     @csrf
     <div class="row justify-content-center">

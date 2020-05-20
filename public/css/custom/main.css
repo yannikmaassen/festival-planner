@@ -62,6 +62,10 @@ hr {
     margin-bottom: 30px;
 }
 
+.bi-arrow-down {
+    fill: var(--platinum);
+}
+
 .badge__style {
     background-color: var(--manatee);
     color: var(--baby_powder);
@@ -233,6 +237,10 @@ small {
     fill: white;
 }
 
+.navbar > a.active > svg {
+    fill: var(--rich_black);
+}
+
 /* Forms styling */
 
 .form-control {
@@ -264,7 +272,6 @@ small {
     width: 120px;
     height: 120px;
     border-radius: 30px;
-    margin-right: 40px;
 }
 
 .profile__section {

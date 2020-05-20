@@ -2,8 +2,10 @@
 
 @section('content')
 <div class="container">
-  <div class="row justify-content-center align-items-center my-4">
+  <div class="row justify-content-center align-items-center my-2">
     <img class="profile__image" src="/images/people-at-concert.jpg" alt="Profilbild">
+  </div>
+  <div class="row justify-content-center align-items-center my-2">
     <p class="h2">{{ $ownProfile->profile_name }}</p>
   </div>
   <div class="row justify-content-center">
@@ -17,8 +19,8 @@
   </section>
   <hr>
   <section>
-    <h3 class="profile__section--heading">Bisherige Festivals</h3>
-    <span class="badge badge__style">Rock am Ring</span>
+    <h3 class="profile__section--heading">Mein Lieblingsfestival</h3>
+    <span class="badge badge__style">{{ $festival->festival_name }}</span>
   </section>
   <hr>
   <section>

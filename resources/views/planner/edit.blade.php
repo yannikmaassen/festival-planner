@@ -29,12 +29,17 @@
       <p class="invalid-feedback">{{ $errors->first('info_text') }}</p>
       @enderror
     </div>
-    <div class="form-group">
-      <label class="form__label" for="planner_input3">Planner-Bild</label>
-      <input type="file" class="form-control-file @error('planner_image') is-invalid @enderror" id="planner_input3" name="planner_image" value="{{ old('planner_image') ?? $currentPlanner->planner_image }}">
-      @error('planner_image')
-      <p class="invalid-feedback">{{ $errors->first('planner_image') }}</p>
-      @enderror
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Planner-Bild</span>
+      </div>
+      <div class="custom-file">
+        <input name="planner_image" type="file" class="custom-file-input @error('planner_image') is-invalid @enderror" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">...</label>
+        @error('planner_image')
+        <p class="invalid-feedback">{{ $errors->first('planner_image') }}</p>
+        @enderror
+      </div>
     </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">
