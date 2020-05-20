@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Planner;
 use App\Festival;
+use App\Profile;
+use App\User;
 
 class PlannerController extends Controller
 {
@@ -73,12 +75,16 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Planner $planner)
     {
-        $currentPlanner = Planner::find($id);
+        $userIds = $planner->user()->pluck('id');
+        $users = User::find($userIds);
+        $profiles = Profile::find($users)->toArray();
+
         return view('planner.show', [
             'festivals' => Festival::all(),
-            'currentPlanner' => $currentPlanner
+            'currentPlanner' => $planner,
+            'profiles' => $profiles
         ]);
     }
 
@@ -104,19 +110,22 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Planner $planner)
     {
-        $data = $this->validateData();
-        $currentPlanner = Planner::find($id);
+        $data = $this->validateUpdateData();
 
         if ($request->has('planner_image')) {
             $path = $request->file('planner_image')->store('/planner/images', 'public');
             $data['planner_image'] = $path;
         }
-        $currentPlanner->update($data);
+
+        // dd($planner);
+        $planner->update($data);
+        $planner->user()->attach($request->input('user_id'));
+
 
         return view('planner.show', [
-            'currentPlanner' => $currentPlanner,
+            'currentPlanner' => $planner,
             'festivals' => Festival::all()
         ]);
     }
@@ -146,8 +155,22 @@ class PlannerController extends Controller
             'festival_id' => 'required',
             'info_text' => 'required|min:3',
             'todo_list' => 'nullable',
-            'playlists' => 'nullable',
+            'playlist_1' => 'nullable',
+            'playlist_2' => 'nullable',
             'planner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    }
+
+    public function validateUpdateData()
+    {
+        return request()->validate([
+            'festival_id' => 'nullable',
+            'info_text' => 'nullable',
+            'todo_list' => 'nullable',
+            'playlist_1' => 'nullable',
+            'playlist_2' => 'nullable',
+            'planner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'user_id' => 'nullable'
         ]);
     }
 }

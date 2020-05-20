@@ -15,27 +15,44 @@
     <section class="festival-info">
       <h2 class="festival-info__heading">Info</h2>
       <p>{{ $currentPlanner->festival->genres }}</p>
-      <p>{{ $currentPlanner->info_text }}</p>
+      <p class="h5">{{ $currentPlanner->info_text }}</p>
     </section>
   </section>
   <hr>
   <section>
     <h2 class="planner__element--heading">Festivalcrew</h2>
-    <a class="btn btn-primary mb-4 w-100" href="{{ route('friends.add') }}">
+    @foreach($profiles as $profile)
+    <a class="badge badge__style mb-3 w-100" href="{{ route('profile.show', $currentPlanner) }}">
+      {{ $profile['profile_name'] }}
+    </a>
+    @endforeach
+    <a class="btn btn-primary mb-4 w-100" href="{{ route('friends.add', $currentPlanner) }}">
       {{ __('Füge weitere Crewmember hinzu!') }}
     </a>
   </section>
   <section>
     <h2 class="planner__element--heading">ToDo-Liste</h2>
-    <a class="btn btn-primary mb-4 w-100" href="{{ route('todos.add') }}">
+    @if(isset($currentPlanner->todo_list))
+    <a href="{{ route('todos.edit', $currentPlanner) }}" class="btn btn__edit-planner mb-2">Bearbeiten</a>
+    <pre class="festival-info">{{ $currentPlanner->todo_list }}</pre>
+    @else
+    <a class="btn btn-primary mb-4 w-100" href="{{ route('todos.add', $currentPlanner) }}">
       {{ __('Füge ToDos für Dich und Deine Crew hinzu!') }}
     </a>
+    @endif
   </section>
   <section>
-    <h2 class="planner__element--heading">Music</h2>
-    <a class="btn btn-primary mb-4 w-100" href="{{ route('playlist.search') }}">
+    <h2 class="planner__element--heading">Camp-Playlist</h2>
+    @if(isset($currentPlanner->playlist_1))
+    <a href="{{ route('playlist.search', $currentPlanner) }}" class="btn btn__edit-planner mb-2">Bearbeiten</a>
+    <a class="badge badge__style mb-3 w-100" href="{{ $currentPlanner->playlist_1 }}">
+      {{ $currentPlanner->playlist_2 }}
+    </a>
+    @else
+    <a class="btn btn-primary mb-4 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
       {{ __('Füge hier Eure Festival-Playlisten ein!') }}
     </a>
+    @endif
   </section>
 </div>
 @endsection
