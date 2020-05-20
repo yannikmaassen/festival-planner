@@ -119,14 +119,17 @@ class PlannerController extends Controller
             $data['planner_image'] = $path;
         }
 
-        // dd($planner);
         $planner->update($data);
         $planner->user()->attach($request->input('user_id'));
 
+        $userIds = $planner->user()->pluck('id');
+        $users = User::find($userIds);
+        $profiles = Profile::find($users)->toArray();
 
         return view('planner.show', [
             'currentPlanner' => $planner,
-            'festivals' => Festival::all()
+            'festivals' => Festival::all(),
+            'profiles' => $profiles
         ]);
     }
 

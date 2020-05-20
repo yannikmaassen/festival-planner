@@ -27,8 +27,10 @@ class FriendController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit(Planner $planner)
     {
-        return view('friends.edit');
+        return view('friends.edit', [
+            'currentPlanner' => $planner
+        ]);
     }
 }
