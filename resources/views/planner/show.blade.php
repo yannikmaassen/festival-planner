@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <section class="mb-4">
-    <img class="auth__image mt-3" src="{{ $currentPlanner->getImageAttribute($currentPlanner->planner_image) }}" alt="Festival-Szenerie">
+    <img class="auth__image mt-3" src="{{ $currentPlanner->getImageAttributePlanner($currentPlanner->planner_image) }}" alt="Festival-Szenerie">
     <div class="row">
       <h1 class="text-white mt-3 ml-3">{{ $currentPlanner->festival->festival_name }}</h1>
     </div>
