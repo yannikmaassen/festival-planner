@@ -17,20 +17,30 @@ class ProfileSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
             'user_id' => '1',
-            'profile_name' => 'Test Tester',
-            'profile_description' => 'Lorem Ipsum dolor sit amet.',
+            'profile_name' => 'Yannik Maaßen',
+            'profile_description' => 'Hi, ich bin Yannnik. Ich gehe gerne auf Festivals.',
             'festival_id' => '2',
-            'profile_list' => 'Testware',
+            'profile_list' => 'Wasser, Ticket, Zelt',
             'profile_image' => ''
         ], [
             'id' => '2',
             'created_at' => now(),
             'updated_at' => now(),
             'user_id' => '2',
-            'profile_name' => 'Testo Tester',
-            'profile_description' => 'Amet sit dolor ipsum lorem.',
+            'profile_name' => 'Maik Riemann',
+            'profile_description' => 'Moin moin! Maik mein Name!',
             'festival_id' => '4',
-            'profile_list' => 'Testoware',
+            'profile_list' => 'Pavillon, Zelt, Ticket',
+            'profile_image' => ''
+        ], [
+            'id' => '3',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'user_id' => '3',
+            'profile_name' => 'Mats Knop',
+            'profile_description' => 'Moinsen! Bin der Mats und für jedes Festival zu haben.',
+            'festival_id' => '7',
+            'profile_list' => 'Pavillon, Zelt, Ticket',
             'profile_image' => ''
         ]]);
     }
