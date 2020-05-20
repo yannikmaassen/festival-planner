@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <h2 class="text-white text-center mt-3">Freunde hinzufügen</h2>
-  <form class="form-inline my-4 my-lg-0" method="GET" action="{{ route('friends.search') }}">
+  <form class="form-inline my-4 my-lg-0" method="GET" action="{{ route('friends.search', $currentPlanner) }}">
     @csrf
     <div class="input-group input-group-sm">
       <label for="input_friends" class="form__label">Suche nach Freunden, die auch diese App nutzen.</label>

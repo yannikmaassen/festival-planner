@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use SpotifyWebAPI;
+use App\Planner;
 
 class SpotifyController extends Controller
 
@@ -38,19 +39,25 @@ class SpotifyController extends Controller
         return redirect('planner');
     }
 
+    public function search(Planner $planner)
+    {
+        return view('playlist.search', [
+            'currentPlanner' => $planner
+        ]);
+    }
 
-    public function searchPlaylist(SpotifyWebAPI\SpotifyWebAPI $api)
+    public function searchPlaylist(SpotifyWebAPI\SpotifyWebAPI $api, Planner $planner)
     {
         $query = request()->input('q');
         $api->setAccessToken(session()->get('access_token'));
 
         $results = $api->search($query, 'playlist');
-
         $playlists = $results->playlists->items;
 
         return view('playlist.searchResultsPlaylist', [
             'playlists' => $playlists,
-            'query' => $query
+            'query' => $query,
+            'currentPlanner' => $planner
         ]);
     }
 
