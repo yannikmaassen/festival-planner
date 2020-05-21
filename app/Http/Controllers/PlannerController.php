@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Planner;
 use App\Festival;
-use App\Profile;
-use App\User;
 
 class PlannerController extends Controller
 {
@@ -18,14 +16,6 @@ class PlannerController extends Controller
      */
     public function index()
     {
-        // $user = Auth::user();
-        // $planners = $user->planner;
-
-        // // $planners = DB::table('planner_user')->where('user_id', Auth::id())->get();
-        // return view('planner.index', [
-        //     'planners' => $planners
-        // ]);
-
         $user = Auth::user();
         $planners = $user->planner;
         if (count($planners) >= 1) {
@@ -92,11 +82,10 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Planner $planner)
     {
-        $currentPlanner = Planner::find($id);
         return view('planner.edit', [
-            'currentPlanner' => $currentPlanner,
+            'currentPlanner' => $planner,
             'festivals' => Festival::all(),
         ]);
     }
@@ -120,15 +109,9 @@ class PlannerController extends Controller
         $planner->update($data);
         $planner->user()->attach($request->input('user_id'));
 
-        return redirect()->route('planner.show');
-
-        // $users = $planner->load('user.profile')->user;
-
-        // return view('planner.show', [
-        //     'currentPlanner' => $planner,
-        //     'festivals' => Festival::all(),
-        //     'users' => $users
-        // ]);
+        return redirect()->route('planner.show', [
+            'planner' => $planner
+        ]);
     }
 
     /**
@@ -137,10 +120,9 @@ class PlannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Planner $planner)
     {
-        $currentPlanner = Planner::find($id);
-        $currentPlanner->delete();
+        $planner->delete();
 
         return redirect()->route('planner.index');
     }

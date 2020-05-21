@@ -75,12 +75,4 @@ class SpotifyController extends Controller
             'query' => $query
         ]);
     }
-
-    // public function requestAccessToken()
-    // {
-    //     $session->requestAccessToken($_GET['code']);
-
-    //     $accessToken = $session->getAccessToken();
-    //     $refreshToken = $session->getRefreshToken();
-    // }
 }

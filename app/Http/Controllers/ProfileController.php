@@ -18,6 +18,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -72,7 +73,6 @@ class ProfileController extends Controller
             $festival_id = $ownProfile->festival_id;
             $festival = Festival::find($festival_id);
 
-
             return view('profile.show', [
                 'festival' => $festival,
                 'ownProfile' => $ownProfile
@@ -86,11 +86,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Profile $profile)
     {
-        $ownProfile = Profile::find($id);
         return view('profile.edit', [
-            'ownProfile' => $ownProfile,
+            'ownProfile' => $profile,
             'festivals' => Festival::all()
         ]);
     }
@@ -102,17 +101,16 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profile $profile)
     {
         $data = $this->validateData();
         if ($request->has('profile_image')) {
             $path = $request->file('profile_image')->store('/profile/images', 'public');
             $data['profile_image'] = $path;
         }
-        $ownProfile = Profile::find($id);
-        $ownProfile->update($data);
+        $profile->update($data);
 
-        return redirect()->route('profile.show', $ownProfile);
+        return redirect()->route('profile.show', $profile);
     }
 
     /**
