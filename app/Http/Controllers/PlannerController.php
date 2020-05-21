@@ -107,7 +107,11 @@ class PlannerController extends Controller
         }
 
         $planner->update($data);
-        $planner->user()->attach($request->input('user_id'));
+        if ($request->input('user_id')) {
+            $planner->user()->attach($request->input('user_id'));
+        } elseif ($request->input('user_id_detach')) {
+            $planner->user()->detach($request->input('user_id_detach'));
+        }
 
         return redirect()->route('planner.show', [
             'planner' => $planner
