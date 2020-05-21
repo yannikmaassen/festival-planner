@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center align-items-center my-2">
-    <img class="profile__image" src="/images/people-at-concert.jpg" alt="Profilbild">
+    <img class="profile__image" src="{{ $ownProfile->getImageAttributeProfile($ownProfile->profile_image) }}" alt="Profilbild">
   </div>
   <div class="row justify-content-center align-items-center my-2">
     <p class="h2">{{ $ownProfile->profile_name }}</p>
   </div>
-  <div class="row justify-content-center">
+  <div class=" row justify-content-center">
     <a class="btn btn__edit-profile mb-4" href="{{ route('profile.edit', $ownProfile) }}">Profil bearbeiten</a>
   </div>
   <section>

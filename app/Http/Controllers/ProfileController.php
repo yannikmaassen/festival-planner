@@ -42,8 +42,13 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $data = $this->validateData();
+        if ($request->has('profile_image')) {
+            $path = $request->file('profile_image')->store('/profile/images', 'public');
+            $data['profile_image'] = $path;
+        }
         $data['user_id'] = $user->id;
         $newProfile = Profile::create($data);
+
         $user->profile()->save($newProfile);
 
         return view('profile.show', [
@@ -97,9 +102,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         $data = $this->validateData();
+        if ($request->has('profile_image')) {
+            $path = $request->file('profile_image')->store('/profile/images', 'public');
+            $data['profile_image'] = $path;
+        }
         $ownProfile = Profile::find($id);
         $ownProfile->update($data);
 
@@ -129,7 +138,7 @@ class ProfileController extends Controller
     {
         return request()->validate([
             'profile_name' => 'required',
-            'profile_image' => 'nullable',
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'profile_description' => 'required|min:3',
             'festival_id' => 'nullable',
             'profile_list' => 'nullable'

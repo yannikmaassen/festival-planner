@@ -21,11 +21,11 @@
   <hr>
   <section>
     <h2 class="planner__element--heading">Festivalcrew</h2>
-    @if(count($profiles) >= 1)
+    @if(count($users) >= 1)
     <a href="{{ route('friends.edit', $currentPlanner) }}" class="btn btn__edit-planner mb-2">Bearbeiten</a>
-    @foreach($profiles as $profile)
+    @foreach($users as $user)
     <a class="badge badge__style mb-3 w-100" href="{{ route('profile.show', $currentPlanner) }}">
-      {{ $profile['profile_name'] }}
+      {{ $user->profile->profile_name }}
     </a>
     @endforeach
     @else

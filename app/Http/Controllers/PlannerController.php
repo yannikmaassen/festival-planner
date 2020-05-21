@@ -77,14 +77,12 @@ class PlannerController extends Controller
      */
     public function show(Planner $planner)
     {
-        $userIds = $planner->user()->pluck('id');
-        $users = User::find($userIds);
-        $profiles = Profile::find($users)->toArray();
+        $users = $planner->load('user.profile')->user;
 
         return view('planner.show', [
             'festivals' => Festival::all(),
             'currentPlanner' => $planner,
-            'profiles' => $profiles
+            'users' => $users
         ]);
     }
 
@@ -122,15 +120,15 @@ class PlannerController extends Controller
         $planner->update($data);
         $planner->user()->attach($request->input('user_id'));
 
-        $userIds = $planner->user()->pluck('id');
-        $users = User::find($userIds);
-        $profiles = Profile::find($users)->toArray();
+        return redirect()->route('planner.show');
 
-        return view('planner.show', [
-            'currentPlanner' => $planner,
-            'festivals' => Festival::all(),
-            'profiles' => $profiles
-        ]);
+        // $users = $planner->load('user.profile')->user;
+
+        // return view('planner.show', [
+        //     'currentPlanner' => $planner,
+        //     'festivals' => Festival::all(),
+        //     'users' => $users
+        // ]);
     }
 
     /**
