@@ -444,3 +444,40 @@ small {
     width: max-content;
     padding: 8px;
 }
+
+.btn__create-planner {
+    background-color: var(--flame);
+    color: white;
+    border: 1px solid var(--rich_black);
+    border-radius: 5px;
+    height: 40px;
+    width: 70%;
+}
+
+.btn__delete-planner {
+    display: flex;
+    align-items: center;
+    background: var(--platinum);
+    color: var(--gunmetal);
+    margin: 20px 0px 20px 0px;
+    border-radius: 8px;
+    height: 40px;
+    width: max-content;
+    padding: 8px;
+}
+
+.btn__save-planner {
+    background-color: var(--flame);
+    color: white;
+    border: 1px solid var(--rich_black);
+    border-radius: 5px;
+    height: 40px;
+    width: 60%;
+}
+
+.btn-group__edit-planner {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
