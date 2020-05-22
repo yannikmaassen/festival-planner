@@ -38,10 +38,8 @@
       <h2>Festivalcrew</h2>
       @if(count($users) >= 1)
       <a href="{{ route('friends.add', $currentPlanner) }}" class="btn btn__add-friend">
-        <svg class="bi bi-plus-circle" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd" />
-          <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd" />
-          <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd" />
+        <svg class="bi bi-plus-square-fill" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm6.5 4a.5.5 0 00-1 0v3.5H4a.5.5 0 000 1h3.5V12a.5.5 0 001 0V8.5H12a.5.5 0 000-1H8.5V4z" clip-rule="evenodd" />
         </svg>
       </a>
       @endif
@@ -90,7 +88,7 @@
     @if(isset($currentPlanner->todo_list))
     <pre class="festival-info">{{ $currentPlanner->todo_list }}</pre>
     @else
-    <a class="btn btn-primary mb-4 w-100" href="{{ route('todos.add', $currentPlanner) }}">
+    <a class="btn btn-primary my-3 w-100" href="{{ route('todos.add', $currentPlanner) }}">
       {{ __('Füge ToDos für Dich und Deine Crew hinzu!') }}
     </a>
     @endif
@@ -113,7 +111,7 @@
       {{ $currentPlanner->playlist_2 }}
     </a>
     @else
-    <a class="btn btn-primary mb-4 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
+    <a class="btn btn-primary my-3 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
       {{ __('Füge hier Eure Festival-Playlisten ein!') }}
     </a>
     @endif

@@ -81,7 +81,7 @@ hr {
 
 pre {
     color: var(--eerie_black);
-    background-color: var(--manatee);
+    background-color: var(--platinum);
     margin-top: 16px;
     padding: 12px;
     border-radius: 5px;
@@ -114,7 +114,7 @@ pre {
     display: flex;
     width: min-content;
     align-items: center;
-    background-color: var(--manatee);
+    background-color: var(--platinum);
     color: var(--eerie_black);
     font-size: 1em;
     padding: 6px;
@@ -135,6 +135,11 @@ pre {
     all: unset;
     padding-left: 12px;
     margin-bottom: 12px;
+}
+
+.btn__add-friend > svg {
+    border: 1px solid var(--cadet);
+    border-radius: 6px;
 }
 
 .btn__search-playlist {
@@ -201,17 +206,18 @@ a.badge:focus {
 
 .festival-info-text {
     margin: 12px 0px 16px 0px;
-    border: 1px solid var(--cadet);
+    border: 3px solid var(--cadet);
     padding: 12px;
-    background: var(--manatee);
+    background: var(--gunmetal);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .festival-info-text > p {
-    color: var(--rich_black);
+    color: var(--baby_powder);
 }
 
 h4.planner-element__heading {
-    color: var(--rich_black);
+    color: var(--baby_powder);
 }
 
 .btn__edit-planner {
@@ -297,20 +303,23 @@ small {
 }
 
 .btn__edit-profile {
-    width: 320px;
-    height: 36px;
-    color: var(--baby_powder);
-    background-color: var(--davys_grey);
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 48px;
+    color: var(--rich_black);
+    background-color: var(--platinum);
     border: 1px solid var(--rich_black);
-    font: bold;
-    font-size: 1.1em;
 }
 
 .btn__logout {
-    width: 250px;
-    height: 36px;
-    color: var(--baby_powder);
-    background-color: var(--davys_grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    height: 48px;
+    color: var(--rich_black);
+    background-color: var(--platinum);
     border: 1px solid var(--rich_black);
     font: bold;
     font-size: 1.1em;
@@ -374,16 +383,64 @@ small {
 }
 
 .profile__section {
-    border-width: 1px;
-    border-radius: 12px;
-    border-style: solid;
-    padding: 8px;
-    border-color: var(--light_cyan);
+    border: 1px solid var(--platinum);
+    border-radius: 8px;
+    padding: 16px;
     margin-bottom: 20px;
-    background-color: var(--steel_teal);
+    background-color: var(--gunmetal);
     font-size: 1.1em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .profile__section--heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font: bold;
+    border-bottom: 1px solid var(--cadet);
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px 30px 0px;
+}
+
+.searchTerm {
+    width: 100%;
+    padding: 5px;
+    height: 40px;
+    border: none;
+    color: var(--cadet);
+    background: var(--steel_teal);
+    border-radius: 20px 0px 0px 20px;
+    text-align: center;
+}
+
+.searchTerm:focus {
+    color: white;
+}
+
+.searchButton {
+    width: 50px;
+    height: 40px;
+    background: var(--steel_teal);
+    text-align: center;
     color: var(--baby_powder);
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    background: var(--platinum);
+    color: var(--gunmetal);
+    margin: 20px 0px 20px 0px;
+    border-radius: 8px;
+    height: 40px;
+    width: max-content;
+    padding: 8px;
 }
