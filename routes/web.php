@@ -28,8 +28,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Profile routes
 
-Route::get('/profile', 'ProfileController@show')->name('profile.show')->middleware('auth');
-Route::get('/profile/other', 'ProfileController@other')->name('profile.other')->middleware('auth');
+// Route::get('/profile/{profile}', 'ProfileController@show')->name('profile.show')->middleware('auth');
+// Route::get('/profile/{profile}', 'ProfileController@other')->name('profile.other')->middleware('auth');
 Route::resource('/profile', 'ProfileController')->middleware('auth');
 
 // Planner routes
@@ -41,7 +41,6 @@ Route::resource('/planner', 'PlannerController')->middleware('auth');
 
 Route::get('/planner/{planner}/searchFriends', 'FriendController@searchFriends')->name('friends.search');
 Route::get('/planner/{planner}/addFriends', 'FriendController@add')->name('friends.add');
-Route::get('/planner/{planner}/editFriends', 'FriendController@edit')->name('friends.edit');
 
 // Todos routes
 

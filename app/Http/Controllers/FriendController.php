@@ -10,7 +10,9 @@ class FriendController extends Controller
 {
     public function add(Planner $planner)
     {
-        return view('friends.add', ['currentPlanner' => $planner]);
+        return view('friends.add', [
+            'currentPlanner' => $planner
+        ]);
     }
 
     public function searchFriends(Planner $planner)
@@ -23,13 +25,6 @@ class FriendController extends Controller
         return view('friends.search', [
             'query' => $query,
             'friends' => $friends,
-            'currentPlanner' => $planner
-        ]);
-    }
-
-    public function edit(Planner $planner)
-    {
-        return view('friends.edit', [
             'currentPlanner' => $planner
         ]);
     }

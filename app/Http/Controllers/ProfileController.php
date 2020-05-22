@@ -51,9 +51,11 @@ class ProfileController extends Controller
         $newProfile = Profile::create($data);
 
         $user->profile()->save($newProfile);
+        $festival = Festival::find($request->input('festival_id'));
 
         return view('profile.show', [
-            'ownProfile' => $newProfile
+            'ownProfile' => $newProfile,
+            'festival' => $festival
         ]);
     }
 
@@ -110,6 +112,7 @@ class ProfileController extends Controller
         }
         $profile->update($data);
 
+
         return redirect()->route('profile.show', $profile);
     }
 
@@ -119,14 +122,15 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Profile $profile)
     {
-        //
+        $profile->delete();
+
+        return redirect()->route('planner');
     }
 
     public function other(Profile $profile)
     {
-
         return view('profile.other', [
             'profile' => $profile
         ]);

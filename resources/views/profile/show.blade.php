@@ -34,7 +34,7 @@
   <hr>
   <section>
     <h3 class="profile__section--heading">Meine Packliste</h3>
-    <pre class="profile__section">
+    <pre>
     {{ $ownProfile->profile_list }}
     </pre>
   </section>

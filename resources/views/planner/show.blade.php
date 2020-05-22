@@ -4,32 +4,41 @@
 <div class="container">
   <section class="mb-4">
     <img class="auth__image mt-3" src="{{ $currentPlanner->getImageAttributePlanner($currentPlanner->planner_image) }}" alt="Festival-Szenerie">
-    <div class="row">
-      <h1 class="text-white mt-3 ml-3">{{ $currentPlanner->festival->festival_name }}</h1>
-    </div>
-    <div class="row justify-content-around align-items-center">
-      <p class="mr-5">{{ $currentPlanner->festival->start_date }} - {{ $currentPlanner->festival->end_date }}</p>
-      <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner ml-4 mb-3">
-        <svg class="bi bi-pencil-square" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
-          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd" />
-        </svg>
-      </a>
-      <p>{{ $currentPlanner->festival->genres }}</p>
-    </div>
 
-    <section class="planner-element">
-      <h2 class="planner-element__heading">Info</h2>
-      <p class="h5">{{ $currentPlanner->info_text }}</p>
-    </section>
+    <div class="planner-element">
+
+      <div class="planner-element__heading">
+        <h1>{{ $currentPlanner->festival->festival_name }}</h1>
+        <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner ml-4 mb-3">
+          <svg class="bi bi-pencil-square" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+      <div class="festival-default-info">
+        <h4>
+          Zeitraum
+        </h4><br>
+        <p>{{ $currentPlanner->festival->start_date }} - {{ $currentPlanner->festival->end_date }}</p>
+        <h4>
+          Genres
+        </h4><br>
+        <p>{{ $currentPlanner->festival->genres }}</p>
+      </div>
+      <section class="festival-info-text">
+        <h4 class="planner-element__heading">Beschreibung</h4>
+        <p>{{ $currentPlanner->info_text }}</p>
+      </section>
   </section>
+
   <hr>
   <section class="planner-element">
     <div class="planner-element__heading">
       <h2>Festivalcrew</h2>
       @if(count($users) >= 1)
       <a href="{{ route('friends.add', $currentPlanner) }}" class="btn btn__add-friend">
-        <svg class="bi bi-plus-circle" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bi bi-plus-circle" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd" />
           <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd" />
           <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd" />
@@ -71,7 +80,7 @@
       <h2>ToDo-Liste</h2>
       @if(isset($currentPlanner->todo_list))
       <a href="{{ route('todos.edit', $currentPlanner) }}" class="btn btn__edit-todos">
-        <svg class="bi bi-pencil-square" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bi bi-pencil-square" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
           <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd" />
         </svg>
@@ -92,7 +101,7 @@
       <h2>Camp-Playlist</h2>
       @if(isset($currentPlanner->playlist_1))
       <a href="{{ route('playlist.search', $currentPlanner) }}" class="btn btn__search-playlist">
-        <svg class="bi bi-search" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bi bi-search" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd" />
         </svg>
@@ -109,5 +118,6 @@
     </a>
     @endif
   </section>
+</div>
 </div>
 @endsection

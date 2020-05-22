@@ -24,6 +24,23 @@
     --manatee: #8f91a2;
 }
 
+/* Header styling */
+
+header {
+    font-family: "Aclonica";
+    height: 48px;
+    background-color: var(--gunmetal);
+    margin-bottom: 12px;
+    border-radius: 0px 0px 12px 12px;
+    border-bottom: 2px solid var(--platinum);
+}
+
+.header__text {
+    text-align: center;
+    font-size: 2em;
+    color: var(--platinum);
+}
+
 /* General styling */
 
 * {
@@ -63,11 +80,12 @@ hr {
 }
 
 pre {
-    color: var(--baby_powder);
-    background-color: var(--gunmetal);
+    color: var(--eerie_black);
+    background-color: var(--manatee);
     margin-top: 16px;
     padding: 12px;
     border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .bi-arrow-down {
@@ -96,18 +114,21 @@ pre {
     display: flex;
     width: min-content;
     align-items: center;
-    background-color: var(--gunmetal);
-    color: var(--baby_powder);
-    font-size: 0.9em;
+    background-color: var(--manatee);
+    color: var(--eerie_black);
+    font-size: 1em;
     padding: 6px;
     margin: 6px;
     border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 2px 2px rgba(0, 0, 0, 0.23);
+    border: 1.5px solid var(--eerie_black);
 }
 
 .btn__delete-friend {
     all: unset;
     margin-left: 8px;
-    border-left: 1px solid var(--light_gray);
+    border-left: 1px solid var(--outer_space);
+    padding: 1px;
 }
 
 .btn__add-friend {
@@ -137,7 +158,7 @@ a.badge:focus {
 }
 
 .planner-element {
-    background-color: var(--steel_teal);
+    background-color: var(--gunmetal);
     height: auto;
     width: auto;
     border: 1.5px solid var(--cadet);
@@ -145,6 +166,52 @@ a.badge:focus {
     padding: 12px;
     margin: 24px 0px 30px 0px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.planner-element__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font: bold;
+    border-bottom: 1px solid var(--cadet);
+}
+
+/* .planner-element__info {
+    background-color: var(--gunmetal);
+    height: auto;
+    width: auto;
+    border: 1.5px solid var(--cadet);
+    border-radius: 5px;
+    padding: 12px;
+    margin: 24px 0px 30px 0px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+} */
+
+.festival-default-info {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0px 0px 0px;
+    padding: 8px;
+}
+
+.festival-default-info > h4 {
+    color: var(--baby_powder);
+}
+
+.festival-info-text {
+    margin: 12px 0px 16px 0px;
+    border: 1px solid var(--cadet);
+    padding: 12px;
+    background: var(--manatee);
+}
+
+.festival-info-text > p {
+    color: var(--rich_black);
+}
+
+h4.planner-element__heading {
+    color: var(--rich_black);
 }
 
 .btn__edit-planner {
@@ -156,15 +223,6 @@ a.badge:focus {
     all: unset;
     color: var(--baby_powder);
     margin-bottom: 12px;
-}
-
-.planner-element__heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    font: bold;
-    border-bottom: 1px solid var(--cadet);
 }
 
 /* Auth styling */
@@ -195,21 +253,6 @@ a.badge:focus {
 
 .form-check-label {
     color: var(--gunmetal);
-}
-
-/* Header styling */
-
-header {
-    font-family: "Aclonica";
-    height: 48px;
-    background-color: var(--gunmetal);
-    margin-bottom: 12px;
-}
-
-.header__text {
-    text-align: center;
-    font-size: 2em;
-    color: var(--platinum);
 }
 
 /* Card styling */
@@ -280,8 +323,11 @@ small {
     justify-content: space-around;
     background-color: var(--gunmetal);
     overflow-y: scroll;
-    position: sticky;
+    position: absolute;
     bottom: 0;
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+    border-top: 1px solid var(--platinum);
 }
 
 .nav__svg {
@@ -340,12 +386,4 @@ small {
 
 .profile__section--heading {
     color: var(--baby_powder);
-}
-
-.box {
-    height: 150px;
-    width: 100%;
-    background-color: lightgrey;
-    color: black;
-    padding: 8px;
 }
