@@ -4,8 +4,9 @@
 <div class="container">
   <h2 class="text-white text-center mt-3">ToDo-Liste hinzufügen</h2>
 
-  <form method="POST" action="{{ route('todos.add') }}">
+  <form method="POST" action="{{ route('planner.update', $currentPlanner) }}">
     @csrf
+    @method('PUT')
     <div class="form-group">
       <label class="form__label mt-3" for="todos_input">ToDo-Liste</label>
       <textarea name="todo_list" class="form-control" id="todos_input" rows="12" placeholder="Füge hier deine ToDo-Liste ein, die du mit deiner Crew bearbeiten und abarbeiten kannst."></textarea>
@@ -14,5 +15,8 @@
       {{ __('Speichern') }}
     </button>
   </form>
+  <div class="row">
+    <a class="btn btn-secondary" href="{{ url()->previous() }}">Abbrechen</a>
+  </div>
 </div>
 @endsection

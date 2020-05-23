@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use SpotifyWebAPI;
+use App\Planner;
 
 class SpotifyController extends Controller
 
@@ -12,8 +13,13 @@ class SpotifyController extends Controller
     {
         $options = [
             'scope' => [
+                'playlist-modify-public',
                 'playlist-read-private',
-                'user-read-private',
+                'playlist-modify-private',
+                'user-read-email',
+                'playlist-read-collaborative',
+                'user-library-modify',
+                'user-top-read',
             ],
             'auto-refresh' => true,
         ];
@@ -30,18 +36,44 @@ class SpotifyController extends Controller
         session(['access_token' => $accessToken]);
         session(['refresh_token' => $refreshToken]);
 
-        return redirect('spotifyData');
+        return redirect('planner');
     }
 
-    //test query
-
-    public function data(SpotifyWebAPI\SpotifyWebAPI $api)
+    public function search(Planner $planner)
     {
+        return view('playlist.search', [
+            'currentPlanner' => $planner
+        ]);
+    }
+
+    public function searchPlaylist(SpotifyWebAPI\SpotifyWebAPI $api, Planner $planner)
+    {
+        $query = request()->input('q');
         $api->setAccessToken(session()->get('access_token'));
-        return [
-            $api->getTrack('11dFghVXANMlKmJXsNCbNl'),
-            $api->me()
-        ];
+
+        $results = $api->search($query, 'playlist');
+        $playlists = $results->playlists->items;
+
+        return view('playlist.searchResultsPlaylist', [
+            'playlists' => $playlists,
+            'query' => $query,
+            'currentPlanner' => $planner
+        ]);
+    }
+
+    public function searchArtist(SpotifyWebAPI\SpotifyWebAPI $api)
+    {
+        $query = request()->input('q');
+        $api->setAccessToken(session()->get('access_token'));
+
+        $results = $api->search($query, 'artist');
+
+        $artists = $results->artists->items;
+
+        return view('artist.searchResultsArtist', [
+            'artists' => $artists,
+            'query' => $query
+        ]);
     }
 
     // public function requestAccessToken()

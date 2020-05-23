@@ -16,50 +16,60 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-
 Route::get('/', function () {
     return view('auth.login');
 })->name('auth.login');
 
-// Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit')->middleware('auth');
+// Route::get('/login', function () {
+//     return view('auth.login');
+// });
 
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile/own', 'ProfileController@show')->name('profile.show')->middleware('auth');
+// Profile routes
+
+Route::get('/profile', 'ProfileController@show')->name('profile.show')->middleware('auth');
 Route::get('/profile/other', 'ProfileController@other')->name('profile.other')->middleware('auth');
 Route::resource('/profile', 'ProfileController')->middleware('auth');
 
-// Route::get('/planner/edit', 'PlannerController@edit')->name('planner.edit');
-// Route::post('/planner/create', 'PlannerController@store')->name('planner.store');
+// Planner routes
+
 Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
 Route::resource('/planner', 'PlannerController')->middleware('auth');
 
+// Friends routes
 
-Route::get('/friends/search', 'FriendController@search')->name('friends.search');
-Route::get('/friends/add', 'FriendController@add')->name('friends.add');
-Route::get('/friends/edit', 'FriendController@edit')->name('friends.edit');
+Route::get('/planner/{planner}/searchFriends', 'FriendController@searchFriends')->name('friends.search');
+Route::get('/planner/{planner}/addFriends', 'FriendController@add')->name('friends.add');
+Route::get('/planner/{planner}/editFriends', 'FriendController@edit')->name('friends.edit');
 
-Route::get('/todos/add', 'TodoController@add')->name('todos.add');
-Route::get('/todos/edit', 'TodoController@edit')->name('todos.edit');
+// Todos routes
 
-// Spotify API routes
+Route::get('/planner/{planner}/addTodos', 'TodoController@add')->name('todos.add');
+Route::get('/planner/{planner}/editTodos', 'TodoController@edit')->name('todos.edit');
 
-Route::get('/playlist/add', 'PlaylistController@add')->name('playlist.add');
-Route::get('/playlist/edit', 'PlaylistController@edit')->name('playlist.edit');
+// Artists routes
 
-// Auth routes
-
-Route::get('/login', function () {
-    return view('auth.login');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/auth', 'SpotifyController@authenticate');
-Route::get('/spoti', 'SpotifyController@callback');
-Route::get('/spotifyData', 'SpotifyController@data');
+Route::get('/artists/search', 'ArtistController@search')->name('artist.search');
 
 
+// Spotify routes
 
-Route::get('/home', 'HomeController@index')->name('home');
+//// Auth
+Route::get('/spotifyAuth', 'SpotifyController@authenticate')->name('spotifyAuth');
+Route::get('/spoti', 'SpotifyController@callback')->name('spoti');
+
+//// Playlists
+
+Route::get('/planner/{planner}/searchPlaylist', 'SpotifyController@search')->name('playlist.search');
+Route::get('/planner/{planner}/searchResultsPlaylist', 'SpotifyController@searchPlaylist')->name('searchResultsPlaylist');
+
+//// Artists
+
+Route::get('/artist/searchResultsArtist', 'SpotifyController@searchArtist')->name('searchResultsArtist');
+
+
+
+// Route::get('planner/{planner}/addFriends/{crew}', function ($plannerId, $crewId) {
+//     //
+// });

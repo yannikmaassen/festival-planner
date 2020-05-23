@@ -20,7 +20,8 @@ class CreatePlannersTable extends Migration
             $table->foreign('festival_id')->references('id')->on('festivals')->onDelete('cascade');
             $table->text('info_text')->nullable();
             $table->text('todo_list')->nullable();
-            $table->string('playlists')->nullable();
+            $table->string('playlist_1')->nullable();
+            $table->string('playlist_2')->nullable();
             $table->string('planner_image')->nullable();
         });
     }

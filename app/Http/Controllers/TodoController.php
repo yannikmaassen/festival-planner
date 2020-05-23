@@ -7,9 +7,11 @@ use App\Planner;
 
 class TodoController extends Controller
 {
-    public function add()
+    public function add(Planner $planner)
     {
-        return view('todos.add');
+        return view('todos.add', [
+            'currentPlanner' => $planner
+        ]);
     }
 
     // public function addToPlanner(Planner $planner)
@@ -19,10 +21,12 @@ class TodoController extends Controller
     //     return redirect()->route('planner.show');
     // }
 
-    // public function edit(Planner $planner)
-    // {
-    //     return view('todos.edit');
-    // }
+    public function edit(Planner $planner)
+    {
+        return view('todos.edit', [
+            'currentPlanner' => $planner
+        ]);
+    }
 
     // public function validateData()
     // {
