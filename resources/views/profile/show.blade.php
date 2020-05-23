@@ -13,17 +13,21 @@
     <p class="mb-5">
       {{ $ownProfile->profile_description }}
     </p>
-    <h3 class="profile__section--heading">Lieblingsinterpreten</h3>
-    <a class="btn btn-primary mb-5 w-100" href="{{ route('artist.search') }}">
-      {{ __('Füge deine Lieblingsartists hinzu!') }}
-    </a>
     <h3 class="profile__section--heading">Lieblingsfestival</h3>
-    <span class="badge badge__style">{{ $festival->festival_name }}
+    <span class="badge badge__style mb-4">{{ $festival->festival_name }}
       <br>
       {{ $festival->genres }}
       <br>
       {{ $festival->location }}
     </span>
+    <h3 class="profile__section--heading">Lieblingsinterpreten</h3>
+    @if(!is_null($ownProfile->artist_id))
+    <a href="{{ $ownProfile->artist_uri }}" class="badge badge__style">{{ $ownProfile->artist_name }}</a>
+    @else
+    <a class="btn btn-primary mb-5 w-100" href="{{ route('artist.search', $ownProfile) }}">
+      {{ __('Füge deine Lieblingsartists hinzu!') }}
+    </a>
+    @endif
   </section>
   <section class="profile__section">
     <h3 class="profile__section--heading">Meine Packliste</h3>

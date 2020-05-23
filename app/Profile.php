@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Profile extends Model
 {
-    protected $fillable = ['user_id', 'profile_name', 'profile_image', 'profile_description', 'festival_id', 'profile_list'];
+    protected $fillable = ['user_id', 'profile_name', 'profile_image', 'profile_description', 'festival_id', 'profile_list', 'artist_uri', 'artist_genres', 'artist_href', 'artist_id', 'artist_images', 'artist_name'];
 
     public function user()
     {

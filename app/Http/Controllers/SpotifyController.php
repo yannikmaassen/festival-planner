@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use SpotifyWebAPI;
 use App\Planner;
+use App\Profile;
 
 class SpotifyController extends Controller
 
@@ -46,6 +47,8 @@ class SpotifyController extends Controller
         ]);
     }
 
+
+
     public function searchPlaylist(SpotifyWebAPI\SpotifyWebAPI $api, Planner $planner)
     {
         $query = request()->input('q');
@@ -61,7 +64,14 @@ class SpotifyController extends Controller
         ]);
     }
 
-    public function searchArtist(SpotifyWebAPI\SpotifyWebAPI $api)
+    public function search_artist(Profile $profile)
+    {
+        return view('artist.search', [
+            'profile' => $profile
+        ]);
+    }
+
+    public function searchArtist(SpotifyWebAPI\SpotifyWebAPI $api, Profile $profile)
     {
         $query = request()->input('q_artist');
         $api->setAccessToken(session()->get('access_token'));
@@ -72,7 +82,8 @@ class SpotifyController extends Controller
 
         return view('artist.searchResultsArtist', [
             'artists' => $artists,
-            'query' => $query
+            'query' => $query,
+            'profile' => $profile
         ]);
     }
 }

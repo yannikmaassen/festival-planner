@@ -142,8 +142,13 @@ class PlannerController extends Controller
             'festival_id' => 'required',
             'info_text' => 'required|min:3',
             'todo_list' => 'nullable',
-            'playlist_1' => 'nullable',
-            'playlist_2' => 'nullable',
+            'playlist_href' => 'nullable',
+            'playlist_id' => 'nullable',
+            'playlist_images' => 'nullable',
+            'playlist_name' => 'nullable',
+            'playlist_uri' => 'nullable',
+            'playlist_owner' => 'nullable',
+            'playlist_tracks' => 'nullable',
             'planner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     }
@@ -157,7 +162,14 @@ class PlannerController extends Controller
             'playlist_1' => 'nullable',
             'playlist_2' => 'nullable',
             'planner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'user_id' => 'nullable'
+            'user_id' => 'nullable',
+            'playlist_href' => 'nullable',
+            'playlist_id' => 'nullable',
+            'playlist_images' => 'nullable',
+            'playlist_name' => 'nullable',
+            'playlist_uri' => 'nullable',
+            'playlist_owner' => 'nullable',
+            'playlist_tracks' => 'nullable',
         ]);
     }
 }

@@ -9,7 +9,7 @@
     Zurück zur Suche</a>
   <div class="row align-items-center justify-content-center">
     <div class="col-md-9">
-      <h3 class="my-2 text-center text-white">Search Results for "{{ $query }}":</h3>
+      <h3 class="my-2 text-center text-white">Suchergebnisse für "{{ $query }}":</h3>
     </div>
 
   </div>
@@ -21,8 +21,10 @@
         <form method="POST" action="{{ route('planner.update', $currentPlanner) }}">
           @csrf
           @method('PUT')
-          <input name="playlist_1" type="hidden" value="{{ $playlist->uri }}">
-          <input name="playlist_2" type="hidden" value="{{ $playlist->name }}">
+          <input name="playlist_href" type="hidden" value="{{ $playlist->href }}">
+          <input name="playlist_id" type="hidden" value="{{ $playlist->id }}">
+          <input name="playlist_name" type="hidden" value="{{ $playlist->name }}">
+          <input name="playlist_uri" type="hidden" value="{{ $playlist->uri }}">
           <button type="submit" class="btn btn-primary my-2">Hinzufügen</button>
         </form>
       </a>

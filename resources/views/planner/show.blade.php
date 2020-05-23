@@ -97,7 +97,7 @@
   <section class="planner-element">
     <div class="planner-element__heading">
       <h2>Camp-Playlist</h2>
-      @if(isset($currentPlanner->playlist_1))
+      @if(isset($currentPlanner->playlist_id))
       <a href="{{ route('playlist.search', $currentPlanner) }}" class="btn btn__search-playlist">
         <svg class="bi bi-search" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
@@ -106,9 +106,9 @@
       </a>
       @endif
     </div>
-    @if(isset($currentPlanner->playlist_1))
-    <a class="badge badge__style mb-3 w-100" href="{{ $currentPlanner->playlist_1 }}">
-      {{ $currentPlanner->playlist_2 }}
+    @if(isset($currentPlanner->playlist_id))
+    <a class="badge badge__style mb-3 w-100" href="{{ $currentPlanner->playlist_uri }}">
+      {{ $currentPlanner->playlist_name }}
     </a>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('playlist.search', $currentPlanner) }}">

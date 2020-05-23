@@ -49,8 +49,8 @@ Route::get('/planner/{planner}/editTodos', 'TodoController@edit')->name('todos.e
 
 // Artists routes
 
-Route::get('/artists/search', 'ArtistController@search')->name('artist.search');
-
+Route::get('/profile/{profile}/searchArtist', 'SpotifyController@search_artist')->name('artist.search');
+Route::get('/profile/{profile}/searchResultsArtist', 'SpotifyController@searchArtist')->name('searchResultsArtist');
 
 // Spotify routes
 
@@ -62,12 +62,6 @@ Route::get('/spoti', 'SpotifyController@callback')->name('spoti');
 
 Route::get('/planner/{planner}/searchPlaylist', 'SpotifyController@search')->name('playlist.search');
 Route::get('/planner/{planner}/searchResultsPlaylist', 'SpotifyController@searchPlaylist')->name('searchResultsPlaylist');
-
-//// Artists
-
-Route::get('/artist/searchResultsArtist', 'SpotifyController@searchArtist')->name('searchResultsArtist');
-
-
 
 // Route::get('planner/{planner}/addFriends/{crew}', function ($plannerId, $crewId) {
 //     //

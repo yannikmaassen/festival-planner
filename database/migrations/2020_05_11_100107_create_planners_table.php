@@ -20,8 +20,13 @@ class CreatePlannersTable extends Migration
             $table->foreign('festival_id')->references('id')->on('festivals')->onDelete('cascade');
             $table->text('info_text')->nullable();
             $table->text('todo_list')->nullable();
-            $table->string('playlist_1')->nullable();
-            $table->string('playlist_2')->nullable();
+            $table->string('playlist_href')->nullable();
+            $table->string('playlist_id')->nullable();
+            $table->string('playlist_images')->nullable();
+            $table->string('playlist_name')->nullable();
+            $table->string('playlist_uri')->nullable();
+            $table->string('playlist_owner')->nullable();
+            $table->string('playlist_tracks')->nullable();
             $table->string('planner_image')->nullable();
         });
     }
