@@ -63,7 +63,7 @@ class SpotifyController extends Controller
 
     public function searchArtist(SpotifyWebAPI\SpotifyWebAPI $api)
     {
-        $query = request()->input('q');
+        $query = request()->input('q_artist');
         $api->setAccessToken(session()->get('access_token'));
 
         $results = $api->search($query, 'artist');
