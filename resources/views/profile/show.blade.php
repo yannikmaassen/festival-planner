@@ -9,18 +9,18 @@
     <p class="h2">{{ $ownProfile->profile_name }}</p>
   </div>
   <section class="profile__section">
-    <h3 class="profile__section--heading">Beschreibung</h3>
+    <h4 class="profile__section--heading">Beschreibung</h4>
     <p class="mb-5">
       {{ $ownProfile->profile_description }}
     </p>
-    <h3 class="profile__section--heading">Lieblingsfestival</h3>
+    <h4 class="profile__section--heading">Lieblingsfestival</h4>
     <span class="badge badge__style mb-4">{{ $festival->festival_name }}
       <br>
       {{ $festival->genres }}
       <br>
       {{ $festival->location }}
     </span>
-    <h3 class="profile__section--heading">Lieblingsinterpreten</h3>
+    <h4 class="profile__section--heading">Lieblingsinterpret</h4>
     @if(!is_null($ownProfile->artist_id))
     <a href="{{ $ownProfile->artist_uri }}" class="badge badge__style">{{ $ownProfile->artist_name }}</a>
     @else
@@ -30,7 +30,7 @@
     @endif
   </section>
   <section class="profile__section">
-    <h3 class="profile__section--heading">Meine Packliste</h3>
+    <h4 class="profile__section--heading">Meine Packliste</h4>
     <pre>
     {{ $ownProfile->profile_list }}
     </pre>

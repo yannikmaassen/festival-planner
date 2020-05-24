@@ -27,8 +27,8 @@
         <p>{{ $currentPlanner->festival->genres }}</p>
       </div>
       <section class="festival-info-text">
-        <h4 class="planner-element__heading">Beschreibung</h4>
-        <p>{{ $currentPlanner->info_text }}</p>
+        <h4 class="planner-element__heading--dark">Beschreibung</h4>
+        {{ $currentPlanner->info_text }}
       </section>
   </section>
 
@@ -89,7 +89,7 @@
     <pre class="festival-info">{{ $currentPlanner->todo_list }}</pre>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('todos.add', $currentPlanner) }}">
-      {{ __('Füge ToDos für Dich und Deine Crew hinzu!') }}
+      {{ __('Fügt ToDos für eure Crew hinzu!') }}
     </a>
     @endif
   </section>
@@ -113,7 +113,7 @@
     </a>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
-      {{ __('Füge hier Eure Festival-Playlisten ein!') }}
+      {{ __('Fügt hier Eure Camp-Playlist über Spotify hinzu!') }}
     </a>
     @endif
   </section>

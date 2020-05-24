@@ -84,9 +84,9 @@ pre {
     color: var(--eerie_black);
     background-color: var(--platinum);
     margin-top: 16px;
-    padding: 12px;
+    padding: 16px;
     border-radius: 5px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 2px 2px rgba(0, 0, 0, 0.23);
 }
 
 .bi-arrow-down {
@@ -102,21 +102,44 @@ pre {
     border-radius: 12px;
 }
 
-.badge__style--own {
+/* Auth styling */
+
+.logo__auth {
+    font-family: "Aclonica";
+    text-align: center;
+    font-size: 3em;
+    color: var(--platinum);
     background-color: var(--steel_teal);
-    color: var(--baby_powder);
-    font-size: 1.1em;
+    border-radius: 40px;
     padding: 8px;
-    margin: 6px;
-    border-radius: 12px;
+    width: 80%;
 }
+
+.card-body {
+    background: var(--baby_powder);
+}
+
+.card-header {
+    background-color: var(--gunmetal);
+    color: var(--platinum);
+}
+
+.col-form-label {
+    color: var(--gunmetal);
+}
+
+.form-check-label {
+    color: var(--gunmetal);
+}
+
+/* Planner styling */
 
 .crew-badge {
     display: flex;
     width: min-content;
     align-items: center;
     background-color: var(--platinum);
-    color: var(--eerie_black);
+    color: var(--gunmetal);
     font-size: 1em;
     padding: 6px;
     margin: 6px;
@@ -183,6 +206,15 @@ a.badge:focus {
     border-bottom: 1px solid var(--cadet);
 }
 
+.planner-element__heading--dark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gunmetal);
+    font: bold;
+    border-bottom: 1px solid var(--cadet);
+}
+
 .festival-default-info {
     display: flex;
     flex-direction: column;
@@ -196,10 +228,11 @@ a.badge:focus {
 
 .festival-info-text {
     margin: 12px 0px 16px 0px;
-    border: 3px solid var(--cadet);
-    padding: 12px;
-    background: var(--gunmetal);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 16px;
+    color: var(--gunmetal);
+    background: var(--platinum);
+    font-size: 1.1em;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 2px 2px rgba(0, 0, 0, 0.23); */
 }
 
 .festival-info-text > p {
@@ -221,37 +254,107 @@ h4.planner-element__heading {
     margin-bottom: 12px;
 }
 
-/* Auth styling */
+.btn__create-planner {
+    background-color: var(--flame);
+    color: white;
+    border: 1px solid var(--rich_black);
+    border-radius: 5px;
+    height: 40px;
+    width: 70%;
+}
 
-.logo__auth {
-    font-family: "Aclonica";
-    text-align: center;
-    font-size: 3em;
-    color: var(--platinum);
-    background-color: var(--steel_teal);
-    border-radius: 40px;
+.btn__delete-planner {
+    display: flex;
+    align-items: center;
+    background: var(--red_violet);
+    color: var(--baby_powder);
+    margin: 20px 0px 20px 0px;
+    border-radius: 8px;
+    height: 40px;
+    width: max-content;
     padding: 8px;
-    width: 80%;
+    border: 1px solid var(--rich_black);
 }
 
-.card-body {
-    background: var(--baby_powder);
+.btn__save-planner {
+    background-color: var(--flame);
+    color: white;
+    border: 1px solid var(--rich_black);
+    border-radius: 5px;
+    height: 40px;
+    width: 60%;
 }
 
-.card-header {
-    background-color: var(--gunmetal);
+.btn-group__edit-planner {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.searchResult__playlist {
+    display: flex;
+    background: var(--gunmetal);
+    border: 1px solid var(--rich_black);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 4px 4px rgba(0, 0, 0, 0.23);
+    padding: 10px;
+    margin-bottom: 12px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn__add-playlist {
+    all: unset;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.btn__add-playlist > svg {
+    fill: var(--platinum);
+    border: 1px inset var(--rich_black);
+    border-radius: 8px;
+}
+
+.playlist-info {
+    border: 2px solid var(--cadet);
+    color: var(--baby_powder);
+    margin: 12px 0px 8px 0px;
+    width: 300px;
+    height: 150px;
+    background: var(--manatee);
+}
+
+.searchTerm {
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+    border: none;
+    font-size: 1.1em;
     color: var(--platinum);
+    background: var(--steel_teal);
+    border-radius: 25px 0px 0px 25px;
+    text-align: center;
 }
 
-.col-form-label {
-    color: var(--gunmetal);
+.searchTerm:focus {
+    color: white;
+    font-size: 1.1em;
 }
 
-.form-check-label {
-    color: var(--gunmetal);
+.searchButton {
+    width: 50px;
+    height: 50px;
+    background: var(--steel_teal);
+    text-align: center;
+    color: var(--baby_powder);
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
 }
 
-/* Card styling */
+/* Card styling planner.index */
+
 .card {
     background: none;
 }
@@ -293,27 +396,28 @@ h4.planner-element__heading {
     text-decoration: underline;
 }
 
-.btn__edit-profile {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    height: 48px;
-    color: var(--rich_black);
-    background-color: var(--platinum);
-    border: 1px solid var(--rich_black);
-}
-
 .btn__logout {
     display: flex;
     align-items: center;
     justify-content: center;
     width: min-content;
     height: 48px;
-    color: var(--rich_black);
-    background-color: var(--platinum);
+    color: var(--baby_powder);
+    background-color: var(--red_violet);
     border: 1px solid var(--rich_black);
     font: bold;
-    font-size: 1.1em;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    background: var(--platinum);
+    color: var(--gunmetal);
+    margin: 20px 0px 20px 0px;
+    border-radius: 8px;
+    height: 40px;
+    width: max-content;
+    padding: 8px;
 }
 
 /* Navbar-Styling */
@@ -392,113 +496,18 @@ h4.planner-element__heading {
     border-bottom: 1px solid var(--cadet);
 }
 
+.btn__edit-profile {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 48px;
+    color: var(--rich_black);
+    background-color: var(--platinum);
+    border: 1px solid var(--rich_black);
+}
+
 .search {
     display: flex;
     flex-direction: row;
     margin: 20px 0px 30px 0px;
-}
-
-.searchTerm {
-    width: 100%;
-    padding: 5px;
-    height: 40px;
-    border: none;
-    color: var(--cadet);
-    background: var(--steel_teal);
-    border-radius: 20px 0px 0px 20px;
-    text-align: center;
-}
-
-.searchTerm:focus {
-    color: white;
-}
-
-.searchButton {
-    width: 50px;
-    height: 40px;
-    background: var(--steel_teal);
-    text-align: center;
-    color: var(--baby_powder);
-    border: none;
-    border-radius: 0 20px 20px 0;
-    cursor: pointer;
-}
-
-.btn-back {
-    display: flex;
-    align-items: center;
-    background: var(--platinum);
-    color: var(--gunmetal);
-    margin: 20px 0px 20px 0px;
-    border-radius: 8px;
-    height: 40px;
-    width: max-content;
-    padding: 8px;
-}
-
-.btn__create-planner {
-    background-color: var(--flame);
-    color: white;
-    border: 1px solid var(--rich_black);
-    border-radius: 5px;
-    height: 40px;
-    width: 70%;
-}
-
-.btn__delete-planner {
-    display: flex;
-    align-items: center;
-    background: var(--platinum);
-    color: var(--gunmetal);
-    margin: 20px 0px 20px 0px;
-    border-radius: 8px;
-    height: 40px;
-    width: max-content;
-    padding: 8px;
-}
-
-.btn__save-planner {
-    background-color: var(--flame);
-    color: white;
-    border: 1px solid var(--rich_black);
-    border-radius: 5px;
-    height: 40px;
-    width: 60%;
-}
-
-.btn-group__edit-planner {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.searchResult__playlist {
-    display: flex;
-    background: var(--gunmetal);
-    border: 1px solid var(--rich_black);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 4px 4px rgba(0, 0, 0, 0.23);
-    padding: 10px;
-    margin-bottom: 12px;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.btn__add-playlist > svg {
-    fill: var(--spoti_green);
-    border: 3px inset var(--rich_black);
-    border-radius: 8px;
-}
-
-button {
-    all: unset;
-}
-
-.playlist-info {
-    border: 2px solid var(--cadet);
-    color: var(--baby_powder);
-    margin: 12px 0px 8px 0px;
-    width: 300px;
-    height: 150px;
-    background: var(--manatee);
 }
