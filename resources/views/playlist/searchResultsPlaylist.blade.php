@@ -13,11 +13,11 @@
     </div>
 
   </div>
-  <div class="row mb-5 d-flex justify-content-start text-center">
+  <div class="row mb-5">
     @foreach($playlists as $playlist)
     <div class="col-md-3">
-      <a href="{{ $playlist->uri }}" class="d-block border rounded mb-4 p-0 shadow-sm text-decoration-none bg-dark">
-        <h4 class="text-white my-1"><small>Playlist-Name</small><br>{{ $playlist->name }}</h4>
+      <a href="{{ $playlist->uri }}" class="searchResult__playlist">
+        <h4 class="text-white my-1">{{ $playlist->name }}<br><small>by {{ $playlist->owner->display_name }}</small></h4>
         <form method="POST" action="{{ route('planner.update', $currentPlanner) }}">
           @csrf
           @method('PUT')
@@ -25,7 +25,12 @@
           <input name="playlist_id" type="hidden" value="{{ $playlist->id }}">
           <input name="playlist_name" type="hidden" value="{{ $playlist->name }}">
           <input name="playlist_uri" type="hidden" value="{{ $playlist->uri }}">
-          <button type="submit" class="btn btn-primary my-2">Hinzufügen</button>
+          <input name="playlist_owner" type="hidden" value="{{ $playlist->owner->display_name }}">
+          <button type="submit" class="btn__add-playlist">
+            <svg class="bi bi-plus-square-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm6.5 4a.5.5 0 00-1 0v3.5H4a.5.5 0 000 1h3.5V12a.5.5 0 001 0V8.5H12a.5.5 0 000-1H8.5V4z" clip-rule="evenodd" />
+            </svg>
+          </button>
         </form>
       </a>
     </div>

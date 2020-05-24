@@ -107,8 +107,9 @@
       @endif
     </div>
     @if(isset($currentPlanner->playlist_id))
-    <a class="badge badge__style mb-3 w-100" href="{{ $currentPlanner->playlist_uri }}">
-      {{ $currentPlanner->playlist_name }}
+    <a class="playlist-info" href="{{ $currentPlanner->playlist_uri }}">
+      <h2>{{ $currentPlanner->playlist_name }}</h2>
+      <small>by {{ $currentPlanner->playlist_owner }}</small>
     </a>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
