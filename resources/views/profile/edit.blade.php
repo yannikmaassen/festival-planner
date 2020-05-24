@@ -11,7 +11,7 @@
     </p>
   </a>
 
-  <form method="POST" action="{{ route('profile.update', $ownProfile) }}">
+  <form method="POST" action="{{ route('profile.update', $ownProfile) }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 

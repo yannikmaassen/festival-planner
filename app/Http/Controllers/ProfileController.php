@@ -18,6 +18,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -42,12 +43,19 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $data = $this->validateData();
+        if ($request->has('profile_image')) {
+            $path = $request->file('profile_image')->store('/profile/images', 'public');
+            $data['profile_image'] = $path;
+        }
         $data['user_id'] = $user->id;
         $newProfile = Profile::create($data);
+
         $user->profile()->save($newProfile);
+        $festival = Festival::find($request->input('festival_id'));
 
         return view('profile.show', [
-            'ownProfile' => $newProfile
+            'ownProfile' => $newProfile,
+            'festival' => $festival
         ]);
     }
 
@@ -67,7 +75,6 @@ class ProfileController extends Controller
             $festival_id = $ownProfile->festival_id;
             $festival = Festival::find($festival_id);
 
-
             return view('profile.show', [
                 'festival' => $festival,
                 'ownProfile' => $ownProfile
@@ -81,11 +88,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Profile $profile)
     {
-        $ownProfile = Profile::find($id);
         return view('profile.edit', [
-            'ownProfile' => $ownProfile,
+            'ownProfile' => $profile,
             'festivals' => Festival::all()
         ]);
     }
@@ -97,13 +103,17 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, Profile $profile)
     {
         $data = $this->validateData();
-        $ownProfile = Profile::find($id);
-        $ownProfile->update($data);
+        if ($request->has('profile_image')) {
+            $path = $request->file('profile_image')->store('/profile/images', 'public');
+            $data['profile_image'] = $path;
+        }
+        $profile->update($data);
 
-        return redirect()->route('profile.show', $ownProfile);
+
+        return redirect()->route('profile.show', $profile);
     }
 
     /**
@@ -112,14 +122,15 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Profile $profile)
     {
-        //
+        $profile->delete();
+
+        return redirect()->route('planner');
     }
 
     public function other(Profile $profile)
     {
-
         return view('profile.other', [
             'profile' => $profile
         ]);
@@ -129,7 +140,7 @@ class ProfileController extends Controller
     {
         return request()->validate([
             'profile_name' => 'required',
-            'profile_image' => 'nullable',
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'profile_description' => 'required|min:3',
             'festival_id' => 'nullable',
             'profile_list' => 'nullable'

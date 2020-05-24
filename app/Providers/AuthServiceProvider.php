@@ -3,11 +3,8 @@
 namespace App\Providers;
 
 use App\User;
-use App\Policies\UserPolicy;
-use App\Planner;
-use App\Policies\PlannerPolicy;
 use App\Profile;
-use App\Policies\ProfilePolicy;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -19,9 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        User::class => UserPolicy::class,
-        Planner::class => PlannerPolicy::class,
-        Profile::class => ProfilePolicy::class
+        // 'App\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**
@@ -33,6 +28,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Gate::define('view-profile', function (User $user, Profile $profile) {
+        //     $user = Auth::user();
+        //     return $user->id === $profile->user_id;
+        // });
     }
 }

@@ -19,7 +19,7 @@ class Planner extends Model
         return $this->belongsToMany('App\User');
     }
 
-    public function getImageAttribute($value)
+    public function getImageAttributePlanner($value)
     {
         if ($value) {
             return Storage::url($value);

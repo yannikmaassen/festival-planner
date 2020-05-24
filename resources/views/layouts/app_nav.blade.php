@@ -19,7 +19,6 @@
 </head>
 
 <body class="body__nav">
-
   @include('includes/header')
   <div class="content">
     @yield('content')

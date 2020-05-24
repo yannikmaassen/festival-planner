@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/planner';
+    public const HOME = '/spotifyAuth';
 
     /**
      * Define your route model bindings, pattern filters, etc.
