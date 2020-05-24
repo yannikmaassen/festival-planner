@@ -107,10 +107,11 @@
       @endif
     </div>
     @if(isset($currentPlanner->playlist_id))
-    <a class="playlist-info" href="{{ $currentPlanner->playlist_uri }}">
-      <h2>{{ $currentPlanner->playlist_name }}</h2>
-      <small>by {{ $currentPlanner->playlist_owner }}</small>
-    </a>
+    <div class="playlist-info">
+      <a href="{{ $currentPlanner->playlist_uri }}">
+        <h2>{{ $currentPlanner->playlist_name }}</h2>
+        <small>by {{ $currentPlanner->playlist_owner }}</small>
+      </a></div>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
       {{ __('Fügt hier Eure Camp-Playlist über Spotify hinzu!') }}

@@ -87,6 +87,8 @@ pre {
     padding: 16px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 2px 2px rgba(0, 0, 0, 0.23);
+    font-family: "Ubuntu";
+    font-size: 1.2em;
 }
 
 .bi-arrow-down {
@@ -229,10 +231,10 @@ a.badge:focus {
 .festival-info-text {
     margin: 12px 0px 16px 0px;
     padding: 16px;
+    border-radius: 5px;
     color: var(--gunmetal);
     background: var(--platinum);
     font-size: 1.1em;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 2px 2px rgba(0, 0, 0, 0.23); */
 }
 
 .festival-info-text > p {
@@ -317,12 +319,16 @@ h4.planner-element__heading {
 }
 
 .playlist-info {
-    border: 2px solid var(--cadet);
-    color: var(--baby_powder);
+    border: 1px solid var(--cadet);
+    border-radius: 5px;
+    color: var(--gunmetal);
     margin: 12px 0px 8px 0px;
-    width: 300px;
-    height: 150px;
-    background: var(--manatee);
+    background: var(--platinum);
+    padding: 12px;
+}
+
+.playlist-info > a {
+    color: var(--gunmetal);
 }
 
 .searchTerm {
@@ -481,10 +487,19 @@ h4.planner-element__heading {
     border: 1px solid var(--platinum);
     border-radius: 8px;
     padding: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     background-color: var(--gunmetal);
     font-size: 1.1em;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.profile__section--description {
+    font-size: 1.1em;
+    margin: 10px 0px 20px 0px;
+    background: var(--platinum);
+    color: var(--gunmetal);
+    padding: 12px;
+    border-radius: 5px;
 }
 
 .profile__section--heading {
@@ -510,4 +525,36 @@ h4.planner-element__heading {
     display: flex;
     flex-direction: row;
     margin: 20px 0px 30px 0px;
+}
+
+.favorite-festival {
+    color: var(--gunmetal);
+    padding: 12px;
+    margin: 16px 0px 16px 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--platinum);
+}
+
+.favorite-festival > p {
+    color: var(--gunmetal);
+    margin: 0px;
+}
+
+.favorite-music {
+    background: var(--platinum);
+    padding: 12px;
+    margin: 16px 0px 16px 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-music > a {
+    color: var(--gunmetal);
 }
