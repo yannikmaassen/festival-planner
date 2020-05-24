@@ -9,28 +9,32 @@
     <p class="h2">{{ $ownProfile->profile_name }}</p>
   </div>
   <section class="profile__section">
-    <h3 class="profile__section--heading">Beschreibung</h3>
-    <p class="mb-5">
+    <h4 class="profile__section--heading">Beschreibung</h4>
+    <p class="profile__section--description">
       {{ $ownProfile->profile_description }}
     </p>
-    <h3 class="profile__section--heading">Lieblingsinterpreten</h3>
-    <a class="btn btn-primary mb-5 w-100" href="{{ route('artist.search') }}">
+    <h4 class="profile__section--heading">Lieblingsfestival</h4>
+    <div class="favorite-festival">
+      <h4> {{ $festival->festival_name }}</h4>
+      <p>{{ $festival->genres }}</p>
+      <p>{{ $festival->location }}</p>
+    </div>
+    <h4 class="profile__section--heading">Lieblingsinterpret</h4>
+    @if(!is_null($ownProfile->artist_id))
+    <div class="favorite-music">
+      <a href="{{ $ownProfile->artist_uri }}" class="h4">{{ $ownProfile->artist_name }}</a>
+    </div>
+    @else
+    <a class="btn btn-primary mb-5 w-100" href="{{ route('artist.search', $ownProfile) }}">
       {{ __('Füge deine Lieblingsartists hinzu!') }}
     </a>
-    <h3 class="profile__section--heading">Lieblingsfestival</h3>
-    <span class="badge badge__style">{{ $festival->festival_name }}
-      <br>
-      {{ $festival->genres }}
-      <br>
-      {{ $festival->location }}
-    </span>
+    @endif
   </section>
   <section class="profile__section">
-    <h3 class="profile__section--heading">Meine Packliste</h3>
-    <pre>
-    {{ $ownProfile->profile_list }}
-    </pre>
+    <h4 class="profile__section--heading">Meine Packliste</h4>
+    <pre>{{ $ownProfile->profile_list }}</pre>
   </section>
+  <hr>
   <div class="row justify-content-around my-4">
     <a class="btn btn__edit-profile" href="{{ route('profile.edit', $ownProfile) }}">
       <svg class="bi bi-pencil-square mr-2" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

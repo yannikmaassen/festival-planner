@@ -27,8 +27,8 @@
         <p>{{ $currentPlanner->festival->genres }}</p>
       </div>
       <section class="festival-info-text">
-        <h4 class="planner-element__heading">Beschreibung</h4>
-        <p>{{ $currentPlanner->info_text }}</p>
+        <h4 class="planner-element__heading--dark">Beschreibung</h4>
+        {{ $currentPlanner->info_text }}
       </section>
   </section>
 
@@ -89,7 +89,7 @@
     <pre class="festival-info">{{ $currentPlanner->todo_list }}</pre>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('todos.add', $currentPlanner) }}">
-      {{ __('Füge ToDos für Dich und Deine Crew hinzu!') }}
+      {{ __('Fügt ToDos für eure Crew hinzu!') }}
     </a>
     @endif
   </section>
@@ -97,7 +97,7 @@
   <section class="planner-element">
     <div class="planner-element__heading">
       <h2>Camp-Playlist</h2>
-      @if(isset($currentPlanner->playlist_1))
+      @if(isset($currentPlanner->playlist_id))
       <a href="{{ route('playlist.search', $currentPlanner) }}" class="btn btn__search-playlist">
         <svg class="bi bi-search" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
@@ -106,13 +106,15 @@
       </a>
       @endif
     </div>
-    @if(isset($currentPlanner->playlist_1))
-    <a class="badge badge__style mb-3 w-100" href="{{ $currentPlanner->playlist_1 }}">
-      {{ $currentPlanner->playlist_2 }}
-    </a>
+    @if(isset($currentPlanner->playlist_id))
+    <div class="playlist-info">
+      <a href="{{ $currentPlanner->playlist_uri }}">
+        <h2>{{ $currentPlanner->playlist_name }}</h2>
+        <small>by {{ $currentPlanner->playlist_owner }}</small>
+      </a></div>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
-      {{ __('Füge hier Eure Festival-Playlisten ein!') }}
+      {{ __('Fügt hier Eure Camp-Playlist über Spotify hinzu!') }}
     </a>
     @endif
   </section>

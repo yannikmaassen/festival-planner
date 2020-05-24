@@ -22,6 +22,12 @@ class CreateProfilesTable extends Migration
             $table->text('profile_description')->nullable();
             $table->string('festival_id')->nullable();
             $table->text('profile_list')->nullable();
+            $table->text('artist_uri')->nullable();
+            $table->text('artist_genres')->nullable();
+            $table->text('artist_href')->nullable();
+            $table->text('artist_id')->nullable();
+            $table->text('artist_images')->nullable();
+            $table->text('artist_name')->nullable();
         });
     }
 

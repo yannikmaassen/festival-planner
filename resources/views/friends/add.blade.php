@@ -6,7 +6,7 @@
   <form method="GET" action="{{ route('friends.search', $currentPlanner) }}">
     @csrf
     <div class="search">
-      <input name="searchFriends" type="text" class="searchTerm" placeholder="Suche...">
+      <input name="searchFriends" type="text" class="searchTerm" placeholder="Suche nach Crew-Membern...">
       <button type="submit" class="searchButton">
         <svg class="bi bi-search" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
