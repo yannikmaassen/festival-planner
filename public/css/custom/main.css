@@ -228,6 +228,12 @@ a.badge:focus {
     color: var(--baby_powder);
 }
 
+.festival-default-info__heading {
+    display: flex;
+    align-items: baseline;
+    color: var(--platinum);
+}
+
 .festival-info-text {
     margin: 12px 0px 16px 0px;
     padding: 16px;

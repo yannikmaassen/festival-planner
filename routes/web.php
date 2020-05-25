@@ -20,10 +20,6 @@ Route::get('/', function () {
     return view('auth.login');
 })->name('auth.login');
 
-// Route::get('/login', function () {
-//     return view('auth.login');
-// });
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Profile routes
@@ -65,7 +61,3 @@ Route::get('/spoti', 'SpotifyController@callback')->name('spoti');
 
 Route::get('/planner/{planner}/searchPlaylist', 'SpotifyController@search')->name('playlist.search');
 Route::get('/planner/{planner}/searchResultsPlaylist', 'SpotifyController@searchPlaylist')->name('searchResultsPlaylist');
-
-// Route::get('planner/{planner}/addFriends/{crew}', function ($plannerId, $crewId) {
-//     //
-// });
