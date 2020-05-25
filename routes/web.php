@@ -28,9 +28,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Profile routes
 
-// Route::get('/profile/{profile}', 'ProfileController@show')->name('profile.show')->middleware('auth');
-// Route::get('/profile/{profile}', 'ProfileController@other')->name('profile.other')->middleware('auth');
 Route::resource('/profile', 'ProfileController')->middleware('auth');
+
+// ProfileList routes
+
+Route::get('/profile/{profile}/addProfileList', 'ProfileListController@add')->name('profile_list.add');
+Route::get('/profile/{profile}/editProfileList', 'ProfileListController@edit')->name('profile_list.edit');
 
 // Planner routes
 

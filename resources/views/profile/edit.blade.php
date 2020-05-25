@@ -2,14 +2,9 @@
 
 @section('content')
 <div class="container">
-  <p class="h2 text-center mt-2">
+  <p class="h2 text-center my-4">
     Erzähl' was über dich!
   </p>
-  <a class="btn-link small text-white" href="#">
-    <p class="text-center text-grey">
-      Nö, warum?
-    </p>
-  </a>
 
   <form method="POST" action="{{ route('profile.update', $ownProfile) }}" enctype="multipart/form-data">
     @csrf
@@ -32,11 +27,11 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="form__label" for="profile_input3">Eine kleine Beschreibung über dich</label>
+      <label class="form__label" for="profile_input3">Eine kleine Beschreibung über dich:</label>
       <textarea class="form-control" id="profile_input3" rows="3" name="profile_description">{{ old('profile_description') ?? $ownProfile->profile_description }}</textarea>
     </div>
     <div class="form-group">
-      <label class="form__label">Auf welchen Festivals warst du bereits?</label>
+      <label class="form__label">Dein Lieblingsfestival?</label>
       <select multiple autocomplete="off" name="festival_id" size="5" class="form-control @error('festival_id') is-invalid @enderror">
         @foreach ($festivals as $festival)
         <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
@@ -45,10 +40,6 @@
       @error('festival_id')
       <p class="invalid-feedback">{{ $errors->first('festival_id') }}</p>
       @enderror
-    </div>
-    <div class="form-group">
-      <label class="form__label" for="profile_input5">Deine persönliche Packliste</label>
-      <textarea class="form-control" id="profile_input5" rows="3" name="profile_list" placeholder="Liste hier alle Items auf, die für dich auf keinem Festival fehlen dürfen!">{{ old('profile_list') ?? $ownProfile->profile_list }}</textarea>
     </div>
     <div class="form-group row justify-content-center">
       <div class="col-md-8 offset-md-4">

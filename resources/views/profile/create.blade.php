@@ -3,18 +3,13 @@
 @section('content')
 <div class="container">
   <div class="justify-content-center">
-    <p class="h2 text-center mt-2">
+    <p class="h2 text-center my-4">
       Erzähl' was über dich!
     </p>
-    <a class="btn-link small" href="#">
-      <p class="text-center text-white">
-        Nö, warum?
-      </p>
-    </a>
     <form method="POST" action="{{ route('profile.store') }}" enctype="multipart/form-data">
       @csrf
       <div class="form-group mt-3">
-        <label class="form__label" for="profile_input1">Name</label>
+        <label class="form__label" for="profile_input1">Dein Name</label>
         <input class="form-control" id="profile_input1" name="profile_name">
       </div>
       <div class="input-group mb-3">
@@ -30,7 +25,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="form__label" for="profile_input3">Deine Beschreibung</label>
+        <label class="form__label" for="profile_input3">Eine kleine Beschreibung über dich:</label>
         <textarea class="form-control" id="profile_input3" rows="3" name="profile_description"></textarea>
       </div>
       <div class="form-group">
@@ -43,10 +38,6 @@
         @error('festival_id')
         <p class="invalid-feedback">{{ $errors->first('festival_id') }}</p>
         @enderror
-      </div>
-      <div class="form-group">
-        <label class="form__label" for="profile_input5">Deine persönliche Packliste</label>
-        <textarea class="form-control" id="profile_input5" rows="5" placeholder="Liste hier alle Items auf, die für dich auf keinem Festival fehlen dürfen!" name="profile_list"></textarea>
       </div>
       <div class="form-group row justify-content-center">
         <div class="col-md-8 offset-md-4">

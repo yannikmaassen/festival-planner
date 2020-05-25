@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center align-items-center mx-2">
-    <h1 class="text-white text-center my-5">WHOOOPS... </h1><br>
+    <h1 class="text-white text-center my-5">Willkommen bei Planival!</h1><br>
     <h4 class="text-white text-center mt-5">Scheint so, als hättest du noch keine Planner... <br><br>
       Erstell' dir welche über das "+" in der Navigation!</h4>
     <svg class="bi bi-arrow-down mt-5" width="4em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
