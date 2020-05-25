@@ -4,7 +4,7 @@
 
 <div class="content mx-3 mt-3">
   @foreach($planners as $planner)
-  <a href="{{ url('/planner/' . $planner->id) }}">
+  <a href="{{ route('planner.show', $planner) }}">
     <div class="card mb-4" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-8">

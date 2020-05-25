@@ -416,7 +416,7 @@ h4.planner-element__heading {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: min-content;
+    width: 200px;
     height: 48px;
     color: var(--baby_powder);
     background-color: var(--red_violet);
@@ -433,6 +433,19 @@ h4.planner-element__heading {
     border-radius: 8px;
     height: 40px;
     width: max-content;
+    padding: 8px;
+}
+
+.btn-back__profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--platinum);
+    color: var(--gunmetal);
+    margin: 20px 0px 20px 0px;
+    border-radius: 5px;
+    height: 45px;
+    width: 70px;
     padding: 8px;
 }
 
@@ -505,7 +518,7 @@ h4.planner-element__heading {
 
 .profile__section--description {
     font-size: 1.1em;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px 28px 0px;
     background: var(--platinum);
     color: var(--gunmetal);
     padding: 12px;
@@ -522,13 +535,9 @@ h4.planner-element__heading {
 }
 
 .btn__edit-profile {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    height: 48px;
-    color: var(--rich_black);
-    background-color: var(--platinum);
-    border: 1px solid var(--rich_black);
+    all: unset;
+    color: var(--baby_powder);
+    margin-bottom: 12px;
 }
 
 .search {
@@ -540,7 +549,7 @@ h4.planner-element__heading {
 .favorite-festival {
     color: var(--gunmetal);
     padding: 12px;
-    margin: 16px 0px 16px 0px;
+    margin: 16px 0px 28px 0px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;

@@ -16,6 +16,7 @@
           </svg>
         </a>
       </div>
+
       <div class="festival-default-info">
         <div class="festival-default-info__heading">
           <svg class="bi bi-calendar3 mr-2" width="0.9em" height="0.9em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +29,6 @@
         </div><br>
         <p>{{ $currentPlanner->festival->start_date }} - {{ $currentPlanner->festival->end_date }}</p>
         <div class="festival-default-info__heading">
-
           <svg class="bi bi-geo mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M11 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
             <path d="M7.5 4h1v9a.5.5 0 0 1-1 0V4z" />
@@ -39,6 +39,7 @@
           </h4>
         </div><br>
         <p>{{ $currentPlanner->festival->location }}</p>
+
         <div class="festival-default-info__heading">
           <h4>
             <svg class="bi bi-music-note-beamed mr-1" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
