@@ -12,12 +12,11 @@
     <div class="col-md-3">
       <a href="{{ url('/profile/' . $friend->id) }}" class="d-block border rounded mb-4 p-0 shadow-sm text-decoration-none bg-dark">
         <h4 class="text-white my-1"><small>User-Name:</small> {{ $friend->user_name }}</h4>
-        <h4 class="text-white my-1"><small>E-Mail:</small> {{ $friend->email }}</h4>
         <form method="POST" action="{{ route('planner.update', $currentPlanner) }}">
           <input name="user_id" type="hidden" value="{{ $friend->id }}">
           @csrf
           @method('PATCH')
-          <button class="btn btn-primary my-2">Hinzufügen</button>
+          <button class="btn btn-primary my-2" @if($friend->planner()->exists()) disabled @endif>Hinzufügen</button>
         </form>
       </a>
     </div>

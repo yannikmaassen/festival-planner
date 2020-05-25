@@ -139,7 +139,7 @@ class PlannerController extends Controller
     public function validateData()
     {
         return request()->validate([
-            'festival_id' => 'required',
+            'festival_id' => 'nullable',
             'info_text' => 'required|min:3',
             'todo_list' => 'nullable',
             'playlist_href' => 'nullable',

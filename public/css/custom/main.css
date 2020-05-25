@@ -402,6 +402,10 @@ h4.planner-element__heading {
     border: 1px solid var(--rich_black);
 }
 
+.btn-primary:disabled {
+    background-color: var(--cadet);
+}
+
 .btn-link {
     color: var(--gunmetal);
     font-size: 0.9em;
