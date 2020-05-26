@@ -203,7 +203,7 @@ a.badge:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: var(--baby_powder);
     font: bold;
     border-bottom: 1px solid var(--cadet);
 }
@@ -211,9 +211,8 @@ a.badge:focus {
 .planner-element__heading--dark {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     color: var(--gunmetal);
-    font: bold;
     border-bottom: 1px solid var(--cadet);
 }
 
@@ -300,28 +299,31 @@ h4.planner-element__heading {
     justify-content: space-around;
 }
 
-.searchResult__playlist {
+.searchResult__box {
     display: flex;
+    flex-direction: column;
     background: var(--gunmetal);
     border: 1px solid var(--rich_black);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 4px 4px rgba(0, 0, 0, 0.23);
     padding: 10px;
     margin-bottom: 12px;
     align-items: center;
-    justify-content: space-around;
 }
 
 .btn__add-playlist {
     all: unset;
-    position: absolute;
     right: 30px;
-    bottom: 30px;
+    bottom: 32px;
 }
 
 .btn__add-playlist > svg {
     fill: var(--platinum);
     border: 1px inset var(--rich_black);
     border-radius: 8px;
+}
+
+.btn__add-playlist:disabled > svg {
+    background-color: var(--light_gray);
 }
 
 .playlist-info {
@@ -400,10 +402,6 @@ h4.planner-element__heading {
     background-color: var(--flame);
     color: white;
     border: 1px solid var(--rich_black);
-}
-
-.btn-primary:disabled {
-    background-color: var(--cadet);
 }
 
 .btn-link {
