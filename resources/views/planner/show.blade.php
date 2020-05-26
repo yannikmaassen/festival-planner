@@ -154,6 +154,7 @@
     </div>
     @if(isset($currentPlanner->playlist_id))
     <div class="playlist-info">
+      <img src="{{ $currentPlanner->playlist_images }}" alt="">
       <a href="{{ $currentPlanner->playlist_uri }}">
         <h2>{{ $currentPlanner->playlist_name }}</h2>
         <small>by {{ $currentPlanner->playlist_owner }}</small>
