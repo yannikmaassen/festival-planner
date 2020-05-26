@@ -46,8 +46,9 @@
         @enderror
       </div>
     </div>
-    <div class="btn-group__edit-planner">
-      <button type="submit" class="btn__save-planner">
+    <hr>
+    <div class="btn-group__edit">
+      <button type="submit" class="btn__save-changes">
         {{ __('Änderungen speichern') }}
       </button>
   </form>
@@ -62,6 +63,5 @@
       {{ __('Löschen') }}
     </button>
   </form>
-</div>
 </div>
 @endsection

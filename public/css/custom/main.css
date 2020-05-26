@@ -275,7 +275,6 @@ h4.planner-element__heading {
     align-items: center;
     background: var(--red_violet);
     color: var(--baby_powder);
-    margin: 20px 0px 20px 0px;
     border-radius: 8px;
     height: 40px;
     width: max-content;
@@ -283,7 +282,7 @@ h4.planner-element__heading {
     border: 1px solid var(--rich_black);
 }
 
-.btn__save-planner {
+.btn__save-changes {
     background-color: var(--flame);
     color: white;
     border: 1px solid var(--rich_black);
@@ -292,7 +291,7 @@ h4.planner-element__heading {
     width: 60%;
 }
 
-.btn-group__edit-planner {
+.btn-group__edit {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
