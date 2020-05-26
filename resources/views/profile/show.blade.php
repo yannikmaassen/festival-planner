@@ -45,7 +45,7 @@
       <a href="{{ $ownProfile->artist_uri }}" class="h4">{{ $ownProfile->artist_name }}</a>
     </div>
     @else
-    <a class="btn btn-primary mb-5 w-100" href="{{ route('artist.search', $ownProfile) }}">
+    <a class="btn btn-primary my-3 w-100" href="{{ route('artist.search', $ownProfile) }}">
       {{ __('Füge deine Lieblingsartists hinzu!') }}
     </a>
     @endif

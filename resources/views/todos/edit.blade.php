@@ -13,7 +13,7 @@
       <p class="invalid-feedback">{{ $errors->first('todo_list') }}</p>
       @enderror
     </div>
-    <button type="submit" class="btn btn-primary my-3 w-100">
+    <button type="submit" class="btn btn-primary mb-3 w-100">
       {{ __('Änderungen speichern') }}
     </button>
   </form>
