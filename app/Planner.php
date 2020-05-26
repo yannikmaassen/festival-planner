@@ -25,6 +25,6 @@ class Planner extends Model
             return Storage::url($value);
         }
 
-        return '/images/blog_festival_Main.jpg';
+        return '/images/blog_festival_Main_original.jpg';
     }
 }

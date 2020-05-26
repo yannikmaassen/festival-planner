@@ -574,3 +574,34 @@ h4.planner-element__heading {
 .favorite-music > a {
     color: var(--gunmetal);
 }
+
+.welcome-page {
+    background-image: url("/images/blog_festival_Main.jpg");
+    position: fixed;
+}
+
+.welcome-font {
+    background: var(--gunmetal);
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 3.2em;
+    border: 2px solid var(--platinum);
+}
+
+.welcome-font__p {
+    background: var(--gunmetal);
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid var(--platinum);
+}
+
+.noprofile-page {
+    background-image: url("/images/audience_schnitt.jpg");
+    position: fixed;
+}
+
+.no-profile__p {
+    background: var(--gunmetal);
+    padding: 12px;
+    border-radius: 25px;
+}
