@@ -131,11 +131,6 @@ class PlannerController extends Controller
         return redirect()->route('planner.index');
     }
 
-    public function finished()
-    {
-        return view('planner.show_finished');
-    }
-
     public function validateData()
     {
         return request()->validate([

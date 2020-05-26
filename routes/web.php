@@ -33,7 +33,6 @@ Route::get('/profile/{profile}/editProfileList', 'ProfileListController@edit')->
 
 // Planner routes
 
-Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
 Route::resource('/planner', 'PlannerController')->middleware('auth');
 
 // Friends routes
