@@ -26,14 +26,27 @@
 }
 
 /* Header styling */
+html,
+body {
+    display: grid;
+    grid-template-rows: 48px auto 48px;
+    background-color: var(--charcoal_blue);
+    background-image: url("/images/sunset-1529139_1920.jpg");
+    width: 100vw;
+    height: 100vh;
+    font-family: "Ubuntu";
+}
 
 header {
     font-family: "Aclonica";
     height: 48px;
     background-color: var(--gunmetal);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     border-radius: 0px 0px 12px 12px;
     border-bottom: 2px solid var(--platinum);
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .header__text {
@@ -48,31 +61,21 @@ header {
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--charcoal_blue);
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    font-family: "Ubuntu";
-}
-
-.body__nav {
-    display: grid;
-    grid-template-rows: 48px auto 48px;
-    height: 100vh;
-    width: 100vw;
-}
-
 p {
     color: var(--baby_powder);
 }
 
-.content {
+main {
+    grid-row: 2 / 2;
+    height: auto;
     overflow: scroll;
 }
 
 footer {
     height: 48px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 hr {
@@ -164,7 +167,7 @@ pre {
 }
 
 .btn__add-friend > svg {
-    border: 1px solid var(--cadet);
+    border: 1px solid var(--rich_black);
     border-radius: 6px;
 }
 
@@ -372,6 +375,12 @@ h4.planner-element__heading {
     background: none;
 }
 
+.card-title {
+    padding: 12px;
+    border-bottom: 1px solid var(--cadet);
+    color: white;
+}
+
 .festival-card {
     display: flex;
     flex-direction: column;
@@ -379,16 +388,13 @@ h4.planner-element__heading {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     padding: 12px;
     border-radius: 5px;
-    color: var(--gunmetal);
-    background-image: linear-gradient(
-        to right,
-        var(--manatee),
-        var(--platinum)
-    );
+    border: 1px solid var(--platinum);
+    color: var(--platinum);
+    background: var(--gunmetal);
 }
 
 .card-text {
-    color: var(--charcoal);
+    color: var(--platinum);
 }
 
 .planner__element--heading {
@@ -575,11 +581,6 @@ h4.planner-element__heading {
     color: var(--gunmetal);
 }
 
-.welcome-page {
-    background-image: url("/images/blog_festival_Main.jpg");
-    position: fixed;
-}
-
 .welcome-font {
     background: var(--gunmetal);
     padding: 12px;
@@ -595,9 +596,11 @@ h4.planner-element__heading {
     border: 1px solid var(--platinum);
 }
 
-.noprofile-page {
-    background-image: url("/images/audience_schnitt.jpg");
-    position: fixed;
+.background__image1 {
+    background-image: url("/images/sunset-1529139_1920.jpg");
+    height: 100vh;
+    /* position: fixed; */
+    width: 100vw;
 }
 
 .no-profile__p {

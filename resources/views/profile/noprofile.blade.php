@@ -1,7 +1,7 @@
 @extends('layouts/app_nav')
 
 @section('content')
-<div class="noprofile-page">
+<div class="background__image1">
   <div class="container noprofile-page">
     <h1 class="text-white text-center my-4">WHOOOPS...</h1><br>
     <div class="row justify-content-center align-items-center mx-2 no-profile__p">

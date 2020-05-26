@@ -1,7 +1,7 @@
 @extends('layouts/app_nav')
 
 @section('content')
-<div class="welcome-page">
+<div class="background__image1">
   <div class="container">
     <div class="row justify-content-center align-items-center mx-2">
       <h1 class="text-white text-center my-5 welcome-font">Willkommen bei Planival!</h1><br>

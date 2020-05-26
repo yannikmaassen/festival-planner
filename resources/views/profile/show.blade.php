@@ -42,7 +42,7 @@
     </div>
     @if(!is_null($ownProfile->artist_id))
     <div class="favorite-music">
-      <img src="{{ $ownProfile->artist_images }}" alt="">
+      <img class="mb-3" src="{{ $ownProfile->artist_images }}" alt="">
       <a href="{{ $ownProfile->artist_uri }}" class="h4">{{ $ownProfile->artist_name }}</a>
     </div>
     @else
