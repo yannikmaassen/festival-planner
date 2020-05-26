@@ -11,7 +11,7 @@
 
     <div class="form-group">
       <label class="form__label">Festival ändern</label>
-      <select autocomplete="off" name="festival_id" size="10" class="form-control @error('festivals') is-invalid @enderror">
+      <select autocomplete="off" name="festival_id" size="6" class="form-control @error('festivals') is-invalid @enderror">
         @foreach ($festivals as $festival)
         <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
         @endforeach

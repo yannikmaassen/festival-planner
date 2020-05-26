@@ -26,11 +26,11 @@
       </div>
       <div class="form-group">
         <label class="form__label" for="profile_input3">Eine kleine Beschreibung über dich:</label>
-        <textarea class="form-control" id="profile_input3" rows="3" name="profile_description"></textarea>
+        <textarea class="form-control" id="profile_input3" rows="2" name="profile_description"></textarea>
       </div>
       <div class="form-group">
         <label class="form__label">Dein Lieblingsfestival?</label>
-        <select autocomplete="off" name="festival_id" size="5" class="form-control @error('festival_id') is-invalid @enderror">
+        <select autocomplete="off" name="festival_id" size="3" class="form-control @error('festival_id') is-invalid @enderror">
           @foreach ($festivals as $festival)
           <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
           @endforeach
@@ -41,7 +41,7 @@
       </div>
       <div class="form-group row justify-content-center">
         <div class="col-md-8 offset-md-4">
-          <button type="submit" class="btn btn-primary my-3 w-100">
+          <button type="submit" class="btn btn-primary my-2 w-100">
             {{ __('Profil anlegen') }}
           </button>
         </div>

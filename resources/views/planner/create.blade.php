@@ -10,7 +10,7 @@
     @csrf
     <div class="form-group">
       <label class="form__label">Festival auswählen</label>
-      <select autocomplete="off" name="festival_id" size="10" class="form-control @error('festival_id') is-invalid @enderror">
+      <select autocomplete="off" name="festival_id" size="6" class="form-control @error('festival_id') is-invalid @enderror">
         @foreach ($festivals as $festival)
         <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
         @endforeach
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
       <label class="form__label">Info-Text des Planners</label>
-      <textarea class="form-control @error('info_text') is-invalid @enderror" rows="3" name="info_text" placeholder="Schreibe hier ein paar Grußworte an deine Freunde oder eine kleine Beschreibung über das Festival!"></textarea>
+      <textarea class="form-control @error('info_text') is-invalid @enderror" rows="3" name="info_text" placeholder="Schreibe hier z.B. Grußworte an deine Freunde oder eine kleine Beschreibung über das Festival! Es ist ganz dir überlassen!"></textarea>
       @error('info_text')
       <p class="invalid-feedback">{{ $errors->first('info_text') }}</p>
       @enderror

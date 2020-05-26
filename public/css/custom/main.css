@@ -80,7 +80,7 @@ footer {
 
 hr {
     border-top: 1.5px solid var(--light_cyan);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 pre {
@@ -395,6 +395,8 @@ h4.planner-element__heading {
 
 .card-text {
     color: var(--platinum);
+    font-size: 0.9em;
+    padding: 2px;
 }
 
 .planner__element--heading {
@@ -567,7 +569,6 @@ h4.planner-element__heading {
 }
 
 .favorite-music {
-    background: var(--platinum);
     padding: 12px;
     margin: 16px 0px 16px 0px;
     border-radius: 5px;
@@ -578,7 +579,7 @@ h4.planner-element__heading {
 }
 
 .favorite-music > a {
-    color: var(--gunmetal);
+    color: var(--platinum);
 }
 
 .welcome-font {

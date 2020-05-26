@@ -28,11 +28,11 @@
     </div>
     <div class="form-group">
       <label class="form__label" for="profile_input3">Eine kleine Beschreibung über dich:</label>
-      <textarea class="form-control" id="profile_input3" rows="3" name="profile_description">{{ old('profile_description') ?? $ownProfile->profile_description }}</textarea>
+      <textarea class="form-control" id="profile_input3" rows="2" name="profile_description">{{ old('profile_description') ?? $ownProfile->profile_description }}</textarea>
     </div>
     <div class="form-group">
       <label class="form__label">Dein Lieblingsfestival?</label>
-      <select multiple autocomplete="off" name="festival_id" size="5" class="form-control @error('festival_id') is-invalid @enderror">
+      <select multiple autocomplete="off" name="festival_id" size="3" class="form-control @error('festival_id') is-invalid @enderror">
         @foreach ($festivals as $festival)
         <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
         @endforeach
@@ -42,7 +42,7 @@
       @enderror
     </div>
     <hr>
-    <div class="btn-group__edit mb-4">
+    <div class="btn-group__edit mb-2">
       <button type="submit" class="btn__save-changes">
         {{ __('Änderungen speichern') }}
       </button>
