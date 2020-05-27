@@ -117,7 +117,7 @@ pre {
     text-align: center;
     font-size: 3em;
     color: var(--platinum);
-    background-color: var(--steel_teal);
+    background-color: var(--gunmetal);
     border-radius: 40px;
     padding: 8px;
     width: 80%;
@@ -128,7 +128,7 @@ pre {
 }
 
 .card-header {
-    background-color: var(--gunmetal);
+    background-color: var(--charcoal_blue);
     color: var(--platinum);
 }
 
@@ -345,6 +345,10 @@ h4.planner-element__heading {
     color: var(--gunmetal);
 }
 
+.playlist-info > a > p {
+    color: var(--gunmetal);
+}
+
 .searchTerm {
     width: 100%;
     padding: 5px;
@@ -352,7 +356,7 @@ h4.planner-element__heading {
     border: none;
     font-size: 1.1em;
     color: var(--platinum);
-    background: var(--steel_teal);
+    background: var(--manatee);
     border-radius: 25px 0px 0px 25px;
     text-align: center;
 }
@@ -365,7 +369,7 @@ h4.planner-element__heading {
 .searchButton {
     width: 50px;
     height: 50px;
-    background: var(--steel_teal);
+    background: var(--manatee);
     text-align: center;
     color: var(--baby_powder);
     border: none;
@@ -625,4 +629,16 @@ h4.planner-element__heading {
     color: white;
     font: bold;
     border-bottom: 1px solid var(--cadet);
+}
+
+.box__search--heading {
+    border: 1px solid var(--gunmetal);
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 16px;
+    background-color: var(--platinum);
+    font-size: 0.9em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 24px;
+    color: var(--rich_black);
 }

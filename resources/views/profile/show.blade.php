@@ -49,7 +49,7 @@
     </div>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('artist.search', $ownProfile) }}">
-      {{ __('Füge deine Lieblingsartists hinzu!') }}
+      {{ __('Füge deinen Lieblingsinterpreten hinzu!') }}
     </a>
     @endif
 
@@ -58,7 +58,7 @@
         <svg class="bi bi-list-ul" width="0.7em" height="0.7em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
         </svg>
-        Meine Packliste</h3>
+        Packliste</h3>
       @if(isset($ownProfile->profile_list))
       <a href="{{ route('profile_list.edit', $ownProfile) }}" class="btn btn__edit-todos">
         <svg class="bi bi-pencil-square" width="2em" height="2em" viewBox="0 0 16 16" fill="var(--orange_main)" xmlns="http://www.w3.org/2000/svg">

@@ -4,7 +4,6 @@
 <div class="container">
   <div class="box__general">
     <h2 class="box__general--heading mt-3">ToDo-Liste hinzufügen</h2>
-
     <form method="POST" action="{{ route('planner.update', $currentPlanner) }}">
       @csrf
       @method('PUT')

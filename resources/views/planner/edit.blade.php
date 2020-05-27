@@ -48,7 +48,7 @@
         </div>
       </div>
       <hr>
-      <div class="btn-group__edit">
+      <div class="btn-group__edit my-4">
         <button type="submit" class="btn__save-changes">
           {{ __('Änderungen speichern') }}
         </button>

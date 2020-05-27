@@ -155,11 +155,11 @@
       <img class="mb-3" src="{{ $currentPlanner->playlist_images }}" alt="">
       <a href="{{ $currentPlanner->playlist_uri }}">
         <h2>{{ $currentPlanner->playlist_name }}</h2>
-        <small>by {{ $currentPlanner->playlist_owner }}</small>
+        <p>by {{ $currentPlanner->playlist_owner }}</p>
       </a></div>
     @else
     <a class="btn btn-primary my-3 w-100" href="{{ route('playlist.search', $currentPlanner) }}">
-      {{ __('Fügt hier Eure Camp-Playlist über Spotify hinzu!') }}
+      {{ __('Fügt hier eure Playlist über Spotify hinzu!') }}
     </a>
     @endif
   </section>
