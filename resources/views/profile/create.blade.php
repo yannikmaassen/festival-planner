@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-  <div class="justify-content-center">
-    <p class="h2 text-center my-4">
+  <div class="box__general">
+    <p class="box__general--heading h2 my-4">
       Erzähl' was über dich!
     </p>
     <form method="POST" action="{{ route('profile.store') }}" enctype="multipart/form-data">

@@ -3,10 +3,8 @@
 @section('content')
 <div class="container">
   <section class="mb-4">
-    <img class="auth__image mt-3" src="{{ $currentPlanner->getImageAttributePlanner($currentPlanner->planner_image) }}" alt="Festival-Szenerie">
-
     <div class="planner-element">
-
+      <img class="auth__image my-4" src="{{ $currentPlanner->getImageAttributePlanner($currentPlanner->planner_image) }}" alt="Festival-Szenerie">
       <div class="planner-element__heading">
         <h1>{{ $currentPlanner->festival->festival_name }}</h1>
         <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner ml-4 mb-3">

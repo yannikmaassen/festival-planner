@@ -2,13 +2,15 @@
 
 @section('content')
 <div class="container">
-  <div class="row justify-content-center align-items-center my-4">
-    <img class="profile__image" src="{{ $ownProfile->getImageAttributeProfile($ownProfile->profile_image) }}" alt="Profilbild">
-  </div>
-  <div class="row justify-content-center align-items-center my-2">
-    <p class="h2">{{ $ownProfile->profile_name }}</p>
-  </div>
-  <section class="profile__section">
+
+  <section class="profile__section mt-3">
+    <div class="row justify-content-center align-items-center my-4">
+      <img class="profile__image" src="{{ $ownProfile->getImageAttributeProfile($ownProfile->profile_image) }}" alt="Profilbild">
+    </div>
+    <div class="row justify-content-center align-items-center my-2">
+      <p class="h2">{{ $ownProfile->profile_name }}</p>
+    </div>
+    <hr class="my-4">
     <div class="profile__section--heading">
       <h3>Beschreibung</h3>
       @if(isset($ownProfile->profile_description))
@@ -75,28 +77,29 @@
       {{ __('Füge deine persönliche Packliste hinzu!') }}
     </a>
     @endif
+    <hr>
+    <div class="row justify-content-around align-items-center my-4">
+      <a class="btn-back__profile" href="{{ url()->previous() }}">
+        <svg class="bi bi-chevron-left" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd" />
+        </svg>
+      </a>
+      <div class="justify-content-center">
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <button class="btn btn__logout">
+            <svg class="bi bi-box-arrow-right mr-2" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M11.646 11.354a.5.5 0 010-.708L14.293 8l-2.647-2.646a.5.5 0 01.708-.708l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M4.5 8a.5.5 0 01.5-.5h9a.5.5 0 010 1H5a.5.5 0 01-.5-.5z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M2 13.5A1.5 1.5 0 01.5 12V4A1.5 1.5 0 012 2.5h7A1.5 1.5 0 0110.5 4v1.5a.5.5 0 01-1 0V4a.5.5 0 00-.5-.5H2a.5.5 0 00-.5.5v8a.5.5 0 00.5.5h7a.5.5 0 00.5-.5v-1.5a.5.5 0 011 0V12A1.5 1.5 0 019 13.5H2z" clip-rule="evenodd" />
+            </svg>
+            Logout
+          </button>
+        </form>
+      </div>
+    </div>
   </section>
 
-  <hr>
-  <div class="row justify-content-around align-items-center my-4">
-    <a class="btn-back__profile" href="{{ url()->previous() }}">
-      <svg class="bi bi-chevron-left" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd" />
-      </svg>
-    </a>
-    <div class="justify-content-center">
-      <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button class="btn btn__logout">
-          <svg class="bi bi-box-arrow-right mr-2" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M11.646 11.354a.5.5 0 010-.708L14.293 8l-2.647-2.646a.5.5 0 01.708-.708l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M4.5 8a.5.5 0 01.5-.5h9a.5.5 0 010 1H5a.5.5 0 01-.5-.5z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M2 13.5A1.5 1.5 0 01.5 12V4A1.5 1.5 0 012 2.5h7A1.5 1.5 0 0110.5 4v1.5a.5.5 0 01-1 0V4a.5.5 0 00-.5-.5H2a.5.5 0 00-.5.5v8a.5.5 0 00.5.5h7a.5.5 0 00.5-.5v-1.5a.5.5 0 011 0V12A1.5 1.5 0 019 13.5H2z" clip-rule="evenodd" />
-          </svg>
-          Logout
-        </button>
-      </form>
-    </div>
-  </div>
+
 </div>
 @endsection

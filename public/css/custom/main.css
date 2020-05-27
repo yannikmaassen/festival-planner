@@ -23,6 +23,8 @@
     --davys_grey: #505a5b;
     --manatee: #8f91a2;
     --spoti_green: #6ae368;
+    --orange_peel: #ffa62b;
+    --orange: #f56416;
 }
 
 /* Header styling */
@@ -31,7 +33,7 @@ body {
     display: grid;
     grid-template-rows: 48px auto 48px;
     background-color: var(--charcoal_blue);
-    background-image: url("/images/sunset-1529139_1920.jpg");
+    background-image: url("/images/clouds-during-golden-hour-1905054.jpg");
     width: 100vw;
     height: 100vh;
     font-family: "Ubuntu";
@@ -42,7 +44,7 @@ header {
     height: 48px;
     background-color: var(--gunmetal);
     margin-bottom: 20px;
-    border-radius: 0px 0px 12px 12px;
+    border-radius: 0px 0px 3px 3px;
     border-bottom: 2px solid var(--platinum);
     position: fixed;
     width: 100%;
@@ -305,7 +307,7 @@ h4.planner-element__heading {
     display: flex;
     flex-direction: column;
     background: var(--gunmetal);
-    border: 1px solid var(--rich_black);
+    border: 1px solid var(--platinum);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 4px 4px rgba(0, 0, 0, 0.23);
     padding: 10px;
     margin-bottom: 12px;
@@ -464,7 +466,7 @@ h4.planner-element__heading {
     position: absolute;
     bottom: 0;
     width: 100%;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
     border-top: 1px solid var(--platinum);
 }
 
@@ -597,15 +599,28 @@ h4.planner-element__heading {
     border: 1px solid var(--platinum);
 }
 
-.background__image1 {
-    background-image: url("/images/sunset-1529139_1920.jpg");
-    height: 100vh;
-    /* position: fixed; */
-    width: 100vw;
-}
-
 .no-profile__p {
     background: var(--gunmetal);
     padding: 12px;
     border-radius: 25px;
+}
+
+.box__general {
+    border: 1px solid var(--platinum);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 25px;
+    background-color: var(--gunmetal);
+    font-size: 1.1em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 24px;
+}
+
+.box__general--heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font: bold;
+    border-bottom: 1px solid var(--cadet);
 }
