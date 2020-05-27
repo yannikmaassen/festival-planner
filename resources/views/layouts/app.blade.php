@@ -18,7 +18,7 @@
   <title>Festival Planner</title>
 </head>
 
-<body>
+<body class="body__borderless">
   <main>
     @yield('content')
   </main>

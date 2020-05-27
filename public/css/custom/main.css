@@ -28,11 +28,36 @@
     --custom_red: #bc1011;
 }
 
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 /* Header styling */
+
 html,
 body {
     display: grid;
     grid-template-rows: 48px auto 48px;
+    background-color: var(--charcoal_blue);
+    background-image: url("/images/clouds-during-golden-hour-1905054.jpg");
+    width: 100vw;
+    height: 100vh;
+    font-family: "Ubuntu";
+}
+
+.body__borderless {
+    grid: none;
     background-color: var(--charcoal_blue);
     background-image: url("/images/clouds-during-golden-hour-1905054.jpg");
     width: 100vw;

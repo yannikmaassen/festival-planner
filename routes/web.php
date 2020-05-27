@@ -22,6 +22,10 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/impressum', function () {
+    return view('/impressum');
+})->name('impressum');
+
 // Profile routes
 
 Route::resource('/profile', 'ProfileController')->middleware('auth');

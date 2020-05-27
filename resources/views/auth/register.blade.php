@@ -58,11 +58,17 @@
 
             <div class="form-group row mb-0">
               <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary w-100">
                   {{ __('Registrieren') }}
                 </button>
+              </div>
+              <div class="justify-content-center">
                 <a class="btn btn-link" href="{{ route('login') }}">
                   {{ __('Bereits registriert? Login') }}
+                </a>
+                <br>
+                <a class="btn btn-link" href="{{ route('impressum') }}">
+                  {{ __('Impressum') }}
                 </a>
               </div>
             </div>
