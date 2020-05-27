@@ -8,7 +8,7 @@
       <div class="planner-element__heading">
         <h1>{{ $currentPlanner->festival->festival_name }}</h1>
         <a href="{{ route('planner.edit', $currentPlanner) }}" class="btn btn__edit-planner ml-4 mb-3">
-          <svg class="bi bi-pencil-square" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="var(--flame)" xmlns="http://www.w3.org/2000/svg">
+          <svg class="bi bi-pencil-square" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="var(--orange_main)" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd" />
           </svg>
@@ -17,7 +17,7 @@
 
       <div class="festival-default-info">
         <div class="festival-default-info__heading">
-          <svg class="bi bi-calendar3 mr-2" width="0.9em" height="0.9em" viewBox="0 0 16 16" fill="orange" xmlns="http://www.w3.org/2000/svg">
+          <svg class="bi bi-calendar3 mr-2" width="0.9em" height="0.9em" viewBox="0 0 16 16" fill="var(--orange_main)" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
             <path fill-rule="evenodd" d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
           </svg>
@@ -71,7 +71,7 @@
         Festivalcrew</h2>
       @if(count($users) >= 1)
       <a href="{{ route('friends.add', $currentPlanner) }}" class="btn btn__add-friend">
-        <svg class="bi bi-plus-square-fill" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="var(--flame)" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bi bi-plus-square-fill" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="var(--orange_main)" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm6.5 4a.5.5 0 00-1 0v3.5H4a.5.5 0 000 1h3.5V12a.5.5 0 001 0V8.5H12a.5.5 0 000-1H8.5V4z" clip-rule="evenodd" />
         </svg>
       </a>
@@ -115,7 +115,7 @@
         ToDo-Liste</h2>
       @if(isset($currentPlanner->todo_list))
       <a href="{{ route('todos.edit', $currentPlanner) }}" class="btn btn__edit-todos">
-        <svg class="bi bi-pencil-square" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="var(--flame)" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bi bi-pencil-square" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="var(--orange_main)" xmlns="http://www.w3.org/2000/svg">
           <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
           <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd" />
         </svg>
@@ -143,7 +143,7 @@
         Camp-Playlist</h2>
       @if(isset($currentPlanner->playlist_id))
       <a href="{{ route('playlist.search', $currentPlanner) }}" class="btn btn__search-playlist">
-        <svg class="bi bi-search" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="var(--flame)" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bi bi-search" width="2.3em" height="2.3em" viewBox="0 0 16 16" fill="var(--orange_main)" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd" />
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd" />
         </svg>

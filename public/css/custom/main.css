@@ -8,7 +8,7 @@
     --cadet: #5c6b73;
     --gunmetal: #253237;
     --light_cyan: #e0fbfc;
-    --flame: #f15025;
+    --orange_main: #f15025;
     --english_violet: #474056;
     --red_violet: #912f40;
     --platinum: #e6e8e6;
@@ -24,7 +24,8 @@
     --manatee: #8f91a2;
     --spoti_green: #6ae368;
     --orange_peel: #ffa62b;
-    --orange: #f56416;
+    --orange_main: #f56416;
+    --custom_red: #bc1011;
 }
 
 /* Header styling */
@@ -267,7 +268,7 @@ h4.planner-element__heading {
 }
 
 .btn__create-planner {
-    background-color: var(--flame);
+    background-color: var(--orange_main);
     color: white;
     border: 1px solid var(--rich_black);
     border-radius: 5px;
@@ -278,7 +279,7 @@ h4.planner-element__heading {
 .btn__delete-planner {
     display: flex;
     align-items: center;
-    background: var(--red_violet);
+    background: var(--custom_red);
     color: var(--baby_powder);
     border-radius: 8px;
     height: 40px;
@@ -288,7 +289,7 @@ h4.planner-element__heading {
 }
 
 .btn__save-changes {
-    background-color: var(--flame);
+    background-color: var(--orange_main);
     color: white;
     border: 1px solid var(--rich_black);
     border-radius: 5px;
@@ -312,6 +313,7 @@ h4.planner-element__heading {
     padding: 10px;
     margin-bottom: 12px;
     align-items: center;
+    border-radius: 5px;
 }
 
 .btn__add-playlist {
@@ -408,7 +410,7 @@ h4.planner-element__heading {
 /* Button styling */
 
 .btn-primary {
-    background-color: var(--flame);
+    background-color: var(--orange_main);
     color: white;
     border: 1px solid var(--rich_black);
 }
@@ -423,10 +425,10 @@ h4.planner-element__heading {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 48px;
+    width: 150px;
+    height: 36px;
     color: var(--baby_powder);
-    background-color: var(--red_violet);
+    background-color: var(--custom_red);
     border: 1px solid var(--rich_black);
     font: bold;
 }
@@ -451,7 +453,7 @@ h4.planner-element__heading {
     color: var(--gunmetal);
     margin: 20px 0px 20px 0px;
     border-radius: 5px;
-    height: 45px;
+    height: 36px;
     width: 70px;
     padding: 8px;
 }
@@ -477,7 +479,7 @@ h4.planner-element__heading {
 }
 
 .navbar > a.active > svg {
-    fill: var(--flame);
+    fill: var(--orange_main);
 }
 
 /* Forms styling */
