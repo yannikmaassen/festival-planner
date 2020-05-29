@@ -8,7 +8,7 @@
     --cadet: #5c6b73;
     --gunmetal: #253237;
     --light_cyan: #e0fbfc;
-    --flame: #f15025;
+    --orange_main: #f15025;
     --english_violet: #474056;
     --red_violet: #912f40;
     --platinum: #e6e8e6;
@@ -23,17 +23,58 @@
     --davys_grey: #505a5b;
     --manatee: #8f91a2;
     --spoti_green: #6ae368;
+    --orange_peel: #ffa62b;
+    --orange_main: #f56416;
+    --custom_red: #bc1011;
+}
+
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+a:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Header styling */
+
+html,
+body {
+    display: grid;
+    grid-template-rows: 48px auto 48px;
+    background-color: var(--charcoal_blue);
+    background-image: url("/images/clouds-during-golden-hour-1905054.jpg");
+    width: 100vw;
+    height: 100vh;
+    font-family: "Ubuntu";
+}
+
+.body__borderless {
+    grid: none;
+    background-color: var(--charcoal_blue);
+    background-image: url("/images/clouds-during-golden-hour-1905054.jpg");
+    width: 100vw;
+    height: 100vh;
+    font-family: "Ubuntu";
+}
 
 header {
     font-family: "Aclonica";
     height: 48px;
     background-color: var(--gunmetal);
-    margin-bottom: 12px;
-    border-radius: 0px 0px 12px 12px;
+    margin-bottom: 20px;
+    border-radius: 0px 0px 3px 3px;
     border-bottom: 2px solid var(--platinum);
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .header__text {
@@ -48,36 +89,26 @@ header {
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--charcoal_blue);
-    display: grid;
-    height: 100vh;
-    width: 100vw;
-    font-family: "Ubuntu";
-}
-
-.body__nav {
-    display: grid;
-    grid-template-rows: 48px auto 48px;
-    height: 100vh;
-    width: 100vw;
-}
-
 p {
     color: var(--baby_powder);
 }
 
-.content {
+main {
+    grid-row: 2 / 2;
+    height: auto;
     overflow: scroll;
 }
 
 footer {
     height: 48px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 hr {
     border-top: 1.5px solid var(--light_cyan);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 pre {
@@ -111,7 +142,7 @@ pre {
     text-align: center;
     font-size: 3em;
     color: var(--platinum);
-    background-color: var(--steel_teal);
+    background-color: var(--gunmetal);
     border-radius: 40px;
     padding: 8px;
     width: 80%;
@@ -122,7 +153,7 @@ pre {
 }
 
 .card-header {
-    background-color: var(--gunmetal);
+    background-color: var(--charcoal_blue);
     color: var(--platinum);
 }
 
@@ -164,7 +195,7 @@ pre {
 }
 
 .btn__add-friend > svg {
-    border: 1px solid var(--cadet);
+    border: 1px solid var(--rich_black);
     border-radius: 6px;
 }
 
@@ -203,7 +234,7 @@ a.badge:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: var(--baby_powder);
     font: bold;
     border-bottom: 1px solid var(--cadet);
 }
@@ -211,9 +242,8 @@ a.badge:focus {
 .planner-element__heading--dark {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     color: var(--gunmetal);
-    font: bold;
     border-bottom: 1px solid var(--cadet);
 }
 
@@ -226,6 +256,12 @@ a.badge:focus {
 
 .festival-default-info > h4 {
     color: var(--baby_powder);
+}
+
+.festival-default-info__heading {
+    display: flex;
+    align-items: baseline;
+    color: var(--platinum);
 }
 
 .festival-info-text {
@@ -257,7 +293,7 @@ h4.planner-element__heading {
 }
 
 .btn__create-planner {
-    background-color: var(--flame);
+    background-color: var(--orange_main);
     color: white;
     border: 1px solid var(--rich_black);
     border-radius: 5px;
@@ -268,9 +304,8 @@ h4.planner-element__heading {
 .btn__delete-planner {
     display: flex;
     align-items: center;
-    background: var(--red_violet);
+    background: var(--custom_red);
     color: var(--baby_powder);
-    margin: 20px 0px 20px 0px;
     border-radius: 8px;
     height: 40px;
     width: max-content;
@@ -278,8 +313,8 @@ h4.planner-element__heading {
     border: 1px solid var(--rich_black);
 }
 
-.btn__save-planner {
-    background-color: var(--flame);
+.btn__save-changes {
+    background-color: var(--orange_main);
     color: white;
     border: 1px solid var(--rich_black);
     border-radius: 5px;
@@ -287,35 +322,39 @@ h4.planner-element__heading {
     width: 60%;
 }
 
-.btn-group__edit-planner {
+.btn-group__edit {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-around;
 }
 
-.searchResult__playlist {
+.searchResult__box {
     display: flex;
+    flex-direction: column;
     background: var(--gunmetal);
-    border: 1px solid var(--rich_black);
+    border: 1px solid var(--platinum);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 4px 4px rgba(0, 0, 0, 0.23);
     padding: 10px;
     margin-bottom: 12px;
     align-items: center;
-    justify-content: space-around;
+    border-radius: 5px;
 }
 
 .btn__add-playlist {
     all: unset;
-    position: absolute;
     right: 30px;
-    bottom: 30px;
+    bottom: 32px;
 }
 
 .btn__add-playlist > svg {
     fill: var(--platinum);
     border: 1px inset var(--rich_black);
     border-radius: 8px;
+}
+
+.btn__add-playlist:disabled > svg {
+    background-color: var(--light_gray);
 }
 
 .playlist-info {
@@ -331,6 +370,10 @@ h4.planner-element__heading {
     color: var(--gunmetal);
 }
 
+.playlist-info > a > p {
+    color: var(--gunmetal);
+}
+
 .searchTerm {
     width: 100%;
     padding: 5px;
@@ -338,7 +381,7 @@ h4.planner-element__heading {
     border: none;
     font-size: 1.1em;
     color: var(--platinum);
-    background: var(--steel_teal);
+    background: var(--manatee);
     border-radius: 25px 0px 0px 25px;
     text-align: center;
 }
@@ -351,7 +394,7 @@ h4.planner-element__heading {
 .searchButton {
     width: 50px;
     height: 50px;
-    background: var(--steel_teal);
+    background: var(--manatee);
     text-align: center;
     color: var(--baby_powder);
     border: none;
@@ -365,6 +408,12 @@ h4.planner-element__heading {
     background: none;
 }
 
+.card-title {
+    padding: 12px;
+    border-bottom: 1px solid var(--cadet);
+    color: white;
+}
+
 .festival-card {
     display: flex;
     flex-direction: column;
@@ -372,16 +421,15 @@ h4.planner-element__heading {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     padding: 12px;
     border-radius: 5px;
-    color: var(--gunmetal);
-    background-image: linear-gradient(
-        to right,
-        var(--manatee),
-        var(--platinum)
-    );
+    border: 1px solid var(--platinum);
+    color: var(--platinum);
+    background: var(--gunmetal);
 }
 
 .card-text {
-    color: var(--charcoal);
+    color: var(--platinum);
+    font-size: 0.9em;
+    padding: 2px;
 }
 
 .planner__element--heading {
@@ -391,7 +439,7 @@ h4.planner-element__heading {
 /* Button styling */
 
 .btn-primary {
-    background-color: var(--flame);
+    background-color: var(--orange_main);
     color: white;
     border: 1px solid var(--rich_black);
 }
@@ -406,10 +454,10 @@ h4.planner-element__heading {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: min-content;
-    height: 48px;
+    width: 150px;
+    height: 36px;
     color: var(--baby_powder);
-    background-color: var(--red_violet);
+    background-color: var(--custom_red);
     border: 1px solid var(--rich_black);
     font: bold;
 }
@@ -426,6 +474,19 @@ h4.planner-element__heading {
     padding: 8px;
 }
 
+.btn-back__profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--platinum);
+    color: var(--gunmetal);
+    margin: 20px 0px 20px 0px;
+    border-radius: 5px;
+    height: 36px;
+    width: 70px;
+    padding: 8px;
+}
+
 /* Navbar-Styling */
 
 .navbar {
@@ -436,7 +497,7 @@ h4.planner-element__heading {
     position: absolute;
     bottom: 0;
     width: 100%;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
     border-top: 1px solid var(--platinum);
 }
 
@@ -447,7 +508,7 @@ h4.planner-element__heading {
 }
 
 .navbar > a.active > svg {
-    fill: var(--flame);
+    fill: var(--orange_main);
 }
 
 /* Forms styling */
@@ -495,7 +556,7 @@ h4.planner-element__heading {
 
 .profile__section--description {
     font-size: 1.1em;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px 28px 0px;
     background: var(--platinum);
     color: var(--gunmetal);
     padding: 12px;
@@ -512,13 +573,9 @@ h4.planner-element__heading {
 }
 
 .btn__edit-profile {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    height: 48px;
-    color: var(--rich_black);
-    background-color: var(--platinum);
-    border: 1px solid var(--rich_black);
+    all: unset;
+    color: var(--baby_powder);
+    margin-bottom: 12px;
 }
 
 .search {
@@ -530,7 +587,7 @@ h4.planner-element__heading {
 .favorite-festival {
     color: var(--gunmetal);
     padding: 12px;
-    margin: 16px 0px 16px 0px;
+    margin: 16px 0px 28px 0px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -545,7 +602,6 @@ h4.planner-element__heading {
 }
 
 .favorite-music {
-    background: var(--platinum);
     padding: 12px;
     margin: 16px 0px 16px 0px;
     border-radius: 5px;
@@ -556,5 +612,58 @@ h4.planner-element__heading {
 }
 
 .favorite-music > a {
-    color: var(--gunmetal);
+    color: var(--platinum);
+}
+
+.welcome-font {
+    background: var(--gunmetal);
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 3.2em;
+    border: 2px solid var(--platinum);
+}
+
+.welcome-font__p {
+    background: var(--gunmetal);
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid var(--platinum);
+}
+
+.no-profile__p {
+    background: var(--gunmetal);
+    padding: 12px;
+    border-radius: 25px;
+}
+
+.box__general {
+    border: 1px solid var(--platinum);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 25px;
+    background-color: var(--gunmetal);
+    font-size: 1.1em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 24px;
+}
+
+.box__general--heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font: bold;
+    border-bottom: 1px solid var(--cadet);
+}
+
+.box__search--heading {
+    border: 1px solid var(--gunmetal);
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 16px;
+    background-color: var(--platinum);
+    font-size: 0.9em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 24px;
+    color: var(--rich_black);
 }

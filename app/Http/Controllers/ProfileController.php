@@ -26,8 +26,12 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user, Profile $profile)
     {
+        $user = Auth::user();
+        if (isset($user->profile)) {
+            return redirect()->route('planner.index');
+        }
         return view('profile.create', [
             'festivals' => Festival::all()
         ]);
@@ -122,11 +126,12 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy(User $user, Profile $profile)
     {
-        $profile->delete();
+        $user = Auth::user();
+        $user->profile->delete();
 
-        return redirect()->route('planner');
+        return view('profile.noprofile');
     }
 
     public function other(Profile $profile)

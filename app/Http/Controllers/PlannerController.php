@@ -131,15 +131,10 @@ class PlannerController extends Controller
         return redirect()->route('planner.index');
     }
 
-    public function finished()
-    {
-        return view('planner.show_finished');
-    }
-
     public function validateData()
     {
         return request()->validate([
-            'festival_id' => 'required',
+            'festival_id' => 'nullable',
             'info_text' => 'required|min:3',
             'todo_list' => 'nullable',
             'playlist_href' => 'nullable',

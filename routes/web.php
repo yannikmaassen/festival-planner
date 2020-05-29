@@ -20,21 +20,23 @@ Route::get('/', function () {
     return view('auth.login');
 })->name('auth.login');
 
-// Route::get('/login', function () {
-//     return view('auth.login');
-// });
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/impressum', function () {
+    return view('/impressum');
+})->name('impressum');
 
 // Profile routes
 
-// Route::get('/profile/{profile}', 'ProfileController@show')->name('profile.show')->middleware('auth');
-// Route::get('/profile/{profile}', 'ProfileController@other')->name('profile.other')->middleware('auth');
 Route::resource('/profile', 'ProfileController')->middleware('auth');
+
+// ProfileList routes
+
+Route::get('/profile/{profile}/addProfileList', 'ProfileListController@add')->name('profile_list.add');
+Route::get('/profile/{profile}/editProfileList', 'ProfileListController@edit')->name('profile_list.edit');
 
 // Planner routes
 
-Route::get('/planner/finished', 'PlannerController@finished')->name('planner.finished');
 Route::resource('/planner', 'PlannerController')->middleware('auth');
 
 // Friends routes
@@ -62,7 +64,3 @@ Route::get('/spoti', 'SpotifyController@callback')->name('spoti');
 
 Route::get('/planner/{planner}/searchPlaylist', 'SpotifyController@search')->name('playlist.search');
 Route::get('/planner/{planner}/searchResultsPlaylist', 'SpotifyController@searchPlaylist')->name('searchResultsPlaylist');
-
-// Route::get('planner/{planner}/addFriends/{crew}', function ($plannerId, $crewId) {
-//     //
-// });

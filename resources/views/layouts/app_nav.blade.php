@@ -18,13 +18,12 @@
   <title>Festival Planner</title>
 </head>
 
-<body class="body__nav">
+<body>
   @include('includes/header')
-  <div class="content">
+  <main>
     @yield('content')
-  </div>
+  </main>
   @include('includes/footer', ['ownProfile' => 'own'])
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

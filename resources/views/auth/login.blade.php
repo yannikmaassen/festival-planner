@@ -5,11 +5,9 @@
   <div class="row justify-content-center">
     <h1 class="logo__auth mt-4 mb-2">Planival</h1>
   </div>
-  <p class="h2 text-center mt-2 mb-5">Verwalte deine Festivals!</p>
-  <p class="h6 text-center mt-3">Bitte logge dich ein, um fortzufahren.</p>
+  <p class="h2 text-center mt-2 mb-3">Dein Festival-Planner!</p>
 
-
-  <div class="row justify-content-center mt-3 mb-5">
+  <div class="row justify-content-center mt-3 mb-3">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header h4 text-center">{{ __('Login') }}</div>
@@ -46,7 +44,7 @@
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                   <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
+                    {{ __('Eingeloggt bleiben') }}
                   </label>
                 </div>
               </div>
@@ -54,7 +52,7 @@
 
             <div class="form-group row mb-0">
               <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary w-100">
                   {{ __('Login') }}
                 </button>
                 <!-- @if (Route::has('password.request'))
@@ -62,8 +60,14 @@
                   {{ __('Passwort vergessen?') }}
                 </a>
                 @endif -->
+              </div>
+              <div class="justify-content-center">
                 <a class="btn btn-link" href="{{ url('/register') }}">
                   {{ __('Noch keinen Account? Registrieren') }}
+                </a>
+                <br>
+                <a class="btn btn-link" href="{{ route('impressum') }}">
+                  {{ __('Impressum') }}
                 </a>
               </div>
             </div>
