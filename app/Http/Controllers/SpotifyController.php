@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use SpotifyWebAPI;
 use App\Planner;
 use App\Profile;
+use Illuminate\Support\Facades\Redirect;
+use SpotifyWebAPI\SpotifyWebAPI as SpotifyWebAPISpotifyWebAPI;
 
 class SpotifyController extends Controller
 
@@ -14,13 +16,9 @@ class SpotifyController extends Controller
     {
         $options = [
             'scope' => [
-                'playlist-modify-public',
-                'playlist-read-private',
-                'playlist-modify-private',
                 'user-read-email',
+                'playlist-read-private',
                 'playlist-read-collaborative',
-                'user-library-modify',
-                'user-top-read',
             ],
             'auto-refresh' => true,
         ];
@@ -28,16 +26,21 @@ class SpotifyController extends Controller
         return redirect($session->getAuthorizeUrl($options));
     }
 
-    public function callback(SpotifyWebAPI\Session $session)
+    public function callback(SpotifyWebAPI\Session $session, SpotifyWebAPISpotifyWebAPI $api)
     {
-        $session->requestAccessToken(request()->input('code'));
-        $accessToken = $session->getAccessToken();
-        $refreshToken = $session->getRefreshToken();
+        try {
+            $session->requestAccessToken(request()->input('code'));
+            $accessToken = $session->getAccessToken();
+            $refreshToken = $session->getRefreshToken();
 
-        session(['access_token' => $accessToken]);
-        session(['refresh_token' => $refreshToken]);
+            session(['access_token' => $accessToken]);
+            session(['refresh_token' => $refreshToken]);
+            $this->getToken($api);
+        } catch (\Exception $e) {
+            return redirect()->route('planner.index');
+        }
 
-        return redirect('planner');
+        return redirect()->route('planner.index');
     }
 
     public function search(Planner $planner)
@@ -47,15 +50,32 @@ class SpotifyController extends Controller
         ]);
     }
 
+    private function getToken($api)
+    {
+        $api->setAccessToken(session()->get('access_token'));
 
+        return $api;
+    }
 
     public function searchPlaylist(SpotifyWebAPI\SpotifyWebAPI $api, Planner $planner)
     {
         $query = request()->input('q');
         $api->setAccessToken(session()->get('access_token'));
 
-        $results = $api->search($query, 'playlist');
-        $playlists = $results->playlists->items;
+        if ($query === null) {
+            session()->flash('empty', 'Biite gib einen Suchbegriff ein');
+            return Redirect::back();
+        }
+
+        session(['query' => $query]);
+
+        try {
+            $this->getToken($api);
+            $results = $api->search($query, 'playlist');
+            $playlists = $results->playlists->items;
+        } catch (\Exception $e) {
+            return redirect()->route('spotifyAuth');
+        }
 
         return view('playlist.searchResultsPlaylist', [
             'playlists' => $playlists,
@@ -76,9 +96,20 @@ class SpotifyController extends Controller
         $query = request()->input('q_artist');
         $api->setAccessToken(session()->get('access_token'));
 
-        $results = $api->search($query, 'artist');
+        if ($query === null) {
+            session()->flash('empty', 'Biite gib einen Suchbegriff ein');
+            return Redirect::back();
+        }
 
-        $artists = $results->artists->items;
+        session(['query' => $query]);
+
+        try {
+            $this->getToken($api);
+            $results = $api->search($query, 'artist');
+            $artists = $results->artists->items;
+        } catch (\Exception $e) {
+            return redirect()->route('spotifyAuth');
+        }
 
         return view('artist.searchResultsArtist', [
             'artists' => $artists,

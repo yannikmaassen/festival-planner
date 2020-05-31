@@ -12,13 +12,13 @@
 
       <div class="form-group">
         <label class="form__label">Festival ändern</label>
-        <select autocomplete="off" name="festival_id" size="6" class="form-control @error('festivals') is-invalid @enderror">
+        <select autocomplete="off" name="festival_id" size="6" class="form-control @error('festival_id') is-invalid @enderror">
           @foreach ($festivals as $festival)
           <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
           @endforeach
         </select>
-        @error('festival')
-        <p class="invalid-feedback">{{ $errors->first('festivals') }}</p>
+        @error('festival_id')
+        <p class="invalid-feedback">{{ $errors->first('festival_id') }}</p>
         @enderror
       </div>
 
