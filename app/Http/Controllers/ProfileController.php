@@ -161,9 +161,9 @@ class ProfileController extends Controller
     public function validateUpdateData()
     {
         return request()->validate([
-            'profile_name' => 'required',
-            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'profile_description' => 'required|min:3',
+            'profile_name' => 'nullable',
+            'profile_image' => 'nullable',
+            'profile_description' => 'nullable',
             'festival_id' => 'nullable',
             'profile_list' => 'nullable',
             'artist_uri' => 'nullable',
