@@ -87,6 +87,7 @@ class PlannerController extends Controller
         return view('planner.edit', [
             'currentPlanner' => $planner,
             'festivals' => Festival::all(),
+            'selectedFestival' => $planner->festival
         ]);
     }
 
@@ -134,7 +135,7 @@ class PlannerController extends Controller
     public function validateData()
     {
         return request()->validate([
-            'festival_id' => 'nullable',
+            'festival_id' => 'required',
             'info_text' => 'required|min:3',
             'todo_list' => 'nullable',
             'playlist_href' => 'nullable',
@@ -151,8 +152,8 @@ class PlannerController extends Controller
     public function validateUpdateData()
     {
         return request()->validate([
-            'festival_id' => 'nullable',
-            'info_text' => 'nullable',
+            'festival_id' => 'required',
+            'info_text' => 'required',
             'todo_list' => 'nullable',
             'playlist_1' => 'nullable',
             'playlist_2' => 'nullable',
