@@ -13,12 +13,12 @@
     </div>
 
   </div>
-  <div class="row mb-5 d-flex justify-content-start text-center">
+  <div class="row text-center">
     @foreach($friends as $friend)
     <div class="col-md-3">
       <div class="searchResult__box">
         <a href="{{ url('/profile/' . $friend->id) }}">
-          <h3 class="text-white my-1">{{ $friend->user_name }}</h3>
+          <h3 class="text-white">{{ $friend->user_name }}</h3>
         </a>
         <form method="POST" action="{{ route('planner.update', $currentPlanner) }}">
           <input name="user_id" type="hidden" value="{{ $friend->id }}">

@@ -11,14 +11,14 @@
     <div class="box__search--heading">
       <h4 class="my-2 text-center">Suchergebnisse für "{{ $query }}"</h4>
     </div>
-
   </div>
-  <div class="row mb-5 d-flex justify-content-start text-center">
+
+  <div class="row text-center">
     @foreach($artists as $artist)
     <div class="col-md-3">
       <div class="searchResult__box">
         <a href="{{ $artist->uri }}">
-          <h3 class="text-white my-1">{{ $artist->name }}</h3>
+          <h3 class="text-white">{{ $artist->name }}</h3>
           <form method="POST" action="{{ route('profile.update', $profile) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')

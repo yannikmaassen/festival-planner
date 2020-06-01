@@ -62,6 +62,7 @@
   </section>
 
   <hr>
+
   <section class="planner-element">
     <div class="planner-element__heading">
       <h2>
