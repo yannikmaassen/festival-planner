@@ -13,7 +13,7 @@
     <hr class="my-4">
     <div class="profile__section--heading">
       <h3>Beschreibung</h3>
-      @if(isset($ownProfile->profile_description))
+      @if(isset($ownProfile->user))
       <a href="{{ route('profile.edit', $ownProfile) }}" class="btn btn__edit-todos">
         <svg class="bi bi-pencil-square" width="2em" height="2em" viewBox="0 0 16 16" fill="var(--orange_main)" xmlns="http://www.w3.org/2000/svg">
           <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z" />
@@ -23,14 +23,19 @@
       @endif
     </div>
     <p class="profile__section--description">
+      @if(isset($ownProfile->profile_description))
       {{ $ownProfile->profile_description }}
+      @else ...nichts zu erzählen?
+      @endif
     </p>
+    @if(isset($ownProfile->festival_id))
     <h3 class="profile__section--heading">Lieblingsfestival</h3>
     <div class="favorite-festival">
       <h4> {{ $festival->festival_name }}</h4>
       <p>{{ $festival->genres }}</p>
       <p>{{ $festival->location }}</p>
     </div>
+    @endif
     <div class="profile__section--heading">
       <h3>Lieblingsinterpret</h3>
       @if(isset($ownProfile->artist_id))
