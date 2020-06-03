@@ -20,11 +20,8 @@
           <span class="input-group-text" id="inputGroupFileAddon01">Profilbild</span>
         </div>
         <div class="custom-file">
-          <input name="profile_image" type="file" class="custom-file-input @error('profile_image') is-invalid @enderror" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+          <input name="profile_image" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
           <label class="custom-file-label" for="inputGroupFile01">...</label>
-          @error('profile_image')
-          <p class="invalid-feedback">{{ $errors->first('profile_image') }}</p>
-          @enderror
         </div>
       </div>
       <div class="form-group">
@@ -33,14 +30,11 @@
       </div>
       <div class="form-group">
         <label class="form__label">Dein Lieblingsfestival?</label>
-        <select multiple autocomplete="off" name="festival_id" size="3" class="form-control @error('festival_id') is-invalid @enderror">
+        <select multiple autocomplete="off" name="festival_id" size="3" class="form-control">
           @foreach ($festivals as $festival)
           <option value="{{ $festival->id }}">{{ $festival->festival_name }}</option>
           @endforeach
         </select>
-        @error('festival_id')
-        <p class="invalid-feedback">{{ $errors->first('festival_id') }}</p>
-        @enderror
       </div>
       <hr>
       <div class="btn-group__edit mb-2">

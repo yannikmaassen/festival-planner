@@ -20,7 +20,7 @@
         <div class="searchResult__box">
           <h4 class="text-white my-1">{{ $playlist->name }}<br></h4>
           <p>by {{ $playlist->owner->display_name }}</p>
-          <form method="POST" action="{{ route('planner.update', $currentPlanner) }}">
+          <form method="POST" action="{{ route('planner.update', $currentPlanner) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <input name="playlist_href" type="hidden" value="{{ $playlist->href }}">
