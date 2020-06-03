@@ -21,13 +21,9 @@
         <p class="invalid-feedback">{{ $errors->first('festival_id') }}</p>
         @enderror
       </div>
-
       <div class="form-group">
         <label class="form__label" for="planner_input2">Info-Text des Planners</label>
-        <textarea class="form-control @error('info_text') is-invalid @enderror" id="planner_input2" name="info_text" rows="3">{{ old('info_text') ?? $currentPlanner->info_text }}</textarea>
-        @error('info_text')
-        <p class="invalid-feedback">{{ $errors->first('info_text') }}</p>
-        @enderror
+        <textarea class="form-control" id="planner_input2" name="info_text" rows="3">{{ old('info_text') ?? $currentPlanner->info_text }}</textarea>
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -40,11 +36,8 @@
           </span>
         </div>
         <div class="custom-file">
-          <input name="planner_image" type="file" class="custom-file-input @error('planner_image') is-invalid @enderror" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+          <input name="planner_image" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
           <label class="custom-file-label" for="inputGroupFile01">...</label>
-          @error('planner_image')
-          <p class="invalid-feedback">{{ $errors->first('planner_image') }}</p>
-          @enderror
         </div>
       </div>
       <hr>
